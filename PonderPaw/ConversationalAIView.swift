@@ -60,7 +60,7 @@ struct ConversationalAIView: View {
             description: "A Story Teller"
         )
     ]
-    
+
     private func beginConversation(agent: Agent) {
         if status == .connected {
             conversation?.endSession()
@@ -69,20 +69,20 @@ struct ConversationalAIView: View {
             Task {
                 do {
                     // If you would like to override an agent, uncoming the following lines:
-                    
-                    let promptOverride = ElevenLabsSDK.AgentPrompt(prompt: "You are a story teller who will tell the totoro story to a 5 year old girl who are shy to talk to strangers. You will encourage her to ask questions and share her thoughts. Do give her some pause and let her talk freely.")
-                    let agentConfig = ElevenLabsSDK.AgentConfig(
-                        prompt: promptOverride,
-                        firstMessage: "Hi, Iris! I'm PonderPaw, created by your father. I will tell you a story about totoro today.",
-                        language: .en
-                    )
-                    let overrides = ElevenLabsSDK.ConversationConfigOverride(
-                        agent: agentConfig
-                    )
-                    
-                    
-                    let config = ElevenLabsSDK.SessionConfig(agentId: agent.id, overrides: overrides)
-                    
+                    /*
+                     let promptOverride = ElevenLabsSDK.AgentPrompt(prompt: "You are a pleasant assistant called Eric, supporting a customer called Louis.")
+                     let agentConfig = ElevenLabsSDK.AgentConfig(
+                         prompt: promptOverride,
+                         firstMessage: "Hi, Louis! I'm Eric, your friendly assistant.",
+                         language: .en
+                     )
+                     let overrides = ElevenLabsSDK.ConversationConfigOverride(
+                         agent: agentConfig
+                     )
+                     let config = ElevenLabsSDK.SessionConfig(agentId: agent.id, overrides: overrides)
+                     */
+              
+                    let config = ElevenLabsSDK.SessionConfig(agentId: agent.id)
                     var callbacks = ElevenLabsSDK.Callbacks()
                     
                     callbacks.onConnect = { conversationId in
@@ -142,12 +142,12 @@ struct ConversationalAIView: View {
                         .padding(.bottom, 20)
                     
                     Text(agents[currentAgentIndex].name)
-                        .font(.title.bold()) // Make the font bold
-                        .foregroundColor(.white) // Change color to white for visibility on a black background
+                        .font(.title2)
+                        .foregroundColor(.black)
                     
                     Text(agents[currentAgentIndex].description)
-                        .font(.subheadline.weight(.semibold)) // Slightly bolder than regular
-                        .foregroundColor(.gray.opacity(0.8)) // Adjusted gray with opacity for better visibility on black
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
                     
                     HStack(spacing: 8) {
                         ForEach(0..<agents.count, id: \ .self) { index in
