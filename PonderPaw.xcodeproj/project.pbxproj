@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CD0CD4602D2C791F00E75B7B /* ElevenLabsSDK in Frameworks */ = {isa = PBXBuildFile; productRef = CD0CD45F2D2C791F00E75B7B /* ElevenLabsSDK */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		CD0CD3F62D2C679200E75B7B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD0CD4602D2C791F00E75B7B /* ElevenLabsSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 				CD0CD3E52D2C679200E75B7B /* PonderPaw */,
 				CD0CD3F82D2C679200E75B7B /* PonderPawTests */,
 				CD0CD4022D2C679200E75B7B /* PonderPawUITests */,
+				CD0CD4242D2C69E500E75B7B /* Frameworks */,
 				CD0CD3E42D2C679200E75B7B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +96,13 @@
 				CD0CD3FF2D2C679200E75B7B /* PonderPawUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CD0CD4242D2C69E500E75B7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +125,7 @@
 			);
 			name = PonderPaw;
 			packageProductDependencies = (
+				CD0CD45F2D2C791F00E75B7B /* ElevenLabsSDK */,
 			);
 			productName = PonderPaw;
 			productReference = CD0CD3E32D2C679200E75B7B /* PonderPaw.app */;
@@ -195,6 +209,9 @@
 			);
 			mainGroup = CD0CD3DA2D2C679200E75B7B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				CD0CD45E2D2C791F00E75B7B /* XCRemoteSwiftPackageReference "ElevenLabsSwift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CD0CD3E42D2C679200E75B7B /* Products */;
 			projectDirPath = "";
@@ -399,6 +416,8 @@
 				DEVELOPMENT_TEAM = NDT977GT9N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "User voice input";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -409,7 +428,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = media.pajamacats.PonderPaw.PonderPaw;
+				PRODUCT_BUNDLE_IDENTIFIER = media.pajamacats.PonderPaw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -428,6 +447,8 @@
 				DEVELOPMENT_TEAM = NDT977GT9N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "User voice input";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -438,7 +459,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = media.pajamacats.PonderPaw.PonderPaw;
+				PRODUCT_BUNDLE_IDENTIFIER = media.pajamacats.PonderPaw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -558,6 +579,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CD0CD45E2D2C791F00E75B7B /* XCRemoteSwiftPackageReference "ElevenLabsSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elevenlabs/ElevenLabsSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CD0CD45F2D2C791F00E75B7B /* ElevenLabsSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD0CD45E2D2C791F00E75B7B /* XCRemoteSwiftPackageReference "ElevenLabsSwift" */;
+			productName = ElevenLabsSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CD0CD3DB2D2C679200E75B7B /* Project object */;
 }
