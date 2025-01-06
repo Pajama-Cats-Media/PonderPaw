@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		CD0CD3F62D2C679200E75B7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD0CD3DB2D2C679200E75B7B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD0CD3E22D2C679200E75B7B;
+			remoteInfo = PonderPaw;
+		};
+		CD0CD4002D2C679200E75B7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD0CD3DB2D2C679200E75B7B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD0CD3E22D2C679200E75B7B;
+			remoteInfo = PonderPaw;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CD0CD3E32D2C679200E75B7B /* PonderPaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PonderPaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD0CD3F52D2C679200E75B7B /* PonderPawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PonderPawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD0CD3FF2D2C679200E75B7B /* PonderPawUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PonderPawUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CD0CD3E52D2C679200E75B7B /* PonderPaw */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PonderPaw;
+			sourceTree = "<group>";
+		};
+		CD0CD3F82D2C679200E75B7B /* PonderPawTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PonderPawTests;
+			sourceTree = "<group>";
+		};
+		CD0CD4022D2C679200E75B7B /* PonderPawUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PonderPawUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD0CD3E02D2C679200E75B7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD0CD3F22D2C679200E75B7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD0CD3FC2D2C679200E75B7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD0CD3DA2D2C679200E75B7B = {
+			isa = PBXGroup;
+			children = (
+				CD0CD3E52D2C679200E75B7B /* PonderPaw */,
+				CD0CD3F82D2C679200E75B7B /* PonderPawTests */,
+				CD0CD4022D2C679200E75B7B /* PonderPawUITests */,
+				CD0CD3E42D2C679200E75B7B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD0CD3E42D2C679200E75B7B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD0CD3E32D2C679200E75B7B /* PonderPaw.app */,
+				CD0CD3F52D2C679200E75B7B /* PonderPawTests.xctest */,
+				CD0CD3FF2D2C679200E75B7B /* PonderPawUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD0CD3E22D2C679200E75B7B /* PonderPaw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD0CD4092D2C679200E75B7B /* Build configuration list for PBXNativeTarget "PonderPaw" */;
+			buildPhases = (
+				CD0CD3DF2D2C679200E75B7B /* Sources */,
+				CD0CD3E02D2C679200E75B7B /* Frameworks */,
+				CD0CD3E12D2C679200E75B7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CD0CD3E52D2C679200E75B7B /* PonderPaw */,
+			);
+			name = PonderPaw;
+			packageProductDependencies = (
+			);
+			productName = PonderPaw;
+			productReference = CD0CD3E32D2C679200E75B7B /* PonderPaw.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD0CD3F42D2C679200E75B7B /* PonderPawTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD0CD40C2D2C679200E75B7B /* Build configuration list for PBXNativeTarget "PonderPawTests" */;
+			buildPhases = (
+				CD0CD3F12D2C679200E75B7B /* Sources */,
+				CD0CD3F22D2C679200E75B7B /* Frameworks */,
+				CD0CD3F32D2C679200E75B7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD0CD3F72D2C679200E75B7B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CD0CD3F82D2C679200E75B7B /* PonderPawTests */,
+			);
+			name = PonderPawTests;
+			packageProductDependencies = (
+			);
+			productName = PonderPawTests;
+			productReference = CD0CD3F52D2C679200E75B7B /* PonderPawTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CD0CD3FE2D2C679200E75B7B /* PonderPawUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD0CD40F2D2C679200E75B7B /* Build configuration list for PBXNativeTarget "PonderPawUITests" */;
+			buildPhases = (
+				CD0CD3FB2D2C679200E75B7B /* Sources */,
+				CD0CD3FC2D2C679200E75B7B /* Frameworks */,
+				CD0CD3FD2D2C679200E75B7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD0CD4012D2C679200E75B7B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CD0CD4022D2C679200E75B7B /* PonderPawUITests */,
+			);
+			name = PonderPawUITests;
+			packageProductDependencies = (
+			);
+			productName = PonderPawUITests;
+			productReference = CD0CD3FF2D2C679200E75B7B /* PonderPawUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD0CD3DB2D2C679200E75B7B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					CD0CD3E22D2C679200E75B7B = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					CD0CD3F42D2C679200E75B7B = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = CD0CD3E22D2C679200E75B7B;
+					};
+					CD0CD3FE2D2C679200E75B7B = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = CD0CD3E22D2C679200E75B7B;
+					};
+				};
+			};
+			buildConfigurationList = CD0CD3DE2D2C679200E75B7B /* Build configuration list for PBXProject "PonderPaw" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD0CD3DA2D2C679200E75B7B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = CD0CD3E42D2C679200E75B7B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD0CD3E22D2C679200E75B7B /* PonderPaw */,
+				CD0CD3F42D2C679200E75B7B /* PonderPawTests */,
+				CD0CD3FE2D2C679200E75B7B /* PonderPawUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD0CD3E12D2C679200E75B7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD0CD3F32D2C679200E75B7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD0CD3FD2D2C679200E75B7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD0CD3DF2D2C679200E75B7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD0CD3F12D2C679200E75B7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD0CD3FB2D2C679200E75B7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD0CD3F72D2C679200E75B7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD0CD3E22D2C679200E75B7B /* PonderPaw */;
+			targetProxy = CD0CD3F62D2C679200E75B7B /* PBXContainerItemProxy */;
+		};
+		CD0CD4012D2C679200E75B7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD0CD3E22D2C679200E75B7B /* PonderPaw */;
+			targetProxy = CD0CD4002D2C679200E75B7B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CD0CD4072D2C679200E75B7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD0CD4082D2C679200E75B7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD0CD40A2D2C679200E75B7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PonderPaw/Preview Content\"";
+				DEVELOPMENT_TEAM = NDT977GT9N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = media.pajamacats.PonderPaw.PonderPaw;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD0CD40B2D2C679200E75B7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PonderPaw/Preview Content\"";
+				DEVELOPMENT_TEAM = NDT977GT9N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = media.pajamacats.PonderPaw.PonderPaw;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CD0CD40D2D2C679200E75B7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NDT977GT9N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = media.pajamacats.PonderPaw.PonderPawTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PonderPaw.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PonderPaw";
+			};
+			name = Debug;
+		};
+		CD0CD40E2D2C679200E75B7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NDT977GT9N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = media.pajamacats.PonderPaw.PonderPawTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PonderPaw.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PonderPaw";
+			};
+			name = Release;
+		};
+		CD0CD4102D2C679200E75B7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NDT977GT9N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = media.pajamacats.PonderPaw.PonderPawUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PonderPaw;
+			};
+			name = Debug;
+		};
+		CD0CD4112D2C679200E75B7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NDT977GT9N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = media.pajamacats.PonderPaw.PonderPawUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PonderPaw;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD0CD3DE2D2C679200E75B7B /* Build configuration list for PBXProject "PonderPaw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD0CD4072D2C679200E75B7B /* Debug */,
+				CD0CD4082D2C679200E75B7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD0CD4092D2C679200E75B7B /* Build configuration list for PBXNativeTarget "PonderPaw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD0CD40A2D2C679200E75B7B /* Debug */,
+				CD0CD40B2D2C679200E75B7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD0CD40C2D2C679200E75B7B /* Build configuration list for PBXNativeTarget "PonderPawTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD0CD40D2D2C679200E75B7B /* Debug */,
+				CD0CD40E2D2C679200E75B7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD0CD40F2D2C679200E75B7B /* Build configuration list for PBXNativeTarget "PonderPawUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD0CD4102D2C679200E75B7B /* Debug */,
+				CD0CD4112D2C679200E75B7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD0CD3DB2D2C679200E75B7B /* Project object */;
+}
