@@ -1,0 +1,2345 @@
+{
+  "meta": {
+    "book_id": "8e28a441-7be5-40b0-a9b5-f207a8977197",
+    "book_name": "Les trois petits cochons",
+    "language": "fr-FR",
+    "age_group": "4+",
+    "voice_engine": "native",
+    "default_mode": "interactive"
+  },
+  "playbookOrder": [
+    "cover",
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p8",
+    "p9",
+    "p10",
+    "p11",
+    "p12",
+    "p13",
+    "p14",
+    "p15",
+    "p16",
+    "p17",
+    "p18",
+    "p19",
+    "p20"
+  ],
+  "playbook": {
+    "cover": [],
+    "p1": [
+      "P1A1",
+      "P1V1",
+      "P1A2",
+      "P1V2",
+      "P1A3",
+      "P1V3",
+      "P1A4",
+      "P1V4",
+      "P1A5",
+      "P1V5",
+      "P1A6",
+      "P1V6"
+    ],
+    "p2": [
+      "P2A1",
+      "P2V1",
+      "P2A2",
+      "P2V2",
+      "P2A3",
+      "P2V3"
+    ],
+    "p3": [
+      "P3A1",
+      "P3V1",
+      "P3A2",
+      "P3V2",
+      "P3A3",
+      "P3V3",
+      "P3A4",
+      "P3V4",
+      "P3A5",
+      "P3V5"
+    ],
+    "p4": [
+      "P4A1",
+      "P4V1",
+      "P4A2",
+      "P4V2",
+      "P4A3",
+      "P4V3",
+      "P4A4",
+      "P4V4",
+      "P4A5",
+      "P4V5"
+    ],
+    "p5": [
+      "P5A1",
+      "P5V1",
+      "P5A2",
+      "P5V2",
+      "P5A3",
+      "P5V3",
+      "P5A4",
+      "P5V4",
+      "P5A5",
+      "P5V5",
+      "P5A6",
+      "P5V6"
+    ],
+    "p6": [
+      "P6A1",
+      "P6V1",
+      "P6A2",
+      "P6V2",
+      "P6A3",
+      "P6V3",
+      "P6A4",
+      "P6V4",
+      "P6A5",
+      "P6V5",
+      "P6A6",
+      "P6V6",
+      "P6A7",
+      "P6V7"
+    ],
+    "p7": [
+      "P7A1",
+      "P7V1",
+      "P7A2",
+      "P7V2",
+      "P7A3",
+      "P7V3",
+      "P7A4",
+      "P7V4",
+      "P7A5",
+      "P7V5",
+      "P7A6",
+      "P7V6",
+      "P7A7",
+      "P7V7",
+      "P7A8",
+      "P7V8",
+      "P7A9",
+      "P7V9"
+    ],
+    "p8": [
+      "P8A1",
+      "P8V1",
+      "P8A2",
+      "P8V2",
+      "P8A3",
+      "P8V3",
+      "P8A4",
+      "P8V4",
+      "P8A5",
+      "P8V5",
+      "P8A6",
+      "P8V6"
+    ],
+    "p9": [
+      "P9A1",
+      "P9V1",
+      "P9A2",
+      "P9V2",
+      "P9A3",
+      "P9V3",
+      "P9A4",
+      "P9V4",
+      "P9A5",
+      "P9V5",
+      "P9A6",
+      "P9V6",
+      "P9A7",
+      "P9V7"
+    ],
+    "p10": [
+      "P10A1",
+      "P10V1",
+      "P10A2",
+      "P10V2",
+      "P10A3",
+      "P10V3",
+      "P10A4",
+      "P10V4",
+      "P10A5",
+      "P10V5",
+      "P10A6",
+      "P10V6",
+      "P10A7",
+      "P10V7",
+      "P10A8",
+      "P10V8",
+      "P10A9",
+      "P10V9",
+      "P10A10",
+      "P10V10"
+    ],
+    "p11": [
+      "P11A1",
+      "P11V1",
+      "P11A2",
+      "P11V2",
+      "P11A3",
+      "P11V3",
+      "P11A4",
+      "P11V4",
+      "P11A5",
+      "P11V5"
+    ],
+    "p12": [
+      "P12A1",
+      "P12V1",
+      "P12A2",
+      "P12V2",
+      "P12A3",
+      "P12V3",
+      "P12A4",
+      "P12V4",
+      "P12A5",
+      "P12V5",
+      "P12A6",
+      "P12V6",
+      "P12A7",
+      "P12V7"
+    ],
+    "p13": [
+      "P13A1",
+      "P13V1",
+      "P13A2",
+      "P13V2",
+      "P13A3",
+      "P13V3",
+      "P13A4",
+      "P13V4",
+      "P13A5",
+      "P13V5",
+      "P13A6",
+      "P13V6"
+    ],
+    "p14": [
+      "P14A1",
+      "P14V1",
+      "P14A2",
+      "P14V2",
+      "P14A3",
+      "P14V3",
+      "P14A4",
+      "P14V4",
+      "P14A5",
+      "P14V5",
+      "P14A6",
+      "P14V6",
+      "P14A7",
+      "P14V7",
+      "P14A8",
+      "P14V8"
+    ],
+    "p15": [
+      "P15A1",
+      "P15V1",
+      "P15A2",
+      "P15V2",
+      "P15A3",
+      "P15V3",
+      "P15A4",
+      "P15V4",
+      "P15A5",
+      "P15V5"
+    ],
+    "p16": [
+      "P16A1",
+      "P16V1",
+      "P16A2",
+      "P16V2",
+      "P16A3",
+      "P16V3",
+      "P16A4",
+      "P16V4"
+    ],
+    "p17": [
+      "P17A1",
+      "P17V1",
+      "P17A2",
+      "P17V2",
+      "P17A3",
+      "P17V3"
+    ],
+    "p18": [
+      "P18A1",
+      "P18V1",
+      "P18A2",
+      "P18V2",
+      "P18A3",
+      "P18V3"
+    ],
+    "p19": [
+      "P19A1",
+      "P19V1",
+      "P19A2",
+      "P19V2",
+      "P19A3",
+      "P19V3"
+    ]
+  },
+  "actions": {
+    "P1A1": {
+      "type": "read",
+      "data": {
+        "text": "Il était une fois une vieille maman cochon",
+        "type": "file",
+        "id": "f2a275ef-db36-5b1c-bb29-af27cd0c53e0"
+      }
+    },
+    "P1V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Il était une fois une vieille maman cochon"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A1"
+      }
+    },
+    "P1A2": {
+      "type": "read",
+      "data": {
+        "text": "qui avait trois petits cochons",
+        "type": "file",
+        "id": "53ee9600-e42c-5a7a-a5ba-41cbf420c42c"
+      }
+    },
+    "P1V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "qui avait trois petits cochons"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A2"
+      }
+    },
+    "P1A3": {
+      "type": "read",
+      "data": {
+        "text": "et pas assez de nourriture pour les nourrir.",
+        "type": "file",
+        "id": "cf92dbde-8766-504c-80ea-fb726d1421b5"
+      }
+    },
+    "P1V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et pas assez de nourriture pour les nourrir."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A3"
+      }
+    },
+    "P1A4": {
+      "type": "read",
+      "data": {
+        "text": "Alors, quand ils étaient assez grands,",
+        "type": "file",
+        "id": "613547cb-6366-5eba-9e23-b13288d1bb31"
+      }
+    },
+    "P1V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Alors, quand ils étaient assez grands,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A4"
+      }
+    },
+    "P1A5": {
+      "type": "read",
+      "data": {
+        "text": "elle les a envoyés dans le monde",
+        "type": "file",
+        "id": "0609e90e-8a9e-5bcd-be6a-78e1b3ef5720"
+      }
+    },
+    "P1V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "elle les a envoyés dans le monde"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A5"
+      }
+    },
+    "P1A6": {
+      "type": "read",
+      "data": {
+        "text": "chercher fortune.",
+        "type": "file",
+        "id": "2d96f8ba-1203-5d6c-93fa-6d2b99dbf82b"
+      }
+    },
+    "P1V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "chercher fortune."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A6"
+      }
+    },
+    "P2A1": {
+      "type": "read",
+      "data": {
+        "text": "Le premier petit cochon était très paresseux.",
+        "type": "file",
+        "id": "8d2ef8c1-538b-5a2f-bf6a-92c63e80da34"
+      }
+    },
+    "P2V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Le premier petit cochon était très paresseux."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P2A1"
+      }
+    },
+    "P2A2": {
+      "type": "read",
+      "data": {
+        "text": "Il ne voulait pas du tout travailler",
+        "type": "file",
+        "id": "261318cf-9436-559a-a9e9-5be334ed0dec"
+      }
+    },
+    "P2V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Il ne voulait pas du tout travailler"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P2A2"
+      }
+    },
+    "P2A3": {
+      "type": "read",
+      "data": {
+        "text": "et il bâtit sa maison en paille.",
+        "type": "file",
+        "id": "b12ef638-979e-5588-85d6-9b1bf60f73e7"
+      }
+    },
+    "P2V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et il bâtit sa maison en paille."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P2A3"
+      }
+    },
+    "P3A1": {
+      "type": "read",
+      "data": {
+        "text": "Le deuxième petit cochon a travaillé un peu plus dur",
+        "type": "file",
+        "id": "6b0b28d6-5f22-5468-b8a3-e4b699084865"
+      }
+    },
+    "P3V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Le deuxième petit cochon a travaillé un peu plus dur"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P3A1"
+      }
+    },
+    "P3A2": {
+      "type": "read",
+      "data": {
+        "text": "mais il était un peu paresseux aussi",
+        "type": "file",
+        "id": "da4ad36e-725f-5462-b72d-cc558a2a4954"
+      }
+    },
+    "P3V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "mais il était un peu paresseux aussi"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P3A2"
+      }
+    },
+    "P3A3": {
+      "type": "read",
+      "data": {
+        "text": "et il a construit sa maison avec des bâtons.",
+        "type": "file",
+        "id": "028d1fca-1c96-5546-952a-2f07caeb28bd"
+      }
+    },
+    "P3V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et il a construit sa maison avec des bâtons."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P3A3"
+      }
+    },
+    "P3A4": {
+      "type": "read",
+      "data": {
+        "text": "Ensuite, ils ont chanté et dansé",
+        "type": "file",
+        "id": "00ffb0db-bdaa-5857-9488-149d4146d3aa"
+      }
+    },
+    "P3V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Ensuite, ils ont chanté et dansé"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P3A4"
+      }
+    },
+    "P3A5": {
+      "type": "read",
+      "data": {
+        "text": "et joué ensemble le reste de la journée.",
+        "type": "file",
+        "id": "f158a8e5-a44f-5399-83f2-1f2a1dd5a136"
+      }
+    },
+    "P3V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et joué ensemble le reste de la journée."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P3A5"
+      }
+    },
+    "P4A1": {
+      "type": "read",
+      "data": {
+        "text": "Le troisième petit cochon a travaillé dur toute la journée",
+        "type": "file",
+        "id": "c667a76c-bec9-5d42-b50e-0d54c03066f7"
+      }
+    },
+    "P4V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Le troisième petit cochon a travaillé dur toute la journée"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P4A1"
+      }
+    },
+    "P4A2": {
+      "type": "read",
+      "data": {
+        "text": "et construit sa maison avec des briques.",
+        "type": "file",
+        "id": "63381db0-bc3e-5840-bcb3-b44573b7fe70"
+      }
+    },
+    "P4V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et construit sa maison avec des briques."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P4A2"
+      }
+    },
+    "P4A3": {
+      "type": "read",
+      "data": {
+        "text": "C--quote--était une maison solide complète",
+        "type": "file",
+        "id": "bc6709b5-cc40-53a5-9b4c-69eac2a11b92"
+      }
+    },
+    "P4V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "C--quote--était une maison solide complète"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P4A3"
+      }
+    },
+    "P4A4": {
+      "type": "read",
+      "data": {
+        "text": "avec une belle cheminée et cheminée.",
+        "type": "file",
+        "id": "bd969453-aa63-5369-90d1-5a52dad1e4a5"
+      }
+    },
+    "P4V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "avec une belle cheminée et cheminée."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P4A4"
+      }
+    },
+    "P4A5": {
+      "type": "read",
+      "data": {
+        "text": "Il semblait pouvoir résister aux vents les plus forts.",
+        "type": "file",
+        "id": "d222321e-095a-5ee3-9906-24c565219097"
+      }
+    },
+    "P4V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Il semblait pouvoir résister aux vents les plus forts."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P4A5"
+      }
+    },
+    "P5A1": {
+      "type": "read",
+      "data": {
+        "text": "Le lendemain, un loup est passé par hasard dans la ruelle",
+        "type": "file",
+        "id": "2691df04-23ee-5b3c-a855-d847b9a66047"
+      }
+    },
+    "P5V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Le lendemain, un loup est passé par hasard dans la ruelle"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A1"
+      }
+    },
+    "P5A2": {
+      "type": "read",
+      "data": {
+        "text": "où vivaient les trois petits cochons;",
+        "type": "file",
+        "id": "42debf30-3b6a-5d53-8016-36f0498285b0"
+      }
+    },
+    "P5V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "où vivaient les trois petits cochons;"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A2"
+      }
+    },
+    "P5A3": {
+      "type": "read",
+      "data": {
+        "text": "et il vit la maison de paille,",
+        "type": "file",
+        "id": "ccd82c24-b2e5-5c8c-be0c-358648216791"
+      }
+    },
+    "P5V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et il vit la maison de paille,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A3"
+      }
+    },
+    "P5A4": {
+      "type": "read",
+      "data": {
+        "text": "et il a senti le cochon à l--quote--intérieur.",
+        "type": "file",
+        "id": "dbf81ff7-e68b-52b7-a334-1d1129a13722"
+      }
+    },
+    "P5V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et il a senti le cochon à l--quote--intérieur."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A4"
+      }
+    },
+    "P5A5": {
+      "type": "read",
+      "data": {
+        "text": "Il pensait que le cochon ferait un excellent repas",
+        "type": "file",
+        "id": "db8a289b-6c03-57db-b7ce-083d66b24e2d"
+      }
+    },
+    "P5V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Il pensait que le cochon ferait un excellent repas"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A5"
+      }
+    },
+    "P5A6": {
+      "type": "read",
+      "data": {
+        "text": "et sa bouche a commencé à arroser.",
+        "type": "file",
+        "id": "b575cb69-fec6-5f69-9af2-22d7600d4d86"
+      }
+    },
+    "P5V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et sa bouche a commencé à arroser."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A6"
+      }
+    },
+    "P6A1": {
+      "type": "read",
+      "data": {
+        "text": "Alors il frappa à la porte et dit :",
+        "type": "file",
+        "id": "97d0d73b-245d-5b46-aae8-f7fc79167f0d"
+      }
+    },
+    "P6V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Alors il frappa à la porte et dit :"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A1"
+      }
+    },
+    "P6A2": {
+      "type": "read",
+      "data": {
+        "text": "Petit cochon! Petit cochon!",
+        "type": "file",
+        "id": "b7ffcf44-c43f-53b7-8585-ceba1b910f09"
+      }
+    },
+    "P6V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Petit cochon! Petit cochon!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A2"
+      }
+    },
+    "P6A3": {
+      "type": "read",
+      "data": {
+        "text": "Laisse moi entrer! Laisse moi entrer!",
+        "type": "file",
+        "id": "b7e27015-012f-543c-8969-8f94123452db"
+      }
+    },
+    "P6V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Laisse moi entrer! Laisse moi entrer!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A3"
+      }
+    },
+    "P6A4": {
+      "type": "read",
+      "data": {
+        "text": "Mais le petit cochon a vu les grosses pattes du loup à travers le trou de la serrure,",
+        "type": "file",
+        "id": "8323cd2b-e38a-58a4-a80a-651d067bc247"
+      }
+    },
+    "P6V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Mais le petit cochon a vu les grosses pattes du loup à travers le trou de la serrure,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A4"
+      }
+    },
+    "P6A5": {
+      "type": "read",
+      "data": {
+        "text": "alors il a répondu :",
+        "type": "file",
+        "id": "67aa6fe8-3804-542d-98ce-7099193064d8"
+      }
+    },
+    "P6V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "alors il a répondu :"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A5"
+      }
+    },
+    "P6A6": {
+      "type": "read",
+      "data": {
+        "text": "Non! Non! Non!",
+        "type": "file",
+        "id": "56254025-74e1-5a98-8fe2-eeb47fccc65b"
+      }
+    },
+    "P6V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Non! Non! Non!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A6"
+      }
+    },
+    "P6A7": {
+      "type": "read",
+      "data": {
+        "text": "Pas par les poils de mon chinny menton !",
+        "type": "file",
+        "id": "e04c0c7f-329a-5f26-9508-0595ee651f4a"
+      }
+    },
+    "P6V7": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Pas par les poils de mon chinny menton !"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A7"
+      }
+    },
+    "P7A1": {
+      "type": "read",
+      "data": {
+        "text": "Alors le loup montra les dents et dit :",
+        "type": "file",
+        "id": "51a7eed0-620d-55a6-8d79-3d4f2a474144"
+      }
+    },
+    "P7V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Alors le loup montra les dents et dit :"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A1"
+      }
+    },
+    "P7A2": {
+      "type": "read",
+      "data": {
+        "text": "Alors je soufflerai et je soufflerai",
+        "type": "file",
+        "id": "858cc478-7064-533b-8949-755fc91559bc"
+      }
+    },
+    "P7V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Alors je soufflerai et je soufflerai"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A2"
+      }
+    },
+    "P7A3": {
+      "type": "read",
+      "data": {
+        "text": "et je ferai sauter ta maison.",
+        "type": "file",
+        "id": "1c00e3a0-52dd-53c9-94ee-7bc4403f3377"
+      }
+    },
+    "P7V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et je ferai sauter ta maison."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A3"
+      }
+    },
+    "P7A4": {
+      "type": "read",
+      "data": {
+        "text": "Alors il a soufflé et il a soufflé",
+        "type": "file",
+        "id": "2408bce7-e9a9-5ffc-ad11-ec2941664b7d"
+      }
+    },
+    "P7V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Alors il a soufflé et il a soufflé"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A4"
+      }
+    },
+    "P7A5": {
+      "type": "read",
+      "data": {
+        "text": "et il a fait sauter la maison !",
+        "type": "file",
+        "id": "15b77e2a-71c5-5078-a83b-7ac6784f7b1b"
+      }
+    },
+    "P7V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et il a fait sauter la maison !"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A5"
+      }
+    },
+    "P7A6": {
+      "type": "read",
+      "data": {
+        "text": "Le loup a ouvert ses mâchoires très larges",
+        "type": "file",
+        "id": "38d4ae62-f8aa-56fe-981c-ff582f6e8994"
+      }
+    },
+    "P7V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Le loup a ouvert ses mâchoires très larges"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A6"
+      }
+    },
+    "P7A7": {
+      "type": "read",
+      "data": {
+        "text": "et mordit aussi fort qu--quote--il put,",
+        "type": "file",
+        "id": "b3e222f8-e6eb-5820-b464-a4e6a5f30a0a"
+      }
+    },
+    "P7V7": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et mordit aussi fort qu--quote--il put,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A7"
+      }
+    },
+    "P7A8": {
+      "type": "read",
+      "data": {
+        "text": "mais le premier petit cochon s--quote--est échappé",
+        "type": "file",
+        "id": "2ecca087-33fc-55fa-b8e4-81597b63dbf5"
+      }
+    },
+    "P7V8": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "mais le premier petit cochon s--quote--est échappé"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A8"
+      }
+    },
+    "P7A9": {
+      "type": "read",
+      "data": {
+        "text": "et s--quote--enfuit pour se cacher avec le deuxième petit cochon.",
+        "type": "file",
+        "id": "5200c01d-c27d-5c9c-b42c-fc4ae4ce6470"
+      }
+    },
+    "P7V9": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et s--quote--enfuit pour se cacher avec le deuxième petit cochon."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A9"
+      }
+    },
+    "P8A1": {
+      "type": "read",
+      "data": {
+        "text": "Le loup a continué dans la voie",
+        "type": "file",
+        "id": "35a7ac37-a849-5710-a06e-9eb6c4d0731e"
+      }
+    },
+    "P8V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Le loup a continué dans la voie"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A1"
+      }
+    },
+    "P8A2": {
+      "type": "read",
+      "data": {
+        "text": "et il passa devant la deuxième maison faite de bois;",
+        "type": "file",
+        "id": "63a52bee-1f54-59b2-bc19-d0ee028b9838"
+      }
+    },
+    "P8V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et il passa devant la deuxième maison faite de bois;"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A2"
+      }
+    },
+    "P8A3": {
+      "type": "read",
+      "data": {
+        "text": "et il vit la maison,",
+        "type": "file",
+        "id": "f037f263-73c0-51fc-9004-8373ff2ebe77"
+      }
+    },
+    "P8V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et il vit la maison,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A3"
+      }
+    },
+    "P8A4": {
+      "type": "read",
+      "data": {
+        "text": "et il a senti les cochons à l--quote--intérieur,",
+        "type": "file",
+        "id": "192309e0-433a-58cc-b469-68899dc4cbd2"
+      }
+    },
+    "P8V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et il a senti les cochons à l--quote--intérieur,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A4"
+      }
+    },
+    "P8A5": {
+      "type": "read",
+      "data": {
+        "text": "et sa bouche a commencé à arroser",
+        "type": "file",
+        "id": "9f33cbbd-9650-5894-8250-e98d529281a7"
+      }
+    },
+    "P8V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et sa bouche a commencé à arroser"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A5"
+      }
+    },
+    "P8A6": {
+      "type": "read",
+      "data": {
+        "text": "en pensant au bon dîner qu--quote--ils allaient préparer.",
+        "type": "file",
+        "id": "b668ceb5-5249-59c6-9d1c-dad54c275cc3"
+      }
+    },
+    "P8V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "en pensant au bon dîner qu--quote--ils allaient préparer."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A6"
+      }
+    },
+    "P9A1": {
+      "type": "read",
+      "data": {
+        "text": "Alors il frappa à la porte et dit :",
+        "type": "file",
+        "id": "97d0d73b-245d-5b46-aae8-f7fc79167f0d"
+      }
+    },
+    "P9V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Alors il frappa à la porte et dit :"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A1"
+      }
+    },
+    "P9A2": {
+      "type": "read",
+      "data": {
+        "text": "Petits cochons! Petits cochons!",
+        "type": "file",
+        "id": "a54ea456-aab2-55c5-a4d7-01002e4dfa68"
+      }
+    },
+    "P9V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Petits cochons! Petits cochons!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A2"
+      }
+    },
+    "P9A3": {
+      "type": "read",
+      "data": {
+        "text": "Laisse moi entrer! Laisse moi entrer!",
+        "type": "file",
+        "id": "b7e27015-012f-543c-8969-8f94123452db"
+      }
+    },
+    "P9V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Laisse moi entrer! Laisse moi entrer!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A3"
+      }
+    },
+    "P9A4": {
+      "type": "read",
+      "data": {
+        "text": "Mais les petits cochons virent les oreilles pointues du loup à travers le trou de la serrure,",
+        "type": "file",
+        "id": "afc40a7a-e911-5d8b-9185-b80ec114eec6"
+      }
+    },
+    "P9V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Mais les petits cochons virent les oreilles pointues du loup à travers le trou de la serrure,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A4"
+      }
+    },
+    "P9A5": {
+      "type": "read",
+      "data": {
+        "text": "alors ils ont répondu:",
+        "type": "file",
+        "id": "421859e5-0e16-5d50-ac26-442fe8ecb99c"
+      }
+    },
+    "P9V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "alors ils ont répondu:"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A5"
+      }
+    },
+    "P9A6": {
+      "type": "read",
+      "data": {
+        "text": "Non! Non! Non!",
+        "type": "file",
+        "id": "56254025-74e1-5a98-8fe2-eeb47fccc65b"
+      }
+    },
+    "P9V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Non! Non! Non!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A6"
+      }
+    },
+    "P9A7": {
+      "type": "read",
+      "data": {
+        "text": "Pas par les poils de notre chinny chin chin !",
+        "type": "file",
+        "id": "4df08b80-560e-5c0e-a488-7ab5a2576296"
+      }
+    },
+    "P9V7": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Pas par les poils de notre chinny chin chin !"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A7"
+      }
+    },
+    "P10A1": {
+      "type": "read",
+      "data": {
+        "text": "Alors le loup montra les dents et dit :",
+        "type": "file",
+        "id": "51a7eed0-620d-55a6-8d79-3d4f2a474144"
+      }
+    },
+    "P10V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Alors le loup montra les dents et dit :"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A1"
+      }
+    },
+    "P10A2": {
+      "type": "read",
+      "data": {
+        "text": "Alors je soufflerai et je soufflerai",
+        "type": "file",
+        "id": "858cc478-7064-533b-8949-755fc91559bc"
+      }
+    },
+    "P10V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Alors je soufflerai et je soufflerai"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A2"
+      }
+    },
+    "P10A3": {
+      "type": "read",
+      "data": {
+        "text": "et je ferai exploser ta maison !",
+        "type": "file",
+        "id": "ae7374fd-6cbe-5177-85aa-21649a2583f3"
+      }
+    },
+    "P10V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et je ferai exploser ta maison !"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A3"
+      }
+    },
+    "P10A4": {
+      "type": "read",
+      "data": {
+        "text": "Alors il a soufflé et il a soufflé et il a fait sauter la maison !",
+        "type": "file",
+        "id": "e907ea6f-5a85-54b8-935c-6ef34e085854"
+      }
+    },
+    "P10V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Alors il a soufflé et il a soufflé et il a fait sauter la maison !"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A4"
+      }
+    },
+    "P10A5": {
+      "type": "read",
+      "data": {
+        "text": "Le loup était gourmand",
+        "type": "file",
+        "id": "a759a771-9ade-56d8-ab5e-ad5d228681cd"
+      }
+    },
+    "P10V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Le loup était gourmand"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A5"
+      }
+    },
+    "P10A6": {
+      "type": "read",
+      "data": {
+        "text": "et il a essayé d--quote--attraper les deux cochons à la fois,",
+        "type": "file",
+        "id": "c910ca71-8ba3-5a40-a90d-56a5f5caa265"
+      }
+    },
+    "P10V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et il a essayé d--quote--attraper les deux cochons à la fois,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A6"
+      }
+    },
+    "P10A7": {
+      "type": "read",
+      "data": {
+        "text": "mais il était trop gourmand et n--quote--a obtenu ni l--quote--un ni l--quote--autre !",
+        "type": "file",
+        "id": "8bd36117-170f-5233-bb9b-c277207d9307"
+      }
+    },
+    "P10V7": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "mais il était trop gourmand et n--quote--a obtenu ni l--quote--un ni l--quote--autre !"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A7"
+      }
+    },
+    "P10A8": {
+      "type": "read",
+      "data": {
+        "text": "Ses grandes mâchoires ne serraient rien d--quote--autre que l--quote--air",
+        "type": "file",
+        "id": "24f750d1-0eb9-5999-b14c-10efe634a530"
+      }
+    },
+    "P10V8": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Ses grandes mâchoires ne serraient rien d--quote--autre que l--quote--air"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A8"
+      }
+    },
+    "P10A9": {
+      "type": "read",
+      "data": {
+        "text": "et les deux petits cochons se sont enfuis",
+        "type": "file",
+        "id": "b3970ad7-9a43-5077-ac70-abbbdf688d24"
+      }
+    },
+    "P10V9": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et les deux petits cochons se sont enfuis"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A9"
+      }
+    },
+    "P10A10": {
+      "type": "read",
+      "data": {
+        "text": "aussi vite que leurs petits sabots les porteraient.",
+        "type": "file",
+        "id": "8ec6ff79-bddd-505c-a6c7-8f047c71a675"
+      }
+    },
+    "P10V10": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "aussi vite que leurs petits sabots les porteraient."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A10"
+      }
+    },
+    "P11A1": {
+      "type": "read",
+      "data": {
+        "text": "Le loup les a chassés dans la ruelle",
+        "type": "file",
+        "id": "70b84cee-8283-5e7c-94b6-618fd45e45df"
+      }
+    },
+    "P11V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Le loup les a chassés dans la ruelle"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P11A1"
+      }
+    },
+    "P11A2": {
+      "type": "read",
+      "data": {
+        "text": "et il les a presque attrapés.",
+        "type": "file",
+        "id": "830163bc-3d14-5dcc-8829-a092aae74b12"
+      }
+    },
+    "P11V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et il les a presque attrapés."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P11A2"
+      }
+    },
+    "P11A3": {
+      "type": "read",
+      "data": {
+        "text": "Mais ils sont arrivés à la maison en brique",
+        "type": "file",
+        "id": "6b084311-7493-5399-a362-2891517a1a4b"
+      }
+    },
+    "P11V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Mais ils sont arrivés à la maison en brique"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P11A3"
+      }
+    },
+    "P11A4": {
+      "type": "read",
+      "data": {
+        "text": "et claqué la porte fermée",
+        "type": "file",
+        "id": "11e1ccd9-b1f4-544b-9a5f-380b7ac4481c"
+      }
+    },
+    "P11V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et claqué la porte fermée"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P11A4"
+      }
+    },
+    "P11A5": {
+      "type": "read",
+      "data": {
+        "text": "avant que le loup puisse les attraper.",
+        "type": "file",
+        "id": "4f6d2aa3-df0e-582c-b3a3-0945fdf54757"
+      }
+    },
+    "P11V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "avant que le loup puisse les attraper."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P11A5"
+      }
+    },
+    "P12A1": {
+      "type": "read",
+      "data": {
+        "text": "Les trois petits cochons ils avaient très peur,",
+        "type": "file",
+        "id": "08d45579-d4ba-5194-b9c8-7f2c33dd7f76"
+      }
+    },
+    "P12V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Les trois petits cochons ils avaient très peur,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A1"
+      }
+    },
+    "P12A2": {
+      "type": "read",
+      "data": {
+        "text": "ils savaient que le loup voulait les manger.",
+        "type": "file",
+        "id": "88618926-ccdd-5d48-9047-24fea7f63b32"
+      }
+    },
+    "P12V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "ils savaient que le loup voulait les manger."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A2"
+      }
+    },
+    "P12A3": {
+      "type": "read",
+      "data": {
+        "text": "Et c--quote--était très, très vrai.",
+        "type": "file",
+        "id": "3714be29-0b59-5857-b541-2e09f2761a03"
+      }
+    },
+    "P12V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Et c--quote--était très, très vrai."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A3"
+      }
+    },
+    "P12A4": {
+      "type": "read",
+      "data": {
+        "text": "Le loup n--quote--a pas mangé de la journée",
+        "type": "file",
+        "id": "41ecd64f-a10a-50f9-8559-1cc79e40b4d8"
+      }
+    },
+    "P12V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Le loup n--quote--a pas mangé de la journée"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A4"
+      }
+    },
+    "P12A5": {
+      "type": "read",
+      "data": {
+        "text": "et il s--quote--était mis un gros appétit à chasser les cochons",
+        "type": "file",
+        "id": "bbd5f50b-a1be-5bcb-8b14-9e92fefc23af"
+      }
+    },
+    "P12V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et il s--quote--était mis un gros appétit à chasser les cochons"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A5"
+      }
+    },
+    "P12A6": {
+      "type": "read",
+      "data": {
+        "text": "et maintenant il pouvait les sentir tous les trois à l--quote--intérieur",
+        "type": "file",
+        "id": "0dc37de0-fc2f-54f3-a169-6fac16d0cdc4"
+      }
+    },
+    "P12V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et maintenant il pouvait les sentir tous les trois à l--quote--intérieur"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A6"
+      }
+    },
+    "P12A7": {
+      "type": "read",
+      "data": {
+        "text": "et il savait que les trois petits cochons feraient un beau festin.",
+        "type": "file",
+        "id": "22eaf786-56fe-515b-95eb-34acd39b0400"
+      }
+    },
+    "P12V7": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et il savait que les trois petits cochons feraient un beau festin."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A7"
+      }
+    },
+    "P13A1": {
+      "type": "read",
+      "data": {
+        "text": "Alors le loup frappa à la porte et dit :",
+        "type": "file",
+        "id": "cb7e236a-95cd-55ae-82ab-e6393298f792"
+      }
+    },
+    "P13V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Alors le loup frappa à la porte et dit :"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A1"
+      }
+    },
+    "P13A2": {
+      "type": "read",
+      "data": {
+        "text": "Petits cochons! Petits cochons! Laisse moi entrer! Laisse moi entrer!",
+        "type": "file",
+        "id": "6a4e45f6-ce23-572c-8d4e-a3288b6ae606"
+      }
+    },
+    "P13V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Petits cochons! Petits cochons! Laisse moi entrer! Laisse moi entrer!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A2"
+      }
+    },
+    "P13A3": {
+      "type": "read",
+      "data": {
+        "text": "Mais les petits cochons virent les yeux étroits du loup à travers le trou de la serrure,",
+        "type": "file",
+        "id": "46538ac9-e3f6-557f-83c7-175717af486e"
+      }
+    },
+    "P13V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Mais les petits cochons virent les yeux étroits du loup à travers le trou de la serrure,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A3"
+      }
+    },
+    "P13A4": {
+      "type": "read",
+      "data": {
+        "text": "alors ils ont répondu:",
+        "type": "file",
+        "id": "421859e5-0e16-5d50-ac26-442fe8ecb99c"
+      }
+    },
+    "P13V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "alors ils ont répondu:"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A4"
+      }
+    },
+    "P13A5": {
+      "type": "read",
+      "data": {
+        "text": "Non! Non! Non!",
+        "type": "file",
+        "id": "56254025-74e1-5a98-8fe2-eeb47fccc65b"
+      }
+    },
+    "P13V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Non! Non! Non!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A5"
+      }
+    },
+    "P13A6": {
+      "type": "read",
+      "data": {
+        "text": "Pas par les poils de notre chinny chin chin !",
+        "type": "file",
+        "id": "4df08b80-560e-5c0e-a488-7ab5a2576296"
+      }
+    },
+    "P13V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Pas par les poils de notre chinny chin chin !"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A6"
+      }
+    },
+    "P14A1": {
+      "type": "read",
+      "data": {
+        "text": "Alors le loup montra les dents et dit :",
+        "type": "file",
+        "id": "51a7eed0-620d-55a6-8d79-3d4f2a474144"
+      }
+    },
+    "P14V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Alors le loup montra les dents et dit :"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A1"
+      }
+    },
+    "P14A2": {
+      "type": "read",
+      "data": {
+        "text": "Alors je soufflerai et je soufflerai",
+        "type": "file",
+        "id": "858cc478-7064-533b-8949-755fc91559bc"
+      }
+    },
+    "P14V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Alors je soufflerai et je soufflerai"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A2"
+      }
+    },
+    "P14A3": {
+      "type": "read",
+      "data": {
+        "text": "et je ferai sauter ta maison.",
+        "type": "file",
+        "id": "1c00e3a0-52dd-53c9-94ee-7bc4403f3377"
+      }
+    },
+    "P14V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et je ferai sauter ta maison."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A3"
+      }
+    },
+    "P14A4": {
+      "type": "read",
+      "data": {
+        "text": "Bien! il a soufflé et il a soufflé.",
+        "type": "file",
+        "id": "1aabe133-e714-5fa7-847e-366b7caf1783"
+      }
+    },
+    "P14V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Bien! il a soufflé et il a soufflé."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A4"
+      }
+    },
+    "P14A5": {
+      "type": "read",
+      "data": {
+        "text": "Il a soufflé et il a soufflé.",
+        "type": "file",
+        "id": "d7fde86c-1450-52d7-a025-9a3490eca5be"
+      }
+    },
+    "P14V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Il a soufflé et il a soufflé."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A5"
+      }
+    },
+    "P14A6": {
+      "type": "read",
+      "data": {
+        "text": "Et il souffla, souffla,",
+        "type": "file",
+        "id": "7575d539-bc31-5cc0-b292-3146a1772ba1"
+      }
+    },
+    "P14V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Et il souffla, souffla,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A6"
+      }
+    },
+    "P14A7": {
+      "type": "read",
+      "data": {
+        "text": "et il a soufflé, soufflé;",
+        "type": "file",
+        "id": "cc1deea3-0ff7-5f26-b552-b5598cf1b29f"
+      }
+    },
+    "P14V7": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et il a soufflé, soufflé;"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A7"
+      }
+    },
+    "P14A8": {
+      "type": "read",
+      "data": {
+        "text": "mais il ne pouvait pas faire sauter la maison.",
+        "type": "file",
+        "id": "dd1f8ea3-3f1d-57a8-96ce-07329035aef3"
+      }
+    },
+    "P14V8": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "mais il ne pouvait pas faire sauter la maison."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A8"
+      }
+    },
+    "P15A1": {
+      "type": "read",
+      "data": {
+        "text": "Enfin, il était tellement essoufflé",
+        "type": "file",
+        "id": "a2305ac9-10cc-56aa-9614-af41b08a207e"
+      }
+    },
+    "P15V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Enfin, il était tellement essoufflé"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P15A1"
+      }
+    },
+    "P15A2": {
+      "type": "read",
+      "data": {
+        "text": "qu--quote--il ne pouvait pas souffler",
+        "type": "file",
+        "id": "98c7c3d5-7a25-5063-a3c1-c62f8e442da3"
+      }
+    },
+    "P15V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "qu--quote--il ne pouvait pas souffler"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P15A2"
+      }
+    },
+    "P15A3": {
+      "type": "read",
+      "data": {
+        "text": "et il ne pouvait plus souffler.",
+        "type": "file",
+        "id": "fe2b1f22-871e-5786-87ff-da6529b1d42f"
+      }
+    },
+    "P15V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et il ne pouvait plus souffler."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P15A3"
+      }
+    },
+    "P15A4": {
+      "type": "read",
+      "data": {
+        "text": "Alors il s--quote--est arrêté pour se reposer",
+        "type": "file",
+        "id": "f370bb0a-1619-5297-a370-3e4da0b53079"
+      }
+    },
+    "P15V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Alors il s--quote--est arrêté pour se reposer"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P15A4"
+      }
+    },
+    "P15A5": {
+      "type": "read",
+      "data": {
+        "text": "et réfléchi un peu.",
+        "type": "file",
+        "id": "de5dad5a-4e8f-5fbf-be45-113f37829af2"
+      }
+    },
+    "P15V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et réfléchi un peu."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P15A5"
+      }
+    },
+    "P16A1": {
+      "type": "read",
+      "data": {
+        "text": "Mais c--quote--était trop.",
+        "type": "file",
+        "id": "619f135f-8570-5f45-96c4-b76ffb113e07"
+      }
+    },
+    "P16V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Mais c--quote--était trop."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P16A1"
+      }
+    },
+    "P16A2": {
+      "type": "read",
+      "data": {
+        "text": "Le loup dansait avec rage",
+        "type": "file",
+        "id": "1622bc4f-0ca3-5479-aaff-7e3fe07ac863"
+      }
+    },
+    "P16V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Le loup dansait avec rage"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P16A2"
+      }
+    },
+    "P16A3": {
+      "type": "read",
+      "data": {
+        "text": "et jura qu--quote--il descendrait par la cheminée",
+        "type": "file",
+        "id": "0201c5c4-596a-530f-bb41-c20538d33b7d"
+      }
+    },
+    "P16V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et jura qu--quote--il descendrait par la cheminée"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P16A3"
+      }
+    },
+    "P16A4": {
+      "type": "read",
+      "data": {
+        "text": "et manger le petit cochon pour son souper.",
+        "type": "file",
+        "id": "0b265456-f9e9-5c45-9a84-7f6b6b1bf178"
+      }
+    },
+    "P16V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et manger le petit cochon pour son souper."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P16A4"
+      }
+    },
+    "P17A1": {
+      "type": "read",
+      "data": {
+        "text": "Mais pendant qu--quote--il grimpait sur le toit",
+        "type": "file",
+        "id": "f8e93b31-ed44-529f-881a-a2e0d03b9715"
+      }
+    },
+    "P17V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Mais pendant qu--quote--il grimpait sur le toit"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P17A1"
+      }
+    },
+    "P17A2": {
+      "type": "read",
+      "data": {
+        "text": "le petit cochon a fait un feu ardent",
+        "type": "file",
+        "id": "fceb6db7-5cd5-5afd-b656-42c323e7c2a2"
+      }
+    },
+    "P17V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "le petit cochon a fait un feu ardent"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P17A2"
+      }
+    },
+    "P17A3": {
+      "type": "read",
+      "data": {
+        "text": "et mettre une grande casserole pleine d--quote--eau à bouillir.",
+        "type": "file",
+        "id": "4f77d5da-2cbf-5419-b6fd-b7c374e64e96"
+      }
+    },
+    "P17V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et mettre une grande casserole pleine d--quote--eau à bouillir."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P17A3"
+      }
+    },
+    "P18A1": {
+      "type": "read",
+      "data": {
+        "text": "Puis, juste au moment où le loup descendait par la cheminée,",
+        "type": "file",
+        "id": "d709e55f-0419-5095-93a4-e07dcf12dfac"
+      }
+    },
+    "P18V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Puis, juste au moment où le loup descendait par la cheminée,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P18A1"
+      }
+    },
+    "P18A2": {
+      "type": "read",
+      "data": {
+        "text": "le petit cochon a enlevé le couvercle,",
+        "type": "file",
+        "id": "b938b9ce-93f2-516f-bcff-76f435ce391a"
+      }
+    },
+    "P18V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "le petit cochon a enlevé le couvercle,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P18A2"
+      }
+    },
+    "P18A3": {
+      "type": "read",
+      "data": {
+        "text": "et ploc ! en est tombé le loup dans l--quote--eau bouillante.",
+        "type": "file",
+        "id": "d5559fc3-512b-5584-86c1-ef2230e559c8"
+      }
+    },
+    "P18V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et ploc ! en est tombé le loup dans l--quote--eau bouillante."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P18A3"
+      }
+    },
+    "P19A1": {
+      "type": "read",
+      "data": {
+        "text": "Le loup s--quote--enfuit aussi vite qu--quote--il put.",
+        "type": "file",
+        "id": "eba834ce-cca9-501f-b702-748cc2d0a309"
+      }
+    },
+    "P19V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Le loup s--quote--enfuit aussi vite qu--quote--il put."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P19A1"
+      }
+    },
+    "P19A2": {
+      "type": "read",
+      "data": {
+        "text": "Trois petits cochons ont vécu heureux pour toujours",
+        "type": "file",
+        "id": "baba018c-d928-5dd0-bd4a-9689c0c0e371"
+      }
+    },
+    "P19V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Trois petits cochons ont vécu heureux pour toujours"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P19A2"
+      }
+    },
+    "P19A3": {
+      "type": "read",
+      "data": {
+        "text": "dans leur maison construite en briques.",
+        "type": "file",
+        "id": "3c560e66-c60f-5693-b1f6-2e366fe969b8"
+      }
+    },
+    "P19V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "dans leur maison construite en briques."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P19A3"
+      }
+    }
+  },
+  "sounds": {}
+}

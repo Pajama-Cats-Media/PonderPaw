@@ -1,0 +1,174 @@
+{
+    "meta": {
+        "book_id": "8e28a441-7be5-40b0-a9b5-f207a8977197",
+        "book_name": "Los tres cerditos",
+        "language": "es-es",
+        "age_group": "4+",
+        "voice_engine": "native",
+        "default_mode": "interactive"
+    },
+    "playbookOrder": [
+        "cover",
+        "p1",
+        "p2",
+        "p3"
+    ],
+    "playbook": {
+        "cover": [],
+        "p1": [
+            "P1A1",
+            "P1V1",
+            "P1A2",
+            "P1V2",
+            "P1A3",
+            "P1V3",
+            "P1A4",
+            "P1V4"
+        ],
+        "p2": [
+            "P2A1",
+            "P2V1",
+            "P2A2",
+            "P2V2",
+            "P2A3",
+            "P2V3"
+        ],
+        "p3": []
+    },
+    "actions": {
+        "P1A1": {
+            "type": "read",
+            "data": {
+                "text": "Érase una vez una madre vieja cochinita",
+                "type": "file",
+                "id": "e8ce6307-0dc1-570c-aa02-e513648ad109"
+            }
+        },
+        "P1V1": {
+            "type": "voice_input",
+            "data": {
+                "expect": [
+                    "Érase una vez una madre vieja cochinita"
+                ],
+                "duration": 5000,
+                "confidence": 0.6,
+                "failureAction": "P1A1"
+            }
+        },
+        "P1A2": {
+            "type": "read",
+            "data": {
+                "text": "que tenía tres cochinitos y no tenía suficiente comida para alimentarlos.",
+                "type": "file",
+                "id": "6851240e-5813-5bf1-a179-b9516e96b9a0"
+            }
+        },
+        "P1V2": {
+            "type": "voice_input",
+            "data": {
+                "expect": [
+                    "que tenía tres cochinitos y no tenía suficiente comida para alimentarlos."
+                ],
+                "duration": 5000,
+                "confidence": 0.6,
+                "failureAction": "P1A2"
+            }
+        },
+        "P1A3": {
+            "type": "read",
+            "data": {
+                "text": "Entonces, cuando tuvieron la edad suficiente,",
+                "type": "file",
+                "id": "ccdaceeb-0656-539f-abf4-4b985b65b0db"
+            }
+        },
+        "P1V3": {
+            "type": "voice_input",
+            "data": {
+                "expect": [
+                    "Entonces, cuando tuvieron la edad suficiente,"
+                ],
+                "duration": 5000,
+                "confidence": 0.6,
+                "failureAction": "P1A3"
+            }
+        },
+        "P1A4": {
+            "type": "read",
+            "data": {
+                "text": "los envió al mundo en busca de fortuna.",
+                "type": "file",
+                "id": "38320ced-3ba5-5ccf-8d9f-a7c6d9214291"
+            }
+        },
+        "P1V4": {
+            "type": "voice_input",
+            "data": {
+                "expect": [
+                    "los envió al mundo en busca de fortuna."
+                ],
+                "duration": 5000,
+                "confidence": 0.6,
+                "failureAction": "P1A4"
+            }
+        },
+        "P2A1": {
+            "type": "read",
+            "data": {
+                "text": "El primer cochinito era muy perezoso.",
+                "type": "file",
+                "id": "6be052cf-1ca8-5e80-8b0b-bdc6c4c3edfc"
+            }
+        },
+        "P2V1": {
+            "type": "voice_input",
+            "data": {
+                "expect": [
+                    "El primer cochinito era muy perezoso."
+                ],
+                "duration": 5000,
+                "confidence": 0.6,
+                "failureAction": "P2A1"
+            }
+        },
+        "P2A2": {
+            "type": "read",
+            "data": {
+                "text": "Él no quería trabajar en absoluto.",
+                "type": "file",
+                "id": "bca3d60d-3033-5a9f-9f13-0a8d0410de6a"
+            }
+        },
+        "P2V2": {
+            "type": "voice_input",
+            "data": {
+                "expect": [
+                    "Él no quería trabajar en absoluto."
+                ],
+                "duration": 5000,
+                "confidence": 0.6,
+                "failureAction": "P2A2"
+            }
+        },
+        "P2A3": {
+            "type": "read",
+            "data": {
+                "text": "y construyó su casa de paja.",
+                "type": "file",
+                "id": "af8df215-3c58-5638-b036-70755844cad4"
+            }
+        },
+        "P2V3": {
+            "type": "voice_input",
+            "data": {
+                "expect": [
+                    "y construyó su casa de paja."
+                ],
+                "duration": 5000,
+                "confidence": 0.6,
+                "failureAction": "P2A3"
+            }
+        }
+    },
+    "sounds": {}
+}

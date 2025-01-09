@@ -1,0 +1,1946 @@
+{
+  "meta": {
+    "book_id": "8e28a441-7be5-40b0-a9b5-f207a8977197",
+    "book_name": "Los tres cerditos",
+    "language": "es-es",
+    "age_group": "4+",
+    "voice_engine": "native",
+    "default_mode": "interactive"
+  },
+  "playbookOrder": [
+    "cover",
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p8",
+    "p9",
+    "p10",
+    "p11",
+    "p12",
+    "p13",
+    "p14",
+    "p15",
+    "p16",
+    "p17",
+    "p18",
+    "p19",
+    "p20"
+  ],
+  "playbook": {
+    "cover": [],
+    "p1": [
+      "P1A1",
+      "P1V1",
+      "P1A2",
+      "P1V2",
+      "P1A3",
+      "P1V3",
+      "P1A4",
+      "P1V4"
+    ],
+    "p2": [
+      "P2A1",
+      "P2V1",
+      "P2A2",
+      "P2V2",
+      "P2A3",
+      "P2V3"
+    ],
+    "p3": [
+      "P3A1",
+      "P3V1",
+      "P3A2",
+      "P3V2",
+      "P3A3",
+      "P3V3",
+      "P3A4",
+      "P3V4"
+    ],
+    "p4": [
+      "P4A1",
+      "P4V1",
+      "P4A2",
+      "P4V2",
+      "P4A3",
+      "P4V3",
+      "P4A4",
+      "P4V4",
+      "P4A5",
+      "P4V5"
+    ],
+    "p5": [
+      "P5A1",
+      "P5V1",
+      "P5A2",
+      "P5V2",
+      "P5A3",
+      "P5V3",
+      "P5A4",
+      "P5V4",
+      "P5A5",
+      "P5V5",
+      "P5A6",
+      "P5V6"
+    ],
+    "p6": [
+      "P6A1",
+      "P6V1",
+      "P6A2",
+      "P6V2",
+      "P6A3",
+      "P6V3",
+      "P6A4",
+      "P6V4",
+      "P6A5",
+      "P6V5"
+    ],
+    "p7": [
+      "P7A1",
+      "P7V1",
+      "P7A2",
+      "P7V2",
+      "P7A3",
+      "P7V3",
+      "P7A4",
+      "P7V4",
+      "P7A5",
+      "P7V5",
+      "P7A6",
+      "P7V6",
+      "P7A7",
+      "P7V7"
+    ],
+    "p8": [
+      "P8A1",
+      "P8V1",
+      "P8A2",
+      "P8V2",
+      "P8A3",
+      "P8V3",
+      "P8A4",
+      "P8V4",
+      "P8A5",
+      "P8V5"
+    ],
+    "p9": [
+      "P9A1",
+      "P9V1",
+      "P9A2",
+      "P9V2",
+      "P9A3",
+      "P9V3",
+      "P9A4",
+      "P9V4",
+      "P9A5",
+      "P9V5"
+    ],
+    "p10": [
+      "P10A1",
+      "P10V1",
+      "P10A2",
+      "P10V2",
+      "P10A3",
+      "P10V3",
+      "P10A4",
+      "P10V4",
+      "P10A5",
+      "P10V5",
+      "P10A6",
+      "P10V6",
+      "P10A7",
+      "P10V7",
+      "P10A8",
+      "P10V8"
+    ],
+    "p11": [
+      "P11A1",
+      "P11V1",
+      "P11A2",
+      "P11V2",
+      "P11A3",
+      "P11V3"
+    ],
+    "p12": [
+      "P12A1",
+      "P12V1",
+      "P12A2",
+      "P12V2",
+      "P12A3",
+      "P12V3",
+      "P12A4",
+      "P12V4",
+      "P12A5",
+      "P12V5",
+      "P12A6",
+      "P12V6",
+      "P12A7",
+      "P12V7"
+    ],
+    "p13": [
+      "P13A1",
+      "P13V1",
+      "P13A2",
+      "P13V2",
+      "P13A3",
+      "P13V3",
+      "P13A4",
+      "P13V4",
+      "P13A5",
+      "P13V5"
+    ],
+    "p14": [
+      "P14A1",
+      "P14V1",
+      "P14A2",
+      "P14V2",
+      "P14A3",
+      "P14V3",
+      "P14A4",
+      "P14V4",
+      "P14A5",
+      "P14V5",
+      "P14A6",
+      "P14V6"
+    ],
+    "p15": [
+      "P15A1",
+      "P15V1",
+      "P15A2",
+      "P15V2",
+      "P15A3",
+      "P15V3"
+    ],
+    "p16": [
+      "P16A1",
+      "P16V1",
+      "P16A2",
+      "P16V2",
+      "P16A3",
+      "P16V3",
+      "P16A4",
+      "P16V4"
+    ],
+    "p17": [
+      "P17A1",
+      "P17V1",
+      "P17A2",
+      "P17V2",
+      "P17A3",
+      "P17V3"
+    ],
+    "p18": [
+      "P18A1",
+      "P18V1",
+      "P18A2",
+      "P18V2",
+      "P18A3",
+      "P18V3"
+    ],
+    "p19": [
+      "P19A1",
+      "P19V1",
+      "P19A2",
+      "P19V2",
+      "P19A3",
+      "P19V3"
+    ]
+  },
+  "actions": {
+    "P1A1": {
+      "type": "read",
+      "data": {
+        "text": "Érase una vez una madre vieja cochinita",
+        "type": "file",
+        "id": "e8ce6307-0dc1-570c-aa02-e513648ad109"
+      }
+    },
+    "P1V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Érase una vez una madre vieja cochinita"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A1"
+      }
+    },
+    "P1A2": {
+      "type": "read",
+      "data": {
+        "text": "que tenía tres cochinitos y no tenía suficiente comida para alimentarlos.",
+        "type": "file",
+        "id": "6851240e-5813-5bf1-a179-b9516e96b9a0"
+      }
+    },
+    "P1V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "que tenía tres cochinitos y no tenía suficiente comida para alimentarlos."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A2"
+      }
+    },
+    "P1A3": {
+      "type": "read",
+      "data": {
+        "text": "Entonces, cuando tuvieron la edad suficiente,",
+        "type": "file",
+        "id": "ccdaceeb-0656-539f-abf4-4b985b65b0db"
+      }
+    },
+    "P1V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Entonces, cuando tuvieron la edad suficiente,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A3"
+      }
+    },
+    "P1A4": {
+      "type": "read",
+      "data": {
+        "text": "los envió al mundo en busca de fortuna.",
+        "type": "file",
+        "id": "38320ced-3ba5-5ccf-8d9f-a7c6d9214291"
+      }
+    },
+    "P1V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "los envió al mundo en busca de fortuna."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A4"
+      }
+    },
+    "P2A1": {
+      "type": "read",
+      "data": {
+        "text": "El primer cochinito era muy perezoso.",
+        "type": "file",
+        "id": "6be052cf-1ca8-5e80-8b0b-bdc6c4c3edfc"
+      }
+    },
+    "P2V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "El primer cochinito era muy perezoso."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P2A1"
+      }
+    },
+    "P2A2": {
+      "type": "read",
+      "data": {
+        "text": "Él no quería trabajar en absoluto.",
+        "type": "file",
+        "id": "bca3d60d-3033-5a9f-9f13-0a8d0410de6a"
+      }
+    },
+    "P2V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Él no quería trabajar en absoluto."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P2A2"
+      }
+    },
+    "P2A3": {
+      "type": "read",
+      "data": {
+        "text": "y construyó su casa de paja.",
+        "type": "file",
+        "id": "af8df215-3c58-5638-b036-70755844cad4"
+      }
+    },
+    "P2V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y construyó su casa de paja."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P2A3"
+      }
+    },
+    "P3A1": {
+      "type": "read",
+      "data": {
+        "text": "El segundo cochinito trabajó un poco más duro",
+        "type": "file",
+        "id": "37d56b2e-785d-5118-af7d-fc83681ffd93"
+      }
+    },
+    "P3V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "El segundo cochinito trabajó un poco más duro"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P3A1"
+      }
+    },
+    "P3A2": {
+      "type": "read",
+      "data": {
+        "text": "pero también era algo perezoso",
+        "type": "file",
+        "id": "523e5517-0925-5bed-957c-b003b30a1b6c"
+      }
+    },
+    "P3V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "pero también era algo perezoso"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P3A2"
+      }
+    },
+    "P3A3": {
+      "type": "read",
+      "data": {
+        "text": "y construyó su casa de palos.",
+        "type": "file",
+        "id": "41a60086-34a9-5d02-9686-135718ee01df"
+      }
+    },
+    "P3V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y construyó su casa de palos."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P3A3"
+      }
+    },
+    "P3A4": {
+      "type": "read",
+      "data": {
+        "text": "Luego, cantaron, bailaron y jugaron juntos el resto del día.",
+        "type": "file",
+        "id": "8755b4ae-657d-550e-8952-a19eab5762aa"
+      }
+    },
+    "P3V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Luego, cantaron, bailaron y jugaron juntos el resto del día."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P3A4"
+      }
+    },
+    "P4A1": {
+      "type": "read",
+      "data": {
+        "text": "El tercer cochinito trabajó duro todo el día.",
+        "type": "file",
+        "id": "d6744309-6a77-5710-8571-a12e826e9069"
+      }
+    },
+    "P4V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "El tercer cochinito trabajó duro todo el día."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P4A1"
+      }
+    },
+    "P4A2": {
+      "type": "read",
+      "data": {
+        "text": "y construyó su casa con ladrillos.",
+        "type": "file",
+        "id": "446898cc-e28e-5372-84d1-2f30ed7a5e80"
+      }
+    },
+    "P4V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y construyó su casa con ladrillos."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P4A2"
+      }
+    },
+    "P4A3": {
+      "type": "read",
+      "data": {
+        "text": "Era una casa robusta, completa",
+        "type": "file",
+        "id": "c130a271-c727-5dce-8de0-6e373a9bc5d7"
+      }
+    },
+    "P4V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Era una casa robusta, completa"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P4A3"
+      }
+    },
+    "P4A4": {
+      "type": "read",
+      "data": {
+        "text": "con una robosta hogar y chimenea.",
+        "type": "file",
+        "id": "b2f7c786-90f3-5881-a46a-055ea5ccf5cd"
+      }
+    },
+    "P4V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "con una robosta hogar y chimenea."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P4A4"
+      }
+    },
+    "P4A5": {
+      "type": "read",
+      "data": {
+        "text": "Parecía que podía aguantar los vientos más fuertes.",
+        "type": "file",
+        "id": "20b1f6c2-38a5-5892-a6b4-6fc58a0c3d3e"
+      }
+    },
+    "P4V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Parecía que podía aguantar los vientos más fuertes."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P4A5"
+      }
+    },
+    "P5A1": {
+      "type": "read",
+      "data": {
+        "text": "Al día siguiente, un lobo pasó por casualidad por el camino",
+        "type": "file",
+        "id": "5dbfdcdf-5af4-5b33-afb8-11d349324586"
+      }
+    },
+    "P5V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Al día siguiente, un lobo pasó por casualidad por el camino"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A1"
+      }
+    },
+    "P5A2": {
+      "type": "read",
+      "data": {
+        "text": "donde vivían los tres cochinitos;",
+        "type": "file",
+        "id": "2b2580a7-e9fa-5bcf-9260-7efdb19c68b6"
+      }
+    },
+    "P5V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "donde vivían los tres cochinitos;"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A2"
+      }
+    },
+    "P5A3": {
+      "type": "read",
+      "data": {
+        "text": "y vio la casa de paja,",
+        "type": "file",
+        "id": "afce1853-9215-5cab-866a-7242cd2628fd"
+      }
+    },
+    "P5V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y vio la casa de paja,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A3"
+      }
+    },
+    "P5A4": {
+      "type": "read",
+      "data": {
+        "text": "y olió al cochinito adentro.",
+        "type": "file",
+        "id": "98374850-e35b-5729-8cc5-49745f52e5f3"
+      }
+    },
+    "P5V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y olió al cochinito adentro."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A4"
+      }
+    },
+    "P5A5": {
+      "type": "read",
+      "data": {
+        "text": "Pensó que el cochinito sería una excelente comida",
+        "type": "file",
+        "id": "d2696943-f5f0-559b-b813-b23983ce7e57"
+      }
+    },
+    "P5V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Pensó que el cochinito sería una excelente comida"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A5"
+      }
+    },
+    "P5A6": {
+      "type": "read",
+      "data": {
+        "text": "y se le hizo agua la boca.",
+        "type": "file",
+        "id": "dc9581c8-a66d-50e1-8cfc-f1068668601d"
+      }
+    },
+    "P5V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y se le hizo agua la boca."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A6"
+      }
+    },
+    "P6A1": {
+      "type": "read",
+      "data": {
+        "text": "Así que llamó a la puerta y dijo:",
+        "type": "file",
+        "id": "eaededb8-cb51-5b6f-b97f-1f7bd1af846a"
+      }
+    },
+    "P6V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Así que llamó a la puerta y dijo:"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A1"
+      }
+    },
+    "P6A2": {
+      "type": "read",
+      "data": {
+        "text": "¡Pequeño cochinito! ¡Pequeño cochinito! ¡Déjame entrar! ¡Déjame entrar!",
+        "type": "file",
+        "id": "fa77e143-d131-54d7-a3b5-60b78d7be526"
+      }
+    },
+    "P6V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "¡Pequeño cochinito! ¡Pequeño cochinito! ¡Déjame entrar! ¡Déjame entrar!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A2"
+      }
+    },
+    "P6A3": {
+      "type": "read",
+      "data": {
+        "text": "Pero el cochinito vio las grandes patas del lobo a través del ojo de la cerradura,",
+        "type": "file",
+        "id": "c0246fee-579e-5aa0-b2a9-45930cd70c8e"
+      }
+    },
+    "P6V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Pero el cochinito vio las grandes patas del lobo a través del ojo de la cerradura,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A3"
+      }
+    },
+    "P6A4": {
+      "type": "read",
+      "data": {
+        "text": "así que él respondió: ¡No! ¡No! ¡No!",
+        "type": "file",
+        "id": "9999a498-1580-589a-863e-a0c7288c7afc"
+      }
+    },
+    "P6V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "así que él respondió: ¡No! ¡No! ¡No!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A4"
+      }
+    },
+    "P6A5": {
+      "type": "read",
+      "data": {
+        "text": "¡Ni por los pelos de mi mentón barbilla!",
+        "type": "file",
+        "id": "2b96710f-3897-5624-818b-9776b0a4080e"
+      }
+    },
+    "P6V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "¡Ni por los pelos de mi mentón barbilla!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A5"
+      }
+    },
+    "P7A1": {
+      "type": "read",
+      "data": {
+        "text": "Entonces el lobo mostró los dientes y dijo:",
+        "type": "file",
+        "id": "e7a462c0-6110-5ed9-a05f-b8d91d5468d7"
+      }
+    },
+    "P7V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Entonces el lobo mostró los dientes y dijo:"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A1"
+      }
+    },
+    "P7A2": {
+      "type": "read",
+      "data": {
+        "text": "Entonces soplaré y soplaré y derribaré tu casa.",
+        "type": "file",
+        "id": "5dfe8dcf-b665-5e2d-9c4b-f26cf7f1ce82"
+      }
+    },
+    "P7V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Entonces soplaré y soplaré y derribaré tu casa."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A2"
+      }
+    },
+    "P7A3": {
+      "type": "read",
+      "data": {
+        "text": "¡Así que resopló y resopló y derribó la casa!",
+        "type": "file",
+        "id": "0633f910-8f26-5bca-83db-50b70d6f46b5"
+      }
+    },
+    "P7V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "¡Así que resopló y resopló y derribó la casa!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A3"
+      }
+    },
+    "P7A4": {
+      "type": "read",
+      "data": {
+        "text": "El lobo abrió mucho su mandíbula",
+        "type": "file",
+        "id": "e704ccf8-5671-52bc-b51d-620abbabd62a"
+      }
+    },
+    "P7V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "El lobo abrió mucho su mandíbula"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A4"
+      }
+    },
+    "P7A5": {
+      "type": "read",
+      "data": {
+        "text": "y mordió tan fuerte como pudo,",
+        "type": "file",
+        "id": "e8c0fa5c-3920-568f-8700-dea8db5ee560"
+      }
+    },
+    "P7V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y mordió tan fuerte como pudo,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A5"
+      }
+    },
+    "P7A6": {
+      "type": "read",
+      "data": {
+        "text": "pero el primer cochinito se escapó",
+        "type": "file",
+        "id": "21c6ac03-abbb-5f21-9e91-a3232524e0f4"
+      }
+    },
+    "P7V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "pero el primer cochinito se escapó"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A6"
+      }
+    },
+    "P7A7": {
+      "type": "read",
+      "data": {
+        "text": "y huyó a esconderse con el segundo cochinito.",
+        "type": "file",
+        "id": "b3daad64-e506-522d-b2ae-2997b14fe16b"
+      }
+    },
+    "P7V7": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y huyó a esconderse con el segundo cochinito."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A7"
+      }
+    },
+    "P8A1": {
+      "type": "read",
+      "data": {
+        "text": "El lobo continuó por el camino",
+        "type": "file",
+        "id": "4fcfbef5-1b27-5092-82c8-fb858ce00c96"
+      }
+    },
+    "P8V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "El lobo continuó por el camino"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A1"
+      }
+    },
+    "P8A2": {
+      "type": "read",
+      "data": {
+        "text": "y pasó por la segunda casa hecha de palos;",
+        "type": "file",
+        "id": "7325e13a-4939-5e3f-b378-1b562de6a7cc"
+      }
+    },
+    "P8V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y pasó por la segunda casa hecha de palos;"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A2"
+      }
+    },
+    "P8A3": {
+      "type": "read",
+      "data": {
+        "text": "y vio la casa, y olió los cerdos dentro,",
+        "type": "file",
+        "id": "54f7bebe-b33d-5f4d-ac92-7c9c9ea0b3b4"
+      }
+    },
+    "P8V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y vio la casa, y olió los cerdos dentro,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A3"
+      }
+    },
+    "P8A4": {
+      "type": "read",
+      "data": {
+        "text": "y se le hizo agua la boca",
+        "type": "file",
+        "id": "cc973594-0663-5a9f-8af1-8532cf4eeaa0"
+      }
+    },
+    "P8V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y se le hizo agua la boca"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A4"
+      }
+    },
+    "P8A5": {
+      "type": "read",
+      "data": {
+        "text": "mientras pensaba en la buena cena que haría.",
+        "type": "file",
+        "id": "9543a832-d291-58fe-aa5a-54999796018e"
+      }
+    },
+    "P8V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "mientras pensaba en la buena cena que haría."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A5"
+      }
+    },
+    "P9A1": {
+      "type": "read",
+      "data": {
+        "text": "Así que llamó a la puerta y dijo:",
+        "type": "file",
+        "id": "eaededb8-cb51-5b6f-b97f-1f7bd1af846a"
+      }
+    },
+    "P9V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Así que llamó a la puerta y dijo:"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A1"
+      }
+    },
+    "P9A2": {
+      "type": "read",
+      "data": {
+        "text": "¡Cochinitos! ¡Cochinitos! ¡Déjame entrar! ¡Déjame entrar!",
+        "type": "file",
+        "id": "b1a59cf8-f68a-582b-9750-a49c5fea3b33"
+      }
+    },
+    "P9V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "¡Cochinitos! ¡Cochinitos! ¡Déjame entrar! ¡Déjame entrar!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A2"
+      }
+    },
+    "P9A3": {
+      "type": "read",
+      "data": {
+        "text": "Pero los cochinitos vieron las orejas puntiagudas del lobo a través del ojo de la cerradura,",
+        "type": "file",
+        "id": "74b38fb4-b789-54dc-9c3b-f4acd4d31b7e"
+      }
+    },
+    "P9V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Pero los cochinitos vieron las orejas puntiagudas del lobo a través del ojo de la cerradura,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A3"
+      }
+    },
+    "P9A4": {
+      "type": "read",
+      "data": {
+        "text": "así que respondieron: ¡No! ¡No! ¡No!",
+        "type": "file",
+        "id": "e9c5ae50-24b0-55bd-aa2b-35ce2ebfa451"
+      }
+    },
+    "P9V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "así que respondieron: ¡No! ¡No! ¡No!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A4"
+      }
+    },
+    "P9A5": {
+      "type": "read",
+      "data": {
+        "text": "¡Ni por los pelos de nuestra barbilla barbilla!",
+        "type": "file",
+        "id": "2431bc4f-f979-5067-a16f-60989efeb598"
+      }
+    },
+    "P9V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "¡Ni por los pelos de nuestra barbilla barbilla!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A5"
+      }
+    },
+    "P10A1": {
+      "type": "read",
+      "data": {
+        "text": "Entonces el lobo mostró los dientes y dijo:",
+        "type": "file",
+        "id": "e7a462c0-6110-5ed9-a05f-b8d91d5468d7"
+      }
+    },
+    "P10V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Entonces el lobo mostró los dientes y dijo:"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A1"
+      }
+    },
+    "P10A2": {
+      "type": "read",
+      "data": {
+        "text": "¡Entonces soplaré y soplaré y derribaré tu casa!",
+        "type": "file",
+        "id": "ee940e1f-039f-5c6d-b325-0711a290dee0"
+      }
+    },
+    "P10V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "¡Entonces soplaré y soplaré y derribaré tu casa!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A2"
+      }
+    },
+    "P10A3": {
+      "type": "read",
+      "data": {
+        "text": "¡Así que soplo y soplo y derribó la casa!",
+        "type": "file",
+        "id": "fb998750-f9b2-52b6-b097-ed6abd4b118f"
+      }
+    },
+    "P10V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "¡Así que soplo y soplo y derribó la casa!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A3"
+      }
+    },
+    "P10A4": {
+      "type": "read",
+      "data": {
+        "text": "El lobo era codicioso y trató de atrapar a los dos cerdos a la vez,",
+        "type": "file",
+        "id": "3116e008-9a86-5411-b976-f007ff6e12e6"
+      }
+    },
+    "P10V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "El lobo era codicioso y trató de atrapar a los dos cerdos a la vez,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A4"
+      }
+    },
+    "P10A5": {
+      "type": "read",
+      "data": {
+        "text": "¡pero era demasiado codicioso y no agarró ninguno!",
+        "type": "file",
+        "id": "d29f555e-74d7-5f95-8fd4-da4936a880fa"
+      }
+    },
+    "P10V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "¡pero era demasiado codicioso y no agarró ninguno!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A5"
+      }
+    },
+    "P10A6": {
+      "type": "read",
+      "data": {
+        "text": "Sus grandes mandíbulas sujetaron nada más que aire.",
+        "type": "file",
+        "id": "90fcd27a-77cb-5690-9215-d631587bc21a"
+      }
+    },
+    "P10V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Sus grandes mandíbulas sujetaron nada más que aire."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A6"
+      }
+    },
+    "P10A7": {
+      "type": "read",
+      "data": {
+        "text": "y los dos cochinitos huyeron",
+        "type": "file",
+        "id": "7799ec58-9852-57fb-810b-11e81a668aa9"
+      }
+    },
+    "P10V7": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y los dos cochinitos huyeron"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A7"
+      }
+    },
+    "P10A8": {
+      "type": "read",
+      "data": {
+        "text": "tan rápido como sus pequeñas pezuñas los llevarían.",
+        "type": "file",
+        "id": "92395018-1434-56b2-8b6d-4efec10bdbdd"
+      }
+    },
+    "P10V8": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "tan rápido como sus pequeñas pezuñas los llevarían."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A8"
+      }
+    },
+    "P11A1": {
+      "type": "read",
+      "data": {
+        "text": "El lobo los persiguió por el camino y casi los atrapó.",
+        "type": "file",
+        "id": "a4fa4030-f4d0-5cc0-9aa8-38e7ffb983a6"
+      }
+    },
+    "P11V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "El lobo los persiguió por el camino y casi los atrapó."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P11A1"
+      }
+    },
+    "P11A2": {
+      "type": "read",
+      "data": {
+        "text": "Pero llegaron a la casa de ladrillos.",
+        "type": "file",
+        "id": "5555369d-80ca-5de8-b9c4-56c61b854e42"
+      }
+    },
+    "P11V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Pero llegaron a la casa de ladrillos."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P11A2"
+      }
+    },
+    "P11A3": {
+      "type": "read",
+      "data": {
+        "text": "y cerraron la puerta de golpe antes de que el lobo pudiera atraparlos.",
+        "type": "file",
+        "id": "ac50aa0a-6bc3-582a-a0a3-b2632388b80f"
+      }
+    },
+    "P11V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y cerraron la puerta de golpe antes de que el lobo pudiera atraparlos."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P11A3"
+      }
+    },
+    "P12A1": {
+      "type": "read",
+      "data": {
+        "text": "Los tres cochinitos estaban muy asustados,",
+        "type": "file",
+        "id": "9b3db36f-60bd-5771-a4d3-4b02ab729a67"
+      }
+    },
+    "P12V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Los tres cochinitos estaban muy asustados,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A1"
+      }
+    },
+    "P12A2": {
+      "type": "read",
+      "data": {
+        "text": "sabían que el lobo quería comérselos.",
+        "type": "file",
+        "id": "93865658-48b9-5505-9e2e-26aedb5bfb2c"
+      }
+    },
+    "P12V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "sabían que el lobo quería comérselos."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A2"
+      }
+    },
+    "P12A3": {
+      "type": "read",
+      "data": {
+        "text": "Y eso era muy, muy cierto.",
+        "type": "file",
+        "id": "60e024f8-a7a5-57cc-8414-fe345296b303"
+      }
+    },
+    "P12V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Y eso era muy, muy cierto."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A3"
+      }
+    },
+    "P12A4": {
+      "type": "read",
+      "data": {
+        "text": "El lobo no había comido en todo el día.",
+        "type": "file",
+        "id": "d5281e14-2a3d-51df-aa03-e16027b0617c"
+      }
+    },
+    "P12V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "El lobo no había comido en todo el día."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A4"
+      }
+    },
+    "P12A5": {
+      "type": "read",
+      "data": {
+        "text": "y había desarrollado un gran apetito persiguiendo a los cochinitos",
+        "type": "file",
+        "id": "362320a7-4651-5f1a-92c8-8ce9c29c7b99"
+      }
+    },
+    "P12V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y había desarrollado un gran apetito persiguiendo a los cochinitos"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A5"
+      }
+    },
+    "P12A6": {
+      "type": "read",
+      "data": {
+        "text": "ahora podía oler a los tres adentro",
+        "type": "file",
+        "id": "9592bdd0-cdeb-573f-8783-5f20d7f36b4b"
+      }
+    },
+    "P12V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "ahora podía oler a los tres adentro"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A6"
+      }
+    },
+    "P12A7": {
+      "type": "read",
+      "data": {
+        "text": "supo que los tres cochinitos harían un rico festín.",
+        "type": "file",
+        "id": "b57c89b0-62b0-5c26-9254-507002e5ebba"
+      }
+    },
+    "P12V7": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "supo que los tres cochinitos harían un rico festín."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A7"
+      }
+    },
+    "P13A1": {
+      "type": "read",
+      "data": {
+        "text": "Entonces el lobo llamó a la puerta y dijo:",
+        "type": "file",
+        "id": "4fef142a-2af3-5783-8427-2ffabec8f8db"
+      }
+    },
+    "P13V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Entonces el lobo llamó a la puerta y dijo:"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A1"
+      }
+    },
+    "P13A2": {
+      "type": "read",
+      "data": {
+        "text": "¡Cochinitos! ¡Cochinitos! ¡Déjame entrar! ¡Déjame entrar!",
+        "type": "file",
+        "id": "b1a59cf8-f68a-582b-9750-a49c5fea3b33"
+      }
+    },
+    "P13V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "¡Cochinitos! ¡Cochinitos! ¡Déjame entrar! ¡Déjame entrar!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A2"
+      }
+    },
+    "P13A3": {
+      "type": "read",
+      "data": {
+        "text": "Pero los cochinitos vieron los ojos estrechos del lobo a través del ojo de la cerradura,",
+        "type": "file",
+        "id": "68e81201-78e3-5eda-a3ce-cb20f5e03a00"
+      }
+    },
+    "P13V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Pero los cochinitos vieron los ojos estrechos del lobo a través del ojo de la cerradura,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A3"
+      }
+    },
+    "P13A4": {
+      "type": "read",
+      "data": {
+        "text": "por lo que respondieron:",
+        "type": "file",
+        "id": "91805d6d-ea93-501e-b143-5fe70ddd4bc5"
+      }
+    },
+    "P13V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "por lo que respondieron:"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A4"
+      }
+    },
+    "P13A5": {
+      "type": "read",
+      "data": {
+        "text": "¡No! ¡No! ¡No! ¡Ni por los pelos de nuestra barbilla barbilla!",
+        "type": "file",
+        "id": "1f677595-5a8a-5184-b2f7-f14418ee5568"
+      }
+    },
+    "P13V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "¡No! ¡No! ¡No! ¡Ni por los pelos de nuestra barbilla barbilla!"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A5"
+      }
+    },
+    "P14A1": {
+      "type": "read",
+      "data": {
+        "text": "Entonces el lobo mostró los dientes y dijo:",
+        "type": "file",
+        "id": "e7a462c0-6110-5ed9-a05f-b8d91d5468d7"
+      }
+    },
+    "P14V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Entonces el lobo mostró los dientes y dijo:"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A1"
+      }
+    },
+    "P14A2": {
+      "type": "read",
+      "data": {
+        "text": "Entonces soplaré y soplaré y derribaré tu casa.",
+        "type": "file",
+        "id": "5dfe8dcf-b665-5e2d-9c4b-f26cf7f1ce82"
+      }
+    },
+    "P14V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Entonces soplaré y soplaré y derribaré tu casa."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A2"
+      }
+    },
+    "P14A3": {
+      "type": "read",
+      "data": {
+        "text": "¡Bien! resopló y resopló.",
+        "type": "file",
+        "id": "f2d8e776-391d-5ac8-acea-22c5d60f05e9"
+      }
+    },
+    "P14V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "¡Bien! resopló y resopló."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A3"
+      }
+    },
+    "P14A4": {
+      "type": "read",
+      "data": {
+        "text": "Resopló y resopló.",
+        "type": "file",
+        "id": "674afb51-d690-5d35-9746-92e133c20e49"
+      }
+    },
+    "P14V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Resopló y resopló."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A4"
+      }
+    },
+    "P14A5": {
+      "type": "read",
+      "data": {
+        "text": "Y sopló, sopló, y sopló, sopló;",
+        "type": "file",
+        "id": "d2cc7c18-bdb4-5ce5-913e-67010cdad877"
+      }
+    },
+    "P14V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Y sopló, sopló, y sopló, sopló;"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A5"
+      }
+    },
+    "P14A6": {
+      "type": "read",
+      "data": {
+        "text": "pero no pudo derribar la casa.",
+        "type": "file",
+        "id": "8bbe603a-669b-51ad-a4a8-796e57db13ab"
+      }
+    },
+    "P14V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "pero no pudo derribar la casa."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A6"
+      }
+    },
+    "P15A1": {
+      "type": "read",
+      "data": {
+        "text": "Por fin, estaba tan sin aliento",
+        "type": "file",
+        "id": "147cc80f-5a1b-5dc7-bf5c-7a64cb85e8b6"
+      }
+    },
+    "P15V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Por fin, estaba tan sin aliento"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P15A1"
+      }
+    },
+    "P15A2": {
+      "type": "read",
+      "data": {
+        "text": "que no podía soplar y que no podía soplar más.",
+        "type": "file",
+        "id": "8d95cd19-f109-5093-b523-2e831b4973b8"
+      }
+    },
+    "P15V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "que no podía soplar y que no podía soplar más."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P15A2"
+      }
+    },
+    "P15A3": {
+      "type": "read",
+      "data": {
+        "text": "Así que se detuvoa descansar y pensó un poco.",
+        "type": "file",
+        "id": "a4484771-2de4-5d58-b0bb-10a18f63c171"
+      }
+    },
+    "P15V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Así que se detuvoa descansar y pensó un poco."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P15A3"
+      }
+    },
+    "P16A1": {
+      "type": "read",
+      "data": {
+        "text": "Pero esto fue demasiado.",
+        "type": "file",
+        "id": "edf92da8-319f-5f1a-97ab-82cd9f9bea03"
+      }
+    },
+    "P16V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Pero esto fue demasiado."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P16A1"
+      }
+    },
+    "P16A2": {
+      "type": "read",
+      "data": {
+        "text": "El lobo bailaba con enfado",
+        "type": "file",
+        "id": "748aec3b-2e39-516a-a71e-3ba93d40cc51"
+      }
+    },
+    "P16V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "El lobo bailaba con enfado"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P16A2"
+      }
+    },
+    "P16A3": {
+      "type": "read",
+      "data": {
+        "text": "y juro que bajará por la chimenea",
+        "type": "file",
+        "id": "0fe55057-3939-5a42-8062-2623115213f7"
+      }
+    },
+    "P16V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y juro que bajará por la chimenea"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P16A3"
+      }
+    },
+    "P16A4": {
+      "type": "read",
+      "data": {
+        "text": "y devorará al cochinito para su cena.",
+        "type": "file",
+        "id": "51c52620-2717-5b7d-a097-8f019155a023"
+      }
+    },
+    "P16V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y devorará al cochinito para su cena."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P16A4"
+      }
+    },
+    "P17A1": {
+      "type": "read",
+      "data": {
+        "text": "Pero mientras subía al techo",
+        "type": "file",
+        "id": "cd752ebe-bd75-5bce-b39d-c7fff2b44cc0"
+      }
+    },
+    "P17V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Pero mientras subía al techo"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P17A1"
+      }
+    },
+    "P17A2": {
+      "type": "read",
+      "data": {
+        "text": "el cochinito hizo un fuego ardiente",
+        "type": "file",
+        "id": "1d41ed7a-bb45-59f6-a495-4c0a32649add"
+      }
+    },
+    "P17V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "el cochinito hizo un fuego ardiente"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P17A2"
+      }
+    },
+    "P17A3": {
+      "type": "read",
+      "data": {
+        "text": "y puso a hervir en una olla grande llena de agua.",
+        "type": "file",
+        "id": "bff43258-767e-5671-b7c5-cf7a57aad55c"
+      }
+    },
+    "P17V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y puso a hervir en una olla grande llena de agua."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P17A3"
+      }
+    },
+    "P18A1": {
+      "type": "read",
+      "data": {
+        "text": "Entonces, justo cuando el lobo bajaba por la chimenea,",
+        "type": "file",
+        "id": "481c90c8-16cc-5aeb-8a4c-b24eb725360c"
+      }
+    },
+    "P18V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Entonces, justo cuando el lobo bajaba por la chimenea,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P18A1"
+      }
+    },
+    "P18A2": {
+      "type": "read",
+      "data": {
+        "text": "el cochinito quitó la tapa,",
+        "type": "file",
+        "id": "8542f31d-4123-5922-8451-0ab0a886bb93"
+      }
+    },
+    "P18V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "el cochinito quitó la tapa,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P18A2"
+      }
+    },
+    "P18A3": {
+      "type": "read",
+      "data": {
+        "text": "y ¡plop! cayó el lobo en el agua hirviendo.",
+        "type": "file",
+        "id": "02f57491-048d-595a-b138-880bf2f7a7fc"
+      }
+    },
+    "P18V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "y ¡plop! cayó el lobo en el agua hirviendo."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P18A3"
+      }
+    },
+    "P19A1": {
+      "type": "read",
+      "data": {
+        "text": "El lobo se escapó tan rápido como pudo.",
+        "type": "file",
+        "id": "ca3f5d34-d1ad-515d-a810-92ff0b4628da"
+      }
+    },
+    "P19V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "El lobo se escapó tan rápido como pudo."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P19A1"
+      }
+    },
+    "P19A2": {
+      "type": "read",
+      "data": {
+        "text": "Los tres cochinitos vivieron felices para siempre",
+        "type": "file",
+        "id": "2ddfce68-f872-5dde-bd2a-ba5673f09964"
+      }
+    },
+    "P19V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Los tres cochinitos vivieron felices para siempre"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P19A2"
+      }
+    },
+    "P19A3": {
+      "type": "read",
+      "data": {
+        "text": "en su casa construida de ladrillos.",
+        "type": "file",
+        "id": "39dd3958-738c-5b7f-a452-017107bae781"
+      }
+    },
+    "P19V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "en su casa construida de ladrillos."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P19A3"
+      }
+    }
+  },
+  "sounds": {}
+}

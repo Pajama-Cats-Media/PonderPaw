@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "book_id": "8e28a441-7be5-40b0-a9b5-f207a8977197",
+    "book_name": "三隻小豬",
+    "language": "zh-tw",
+    "age_group": "4+",
+    "voice_engine": "native",
+    "default_mode": "interactive"
+  },
+  "playbookOrder": [
+    "cover",
+    "p1",
+    "p2",
+    "p3"
+  ],
+  "playbook": {
+    "cover": [],
+    "p1": [
+      "P1A1",
+      "P1V1",
+      "P1A2",
+      "P1V2",
+      "P1A3",
+      "P1V3",
+      "P1A4",
+      "P1V4",
+      "P1A5",
+      "P1V5",
+      "P1A6",
+      "P1V6"
+    ],
+    "p2": [
+      "P2A1",
+      "P2V1",
+      "P2A2",
+      "P2V2",
+      "P2A3",
+      "P2V3"
+    ],
+    "p3": []
+  },
+  "actions": {
+     "P1A1": {
+      "type": "read",
+      "data": {
+        "text": "從前有一頭老母豬",
+        "type": "file",
+        "id": "eda0d3b8-779f-54c3-a419-3d5232e5e26e"
+      }
+    },
+    "P1V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "從前有一頭老母豬"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A1"
+      }
+    },
+    "P1A2": {
+      "type": "read",
+      "data": {
+        "text": "有三隻小豬",
+        "type": "file",
+        "id": "11e447f8-fea9-5084-b6d6-d43d5c9f952a"
+      }
+    },
+    "P1V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "有三隻小豬"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A2"
+      }
+    },
+    "P1A3": {
+      "type": "read",
+      "data": {
+        "text": "沒有足夠的食物養活他們。",
+        "type": "file",
+        "id": "b06e3b58-a621-5e30-a0c5-efe3f1f7bb56"
+      }
+    },
+    "P1V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "沒有足夠的食物養活他們。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A3"
+      }
+    },
+    "P1A4": {
+      "type": "read",
+      "data": {
+        "text": "所以當他們足夠大的時候，",
+        "type": "file",
+        "id": "be9bdb5a-22f9-5139-833a-3a8f1ad23619"
+      }
+    },
+    "P1V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "所以當他們足夠大的時候，"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A4"
+      }
+    },
+    "P1A5": {
+      "type": "read",
+      "data": {
+        "text": "她把他們送到了這個世界",
+        "type": "file",
+        "id": "bcfefb3b-780a-50f7-bb51-a3b2cfacc936"
+      }
+    },
+    "P1V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "她把他們送到了這個世界"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A5"
+      }
+    },
+    "P1A6": {
+      "type": "read",
+      "data": {
+        "text": "去尋找他們的財富。",
+        "type": "file",
+        "id": "cbc15693-ea13-5d19-9df6-87c93b788f90"
+      }
+    },
+    "P1V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "去尋找他們的財富。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A6"
+      }
+    },
+    "P2A1": {
+      "type": "read",
+      "data": {
+        "text": "第一隻小豬很懶。",
+        "type": "file",
+        "id": "ef512221-71e4-59e3-9a45-3219e2336093"
+      }
+    },
+    "P2V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "第一隻小豬很懶。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P2A1"
+      }
+    },
+    "P2A2": {
+      "type": "read",
+      "data": {
+        "text": "他根本不想工作",
+        "type": "file",
+        "id": "34973cda-0e8b-523f-8a1e-b30857521e42"
+      }
+    },
+    "P2V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他根本不想工作"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P2A2"
+      }
+    },
+    "P2A3": {
+      "type": "read",
+      "data": {
+        "text": "他用稻草蓋了房子。",
+        "type": "file",
+        "id": "f01986f8-5be2-5633-8c32-e4c8b22de1d9"
+      }
+    },
+    "P2V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他用稻草蓋了房子。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P2A3"
+      }
+    }
+  },
+  "sounds": {}
+}

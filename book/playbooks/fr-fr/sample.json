@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "book_id": "8e28a441-7be5-40b0-a9b5-f207a8977197",
+    "book_name": "Les trois petits cochons",
+    "language": "fr-FR",
+    "age_group": "4+",
+    "voice_engine": "native",
+    "default_mode": "interactive"
+  },
+  "playbookOrder": [
+    "cover",
+    "p1",
+    "p2",
+    "p3"
+  ],
+  "playbook": {
+    "cover": [],
+    "p1": [
+      "P1A1",
+      "P1V1",
+      "P1A2",
+      "P1V2",
+      "P1A3",
+      "P1V3",
+      "P1A4",
+      "P1V4",
+      "P1A5",
+      "P1V5",
+      "P1A6",
+      "P1V6"
+    ],
+    "p2": [
+      "P2A1",
+      "P2V1",
+      "P2A2",
+      "P2V2",
+      "P2A3",
+      "P2V3"
+    ],
+    "p3": []
+  },
+  "actions": {
+    "P1A1": {
+      "type": "read",
+      "data": {
+        "text": "Il était une fois une vieille maman cochon",
+        "type": "file",
+        "id": "f2a275ef-db36-5b1c-bb29-af27cd0c53e0"
+      }
+    },
+    "P1V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Il était une fois une vieille maman cochon"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A1"
+      }
+    },
+    "P1A2": {
+      "type": "read",
+      "data": {
+        "text": "qui avait trois petits cochons",
+        "type": "file",
+        "id": "53ee9600-e42c-5a7a-a5ba-41cbf420c42c"
+      }
+    },
+    "P1V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "qui avait trois petits cochons"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A2"
+      }
+    },
+    "P1A3": {
+      "type": "read",
+      "data": {
+        "text": "et pas assez de nourriture pour les nourrir.",
+        "type": "file",
+        "id": "cf92dbde-8766-504c-80ea-fb726d1421b5"
+      }
+    },
+    "P1V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et pas assez de nourriture pour les nourrir."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A3"
+      }
+    },
+    "P1A4": {
+      "type": "read",
+      "data": {
+        "text": "Alors, quand ils étaient assez grands,",
+        "type": "file",
+        "id": "613547cb-6366-5eba-9e23-b13288d1bb31"
+      }
+    },
+    "P1V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Alors, quand ils étaient assez grands,"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A4"
+      }
+    },
+    "P1A5": {
+      "type": "read",
+      "data": {
+        "text": "elle les a envoyés dans le monde",
+        "type": "file",
+        "id": "0609e90e-8a9e-5bcd-be6a-78e1b3ef5720"
+      }
+    },
+    "P1V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "elle les a envoyés dans le monde"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A5"
+      }
+    },
+    "P1A6": {
+      "type": "read",
+      "data": {
+        "text": "chercher fortune.",
+        "type": "file",
+        "id": "2d96f8ba-1203-5d6c-93fa-6d2b99dbf82b"
+      }
+    },
+    "P1V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "chercher fortune."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A6"
+      }
+    },
+    "P2A1": {
+      "type": "read",
+      "data": {
+        "text": "Le premier petit cochon était très paresseux.",
+        "type": "file",
+        "id": "8d2ef8c1-538b-5a2f-bf6a-92c63e80da34"
+      }
+    },
+    "P2V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Le premier petit cochon était très paresseux."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P2A1"
+      }
+    },
+    "P2A2": {
+      "type": "read",
+      "data": {
+        "text": "Il ne voulait pas du tout travailler",
+        "type": "file",
+        "id": "261318cf-9436-559a-a9e9-5be334ed0dec"
+      }
+    },
+    "P2V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "Il ne voulait pas du tout travailler"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P2A2"
+      }
+    },
+    "P2A3": {
+      "type": "read",
+      "data": {
+        "text": "et il bâtit sa maison en paille.",
+        "type": "file",
+        "id": "b12ef638-979e-5588-85d6-9b1bf60f73e7"
+      }
+    },
+    "P2V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "et il bâtit sa maison en paille."
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P2A3"
+      }
+    }
+  },  
+  "sounds": {}
+}

@@ -136,46 +136,17 @@ struct ConversationalAIView: View {
         ZStack {
             GeometryReader { geometry in
                 VStack {
-                    Spacer()
-                    
                     OrbView(mode: mode, audioLevel: audioLevel)
-                        .padding(.bottom, 20)
-                    
-                    Text(agents[currentAgentIndex].name)
-                        .font(.title2)
-                        .foregroundColor(.black)
-                    
-                    Text(agents[currentAgentIndex].description)
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                    
-                    HStack(spacing: 8) {
-                        ForEach(0..<agents.count, id: \ .self) { index in
-                            Circle()
-                                .fill(index == currentAgentIndex ? Color.black : Color.gray)
-                                .frame(width: 8, height: 8)
-                        }
-                    }
-                    .padding()
+                        .padding(.top, 10)
                     
                     Spacer()
                     
                     CallButton(
                         connectionStatus: status,
                         action: { beginConversation(agent: agents[currentAgentIndex]) }
-                    )
+                    ).padding(.bottom, 10)
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height)
-            }
-            
-            VStack {
-                Image("logo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: 40)
-                    .padding(.top, 16)
-                
-                Spacer()
             }
         }
         .gesture(
@@ -201,13 +172,13 @@ struct CallButton: View {
     private var buttonIcon: String {
         switch connectionStatus {
         case .connected:
-            return "phone.down.fill"
+            return "speaker.wave.2.fill" // Indicates a connected speaking state
         case .connecting:
-            return "phone.arrow.up.right.fill"
+            return "speaker.wave.1.fill" // Indicates a connecting state
         case .disconnecting:
-            return "phone.arrow.down.left.fill"
+            return "speaker.slash.fill" // Indicates a disconnecting state
         default:
-            return "phone.fill"
+            return "mic.fill" // Default to a microphone
         }
     }
     
@@ -236,9 +207,9 @@ struct CallButton: View {
                         .foregroundColor(.white)
                 }
                 
-                Text(connectionStatus == .connected ? "End Call" : "Start Story")
-                    .font(.headline) // Bold text
-                    .foregroundColor(.white)
+//                Text(connectionStatus == .connected ? "End Call" : "Start Story")
+//                    .font(.headline) // Bold text
+//                    .foregroundColor(.white)
             }
         }
         .padding(.bottom, 40)

@@ -1,0 +1,2346 @@
+{
+  "meta": {
+    "book_id": "8e28a441-7be5-40b0-a9b5-f207a8977197",
+    "book_name": "三隻小豬",
+    "language": "zh-tw",
+    "age_group": "4+",
+    "voice_engine":"native",
+    "default_mode": "interactive"
+  },
+  "playbookOrder": [
+    "cover",
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p8",
+    "p9",
+    "p10",
+    "p11",
+    "p12",
+    "p13",
+    "p14",
+    "p15",
+    "p16",
+    "p17",
+    "p18",
+    "p19",
+    "p20"
+  ],
+  "playbook": {
+    "cover": [],
+    "p1": [
+      "P1A1",
+      "P1V1",
+      "P1A2",
+      "P1V2",
+      "P1A3",
+      "P1V3",
+      "P1A4",
+      "P1V4",
+      "P1A5",
+      "P1V5",
+      "P1A6",
+      "P1V6"
+    ],
+    "p2": [
+      "P2A1",
+      "P2V1",
+      "P2A2",
+      "P2V2",
+      "P2A3",
+      "P2V3"
+    ],
+    "p3": [
+      "P3A1",
+      "P3V1",
+      "P3A2",
+      "P3V2",
+      "P3A3",
+      "P3V3",
+      "P3A4",
+      "P3V4",
+      "P3A5",
+      "P3V5"
+    ],
+    "p4": [
+      "P4A1",
+      "P4V1",
+      "P4A2",
+      "P4V2",
+      "P4A3",
+      "P4V3",
+      "P4A4",
+      "P4V4",
+      "P4A5",
+      "P4V5"
+    ],
+    "p5": [
+      "P5A1",
+      "P5V1",
+      "P5A2",
+      "P5V2",
+      "P5A3",
+      "P5V3",
+      "P5A4",
+      "P5V4",
+      "P5A5",
+      "P5V5",
+      "P5A6",
+      "P5V6"
+    ],
+    "p6": [
+      "P6A1",
+      "P6V1",
+      "P6A2",
+      "P6V2",
+      "P6A3",
+      "P6V3",
+      "P6A4",
+      "P6V4",
+      "P6A5",
+      "P6V5",
+      "P6A6",
+      "P6V6",
+      "P6A7",
+      "P6V7"
+    ],
+    "p7": [
+      "P7A1",
+      "P7V1",
+      "P7A2",
+      "P7V2",
+      "P7A3",
+      "P7V3",
+      "P7A4",
+      "P7V4",
+      "P7A5",
+      "P7V5",
+      "P7A6",
+      "P7V6",
+      "P7A7",
+      "P7V7",
+      "P7A8",
+      "P7V8",
+      "P7A9",
+      "P7V9"
+    ],
+    "p8": [
+      "P8A1",
+      "P8V1",
+      "P8A2",
+      "P8V2",
+      "P8A3",
+      "P8V3",
+      "P8A4",
+      "P8V4",
+      "P8A5",
+      "P8V5",
+      "P8A6",
+      "P8V6"
+    ],
+    "p9": [
+      "P9A1",
+      "P9V1",
+      "P9A2",
+      "P9V2",
+      "P9A3",
+      "P9V3",
+      "P9A4",
+      "P9V4",
+      "P9A5",
+      "P9V5",
+      "P9A6",
+      "P9V6",
+      "P9A7",
+      "P9V7"
+    ],
+    "p10": [
+      "P10A1",
+      "P10V1",
+      "P10A2",
+      "P10V2",
+      "P10A3",
+      "P10V3",
+      "P10A4",
+      "P10V4",
+      "P10A5",
+      "P10V5",
+      "P10A6",
+      "P10V6",
+      "P10A7",
+      "P10V7",
+      "P10A8",
+      "P10V8",
+      "P10A9",
+      "P10V9",
+      "P10A10",
+      "P10V10"
+    ],
+    "p11": [
+      "P11A1",
+      "P11V1",
+      "P11A2",
+      "P11V2",
+      "P11A3",
+      "P11V3",
+      "P11A4",
+      "P11V4",
+      "P11A5",
+      "P11V5"
+    ],
+    "p12": [
+      "P12A1",
+      "P12V1",
+      "P12A2",
+      "P12V2",
+      "P12A3",
+      "P12V3",
+      "P12A4",
+      "P12V4",
+      "P12A5",
+      "P12V5",
+      "P12A6",
+      "P12V6",
+      "P12A7",
+      "P12V7"
+    ],
+    "p13": [
+      "P13A1",
+      "P13V1",
+      "P13A2",
+      "P13V2",
+      "P13A3",
+      "P13V3",
+      "P13A4",
+      "P13V4",
+      "P13A5",
+      "P13V5",
+      "P13A6",
+      "P13V6"
+    ],
+    "p14": [
+      "P14A1",
+      "P14V1",
+      "P14A2",
+      "P14V2",
+      "P14A3",
+      "P14V3",
+      "P14A4",
+      "P14V4",
+      "P14A5",
+      "P14V5",
+      "P14A6",
+      "P14V6",
+      "P14A7",
+      "P14V7",
+      "P14A8",
+      "P14V8"
+    ],
+    "p15": [
+      "P15A1",
+      "P15V1",
+      "P15A2",
+      "P15V2",
+      "P15A3",
+      "P15V3",
+      "P15A4",
+      "P15V4",
+      "P15A5",
+      "P15V5"
+    ],
+    "p16": [
+      "P16A1",
+      "P16V1",
+      "P16A2",
+      "P16V2",
+      "P16A3",
+      "P16V3",
+      "P16A4",
+      "P16V4"
+    ],
+    "p17": [
+      "P17A1",
+      "P17V1",
+      "P17A2",
+      "P17V2",
+      "P17A3",
+      "P17V3"
+    ],
+    "p18": [
+      "P18A1",
+      "P18V1",
+      "P18A2",
+      "P18V2",
+      "P18A3",
+      "P18V3"
+    ],
+    "p19": [
+      "P19A1",
+      "P19V1",
+      "P19A2",
+      "P19V2",
+      "P19A3",
+      "P19V3"
+    ]
+  },
+  "actions": {
+    "P1A1": {
+      "type": "read",
+      "data": {
+        "text": "從前有一頭老母豬",
+        "type": "file",
+        "id": "eda0d3b8-779f-54c3-a419-3d5232e5e26e"
+      }
+    },
+    "P1V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "從前有一頭老母豬"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A1"
+      }
+    },
+    "P1A2": {
+      "type": "read",
+      "data": {
+        "text": "有三隻小豬",
+        "type": "file",
+        "id": "11e447f8-fea9-5084-b6d6-d43d5c9f952a"
+      }
+    },
+    "P1V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "有三隻小豬"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A2"
+      }
+    },
+    "P1A3": {
+      "type": "read",
+      "data": {
+        "text": "沒有足夠的食物養活他們。",
+        "type": "file",
+        "id": "b06e3b58-a621-5e30-a0c5-efe3f1f7bb56"
+      }
+    },
+    "P1V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "沒有足夠的食物養活他們。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A3"
+      }
+    },
+    "P1A4": {
+      "type": "read",
+      "data": {
+        "text": "所以當他們足夠大的時候，",
+        "type": "file",
+        "id": "be9bdb5a-22f9-5139-833a-3a8f1ad23619"
+      }
+    },
+    "P1V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "所以當他們足夠大的時候，"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A4"
+      }
+    },
+    "P1A5": {
+      "type": "read",
+      "data": {
+        "text": "她把他們送到了這個世界",
+        "type": "file",
+        "id": "bcfefb3b-780a-50f7-bb51-a3b2cfacc936"
+      }
+    },
+    "P1V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "她把他們送到了這個世界"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A5"
+      }
+    },
+    "P1A6": {
+      "type": "read",
+      "data": {
+        "text": "去尋找他們的財富。",
+        "type": "file",
+        "id": "cbc15693-ea13-5d19-9df6-87c93b788f90"
+      }
+    },
+    "P1V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "去尋找他們的財富。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P1A6"
+      }
+    },
+    "P2A1": {
+      "type": "read",
+      "data": {
+        "text": "第一隻小豬很懶。",
+        "type": "file",
+        "id": "ef512221-71e4-59e3-9a45-3219e2336093"
+      }
+    },
+    "P2V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "第一隻小豬很懶。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P2A1"
+      }
+    },
+    "P2A2": {
+      "type": "read",
+      "data": {
+        "text": "他根本不想工作",
+        "type": "file",
+        "id": "34973cda-0e8b-523f-8a1e-b30857521e42"
+      }
+    },
+    "P2V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他根本不想工作"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P2A2"
+      }
+    },
+    "P2A3": {
+      "type": "read",
+      "data": {
+        "text": "他用稻草蓋了房子。",
+        "type": "file",
+        "id": "f01986f8-5be2-5633-8c32-e4c8b22de1d9"
+      }
+    },
+    "P2V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他用稻草蓋了房子。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P2A3"
+      }
+    },
+    "P3A1": {
+      "type": "read",
+      "data": {
+        "text": "第二隻小豬努力了一點",
+        "type": "file",
+        "id": "e44b8ffb-7ce4-50ee-8af8-6829cd5f0582"
+      }
+    },
+    "P3V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "第二隻小豬努力了一點"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P3A1"
+      }
+    },
+    "P3A2": {
+      "type": "read",
+      "data": {
+        "text": "但他也有點懶惰",
+        "type": "file",
+        "id": "201d92d9-4a07-5571-949d-759437a97903"
+      }
+    },
+    "P3V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "但他也有點懶惰"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P3A2"
+      }
+    },
+    "P3A3": {
+      "type": "read",
+      "data": {
+        "text": "他用木棍蓋起了房子。",
+        "type": "file",
+        "id": "f57e6138-d7bf-5c24-a351-1c287b90439d"
+      }
+    },
+    "P3V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他用木棍蓋起了房子。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P3A3"
+      }
+    },
+    "P3A4": {
+      "type": "read",
+      "data": {
+        "text": "然後，他們載歌載舞",
+        "type": "file",
+        "id": "19e85e92-9118-50fe-8956-090b4832ca95"
+      }
+    },
+    "P3V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "然後，他們載歌載舞"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P3A4"
+      }
+    },
+    "P3A5": {
+      "type": "read",
+      "data": {
+        "text": "剩下的時間一起玩。",
+        "type": "file",
+        "id": "b065a509-162f-5ccb-bbfd-578c28a998bf"
+      }
+    },
+    "P3V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "剩下的時間一起玩。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P3A5"
+      }
+    },
+    "P4A1": {
+      "type": "read",
+      "data": {
+        "text": "三隻小豬辛苦了一天",
+        "type": "file",
+        "id": "7ba70373-1b7c-5a15-b9ec-f1388ec0dec8"
+      }
+    },
+    "P4V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "三隻小豬辛苦了一天"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P4A1"
+      }
+    },
+    "P4A2": {
+      "type": "read",
+      "data": {
+        "text": "並用磚頭建造了他的房子。",
+        "type": "file",
+        "id": "f176d87f-2ae3-5b7b-8ca6-d04f06dd4c61"
+      }
+    },
+    "P4V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "並用磚頭建造了他的房子。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P4A2"
+      }
+    },
+    "P4A3": {
+      "type": "read",
+      "data": {
+        "text": "這是一座堅固的房子",
+        "type": "file",
+        "id": "dd5a7fb4-3a64-5afe-b4cb-3d125b539f6e"
+      }
+    },
+    "P4V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "這是一座堅固的房子"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P4A3"
+      }
+    },
+    "P4A4": {
+      "type": "read",
+      "data": {
+        "text": "有精美的壁爐和煙囪。",
+        "type": "file",
+        "id": "358be7b3-5170-5ab6-9c97-8beeebf23df8"
+      }
+    },
+    "P4V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "有精美的壁爐和煙囪。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P4A4"
+      }
+    },
+    "P4A5": {
+      "type": "read",
+      "data": {
+        "text": "看起來它可以承受最強的風。",
+        "type": "file",
+        "id": "d9e0fc78-8174-547e-a9ac-cb0d26e9dabb"
+      }
+    },
+    "P4V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "看起來它可以承受最強的風。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P4A5"
+      }
+    },
+    "P5A1": {
+      "type": "read",
+      "data": {
+        "text": "第二天，一隻狼恰巧經過小巷",
+        "type": "file",
+        "id": "75eb8f2b-c31b-56a4-b04b-e4b44bfdc9c9"
+      }
+    },
+    "P5V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "第二天，一隻狼恰巧經過小巷"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A1"
+      }
+    },
+    "P5A2": {
+      "type": "read",
+      "data": {
+        "text": "三隻小豬住的地方；",
+        "type": "file",
+        "id": "14c94588-4185-55bb-9cda-04e67ab4683a"
+      }
+    },
+    "P5V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "三隻小豬住的地方；"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A2"
+      }
+    },
+    "P5A3": {
+      "type": "read",
+      "data": {
+        "text": "他看到了稻草屋，",
+        "type": "file",
+        "id": "1362c3a5-b8ec-5a9c-bfd5-d17877774fd8"
+      }
+    },
+    "P5V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他看到了稻草屋，"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A3"
+      }
+    },
+    "P5A4": {
+      "type": "read",
+      "data": {
+        "text": "他聞到了裡面的豬味。",
+        "type": "file",
+        "id": "befabca7-63a0-53fc-890c-7d3d35b1237c"
+      }
+    },
+    "P5V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他聞到了裡面的豬味。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A4"
+      }
+    },
+    "P5A5": {
+      "type": "read",
+      "data": {
+        "text": "他認為這頭豬會做一頓美餐",
+        "type": "file",
+        "id": "3995a92e-5694-5d36-b3bb-7f43b38439e5"
+      }
+    },
+    "P5V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他認為這頭豬會做一頓美餐"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A5"
+      }
+    },
+    "P5A6": {
+      "type": "read",
+      "data": {
+        "text": "他開始流口水。",
+        "type": "file",
+        "id": "1d7e2f79-222a-5699-8875-ced2c61058fc"
+      }
+    },
+    "P5V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他開始流口水。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P5A6"
+      }
+    },
+    "P6A1": {
+      "type": "read",
+      "data": {
+        "text": "於是他敲了敲門說：",
+        "type": "file",
+        "id": "f25884ec-894e-5376-8708-380e1280b2fe"
+      }
+    },
+    "P6V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "於是他敲了敲門說："
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A1"
+      }
+    },
+    "P6A2": {
+      "type": "read",
+      "data": {
+        "text": "小豬！ 小豬！",
+        "type": "file",
+        "id": "c3f23665-131b-5563-82b7-051ea6bb409c"
+      }
+    },
+    "P6V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "小豬！ 小豬！"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A2"
+      }
+    },
+    "P6A3": {
+      "type": "read",
+      "data": {
+        "text": "讓我進去！ 讓我進去！",
+        "type": "file",
+        "id": "0902e3df-4953-569f-8581-5059721ec24e"
+      }
+    },
+    "P6V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "讓我進去！ 讓我進去！"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A3"
+      }
+    },
+    "P6A4": {
+      "type": "read",
+      "data": {
+        "text": "但是小豬從鑰匙孔裡看到了狼的大爪子，",
+        "type": "file",
+        "id": "4151fdae-ec8f-5afe-aa1f-cd772443252b"
+      }
+    },
+    "P6V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "但是小豬從鑰匙孔裡看到了狼的大爪子，"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A4"
+      }
+    },
+    "P6A5": {
+      "type": "read",
+      "data": {
+        "text": "所以他回答說：",
+        "type": "file",
+        "id": "3ec7ea8b-a63e-5fa2-bcf9-b45b7e0c3f32"
+      }
+    },
+    "P6V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "所以他回答說："
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A5"
+      }
+    },
+    "P6A6": {
+      "type": "read",
+      "data": {
+        "text": "不！ 不！ 不！",
+        "type": "file",
+        "id": "34e40d1f-f7c9-590b-a1a1-89cdc2489669"
+      }
+    },
+    "P6V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "不！ 不！ 不！"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A6"
+      }
+    },
+    "P6A7": {
+      "type": "read",
+      "data": {
+        "text": "我下巴上的一根毛你都得不到！",
+        "type": "file",
+        "id": "1cc94223-fede-5cd4-ae79-429bccfb68df"
+      }
+    },
+    "P6V7": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "我下巴上的一根毛你都得不到！"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P6A7"
+      }
+    },
+    "P7A1": {
+      "type": "read",
+      "data": {
+        "text": "狼露出牙齒說：",
+        "type": "file",
+        "id": "4e766458-59d3-5e85-be57-40f3bf09e125"
+      }
+    },
+    "P7V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "狼露出牙齒說："
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A1"
+      }
+    },
+    "P7A2": {
+      "type": "read",
+      "data": {
+        "text": "然後我會吹，我會吹",
+        "type": "file",
+        "id": "86079c32-9bde-5cae-a434-2b1679a0279d"
+      }
+    },
+    "P7V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "然後我會吹，我會吹"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A2"
+      }
+    },
+    "P7A3": {
+      "type": "read",
+      "data": {
+        "text": "我會吹倒你的房子。",
+        "type": "file",
+        "id": "a642d372-8638-5568-89ec-64ef3c1d66d2"
+      }
+    },
+    "P7V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "我會吹倒你的房子。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A3"
+      }
+    },
+    "P7A4": {
+      "type": "read",
+      "data": {
+        "text": "所以他喘著粗氣",
+        "type": "file",
+        "id": "1ad4a77f-60ca-578e-b9c5-a18e63a5a2d5"
+      }
+    },
+    "P7V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "所以他喘著粗氣"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A4"
+      }
+    },
+    "P7A5": {
+      "type": "read",
+      "data": {
+        "text": "他把房子吹倒了！",
+        "type": "file",
+        "id": "f10f78e3-159c-5c33-a863-66d951a0b8c1"
+      }
+    },
+    "P7V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他把房子吹倒了！"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A5"
+      }
+    },
+    "P7A6": {
+      "type": "read",
+      "data": {
+        "text": "狼把嘴巴張得很大",
+        "type": "file",
+        "id": "aec56479-4453-5d19-8b2d-020a486d3ed6"
+      }
+    },
+    "P7V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "狼把嘴巴張得很大"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A6"
+      }
+    },
+    "P7A7": {
+      "type": "read",
+      "data": {
+        "text": "並儘可能地咬下去，",
+        "type": "file",
+        "id": "9ef853dc-a04d-5467-bce1-3628c5b9ef84"
+      }
+    },
+    "P7V7": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "並儘可能地咬下去，"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A7"
+      }
+    },
+    "P7A8": {
+      "type": "read",
+      "data": {
+        "text": "但是第一隻小豬逃脫了",
+        "type": "file",
+        "id": "0ff4db7b-ae29-5a49-a205-3157b313f38b"
+      }
+    },
+    "P7V8": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "但是第一隻小豬逃脫了"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A8"
+      }
+    },
+    "P7A9": {
+      "type": "read",
+      "data": {
+        "text": "跑去和第二隻小豬躲起來了。",
+        "type": "file",
+        "id": "67bfd751-a336-56ff-8ec6-16d8a288d80e"
+      }
+    },
+    "P7V9": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "跑去和第二隻小豬躲起來了。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P7A9"
+      }
+    },
+    "P8A1": {
+      "type": "read",
+      "data": {
+        "text": "狼繼續沿著小路前進",
+        "type": "file",
+        "id": "91c4c471-3e91-59e6-8b3e-777712e6fe24"
+      }
+    },
+    "P8V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "狼繼續沿著小路前進"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A1"
+      }
+    },
+    "P8A2": {
+      "type": "read",
+      "data": {
+        "text": "他經過第二間用木棍搭成的房子。",
+        "type": "file",
+        "id": "ff340abf-2434-5fb1-9431-017c911c5872"
+      }
+    },
+    "P8V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他經過第二間用木棍搭成的房子。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A2"
+      }
+    },
+    "P8A3": {
+      "type": "read",
+      "data": {
+        "text": "他看到了房子，",
+        "type": "file",
+        "id": "584d6f53-b621-5e33-bf09-ff46b866c3a3"
+      }
+    },
+    "P8V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他看到了房子，"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A3"
+      }
+    },
+    "P8A4": {
+      "type": "read",
+      "data": {
+        "text": "他聞到了裡面的豬味，",
+        "type": "file",
+        "id": "2332d627-b02d-5f69-8442-1d97bbd39e60"
+      }
+    },
+    "P8V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他聞到了裡面的豬味，"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A4"
+      }
+    },
+    "P8A5": {
+      "type": "read",
+      "data": {
+        "text": "他開始流口水",
+        "type": "file",
+        "id": "1b9c7d92-3282-55f6-a35b-14e7fe6bd412"
+      }
+    },
+    "P8V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他開始流口水"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A5"
+      }
+    },
+    "P8A6": {
+      "type": "read",
+      "data": {
+        "text": "當他想到他們會做的美味晚餐時。",
+        "type": "file",
+        "id": "c1344da6-d100-5794-b200-ee41f94a8bda"
+      }
+    },
+    "P8V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "當他想到他們會做的美味晚餐時。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P8A6"
+      }
+    },
+    "P9A1": {
+      "type": "read",
+      "data": {
+        "text": "於是他敲了敲門說：",
+        "type": "file",
+        "id": "f25884ec-894e-5376-8708-380e1280b2fe"
+      }
+    },
+    "P9V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "於是他敲了敲門說："
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A1"
+      }
+    },
+    "P9A2": {
+      "type": "read",
+      "data": {
+        "text": "小豬！ 小豬！",
+        "type": "file",
+        "id": "c3f23665-131b-5563-82b7-051ea6bb409c"
+      }
+    },
+    "P9V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "小豬！ 小豬！"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A2"
+      }
+    },
+    "P9A3": {
+      "type": "read",
+      "data": {
+        "text": "讓我進去！ 讓我進去！",
+        "type": "file",
+        "id": "0902e3df-4953-569f-8581-5059721ec24e"
+      }
+    },
+    "P9V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "讓我進去！ 讓我進去！"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A3"
+      }
+    },
+    "P9A4": {
+      "type": "read",
+      "data": {
+        "text": "但是小豬們從鑰匙孔裡看到了狼尖尖的耳朵，",
+        "type": "file",
+        "id": "42fdfdbb-4e2f-5a7c-a943-866c2ab43c65"
+      }
+    },
+    "P9V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "但是小豬們從鑰匙孔裡看到了狼尖尖的耳朵，"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A4"
+      }
+    },
+    "P9A5": {
+      "type": "read",
+      "data": {
+        "text": "所以他們回答說：",
+        "type": "file",
+        "id": "c3099de7-2b0d-5b76-b7fe-e29660b2ae83"
+      }
+    },
+    "P9V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "所以他們回答說："
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A5"
+      }
+    },
+    "P9A6": {
+      "type": "read",
+      "data": {
+        "text": "不！ 不！ 不！",
+        "type": "file",
+        "id": "34e40d1f-f7c9-590b-a1a1-89cdc2489669"
+      }
+    },
+    "P9V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "不！ 不！ 不！"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A6"
+      }
+    },
+    "P9A7": {
+      "type": "read",
+      "data": {
+        "text": "我下巴上的一根毛你都得不到！",
+        "type": "file",
+        "id": "1cc94223-fede-5cd4-ae79-429bccfb68df"
+      }
+    },
+    "P9V7": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "我下巴上的一根毛你都得不到！"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P9A7"
+      }
+    },
+    "P10A1": {
+      "type": "read",
+      "data": {
+        "text": "於是狼露出牙齒說：",
+        "type": "file",
+        "id": "0475a4ba-f5b6-5d1b-96d3-1eaa9c086ec4"
+      }
+    },
+    "P10V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "於是狼露出牙齒說："
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A1"
+      }
+    },
+    "P10A2": {
+      "type": "read",
+      "data": {
+        "text": "然後我會吹，我會吹",
+        "type": "file",
+        "id": "86079c32-9bde-5cae-a434-2b1679a0279d"
+      }
+    },
+    "P10V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "然後我會吹，我會吹"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A2"
+      }
+    },
+    "P10A3": {
+      "type": "read",
+      "data": {
+        "text": "我會吹倒你的房子！",
+        "type": "file",
+        "id": "2d03f758-c804-531b-b47b-a561257de913"
+      }
+    },
+    "P10V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "我會吹倒你的房子！"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A3"
+      }
+    },
+    "P10A4": {
+      "type": "read",
+      "data": {
+        "text": "所以他吹啊吹啊，然後把房子吹倒了！",
+        "type": "file",
+        "id": "13682344-9677-52d5-9b5d-2297843d419e"
+      }
+    },
+    "P10V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "所以他吹啊吹啊，然後把房子吹倒了！"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A4"
+      }
+    },
+    "P10A5": {
+      "type": "read",
+      "data": {
+        "text": "狼是貪婪的",
+        "type": "file",
+        "id": "4b0c295a-4fcf-5a31-b312-ec79a5f4a20d"
+      }
+    },
+    "P10V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "狼是貪婪的"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A5"
+      }
+    },
+    "P10A6": {
+      "type": "read",
+      "data": {
+        "text": "他試圖同時抓住兩隻豬，",
+        "type": "file",
+        "id": "2f189397-e250-53a0-a22d-2559e3a5b5d2"
+      }
+    },
+    "P10V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他試圖同時抓住兩隻豬，"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A6"
+      }
+    },
+    "P10A7": {
+      "type": "read",
+      "data": {
+        "text": "但是他太貪心了，一個也沒有！",
+        "type": "file",
+        "id": "8557106e-be58-5b2e-a3e2-751eb3697099"
+      }
+    },
+    "P10V7": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "但是他太貪心了，一個也沒有！"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A7"
+      }
+    },
+    "P10A8": {
+      "type": "read",
+      "data": {
+        "text": "他的大顎只夾住空氣",
+        "type": "file",
+        "id": "b1395580-c679-5387-8148-62d70ccc1a10"
+      }
+    },
+    "P10V8": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他的大顎只夾住空氣"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A8"
+      }
+    },
+    "P10A9": {
+      "type": "read",
+      "data": {
+        "text": "兩隻小豬爭先恐後地跑了",
+        "type": "file",
+        "id": "b4503343-791a-5ff1-aa74-f6249f7090dc"
+      }
+    },
+    "P10V9": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "兩隻小豬爭先恐後地跑了"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A9"
+      }
+    },
+    "P10A10": {
+      "type": "read",
+      "data": {
+        "text": "像他們的小蹄子一樣快。",
+        "type": "file",
+        "id": "20292cf1-7725-5f0d-aa5a-fb8efbba8ff2"
+      }
+    },
+    "P10V10": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "像他們的小蹄子一樣快。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P10A10"
+      }
+    },
+    "P11A1": {
+      "type": "read",
+      "data": {
+        "text": "狼沿著小路追著他們",
+        "type": "file",
+        "id": "5c04729d-caa0-55b9-90f9-939672a9c6b4"
+      }
+    },
+    "P11V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "狼沿著小路追著他們"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P11A1"
+      }
+    },
+    "P11A2": {
+      "type": "read",
+      "data": {
+        "text": "他幾乎抓住了他們。",
+        "type": "file",
+        "id": "348a2a92-b04b-5434-8857-1e76309e0848"
+      }
+    },
+    "P11V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他幾乎抓住了他們。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P11A2"
+      }
+    },
+    "P11A3": {
+      "type": "read",
+      "data": {
+        "text": "但他們到了磚房",
+        "type": "file",
+        "id": "03a93a7d-870a-5311-b290-6c43bcaaf12a"
+      }
+    },
+    "P11V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "但他們到了磚房"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P11A3"
+      }
+    },
+    "P11A4": {
+      "type": "read",
+      "data": {
+        "text": "砰的一聲關上了門",
+        "type": "file",
+        "id": "11559065-3a60-5f49-9908-45b35ec3894d"
+      }
+    },
+    "P11V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "砰的一聲關上了門"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P11A4"
+      }
+    },
+    "P11A5": {
+      "type": "read",
+      "data": {
+        "text": "在狼抓住他們之前。",
+        "type": "file",
+        "id": "dbead85a-71c3-5e0f-a1fa-47eae48970e7"
+      }
+    },
+    "P11V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "在狼抓住他們之前。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P11A5"
+      }
+    },
+    "P12A1": {
+      "type": "read",
+      "data": {
+        "text": "三隻小豬他們非常害怕，",
+        "type": "file",
+        "id": "67932dd6-cfdc-5b2f-aed2-65830266d9f4"
+      }
+    },
+    "P12V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "三隻小豬他們非常害怕，"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A1"
+      }
+    },
+    "P12A2": {
+      "type": "read",
+      "data": {
+        "text": "他們知道狼想吃掉他們。",
+        "type": "file",
+        "id": "9037807a-c605-5de3-af1f-07e908c32d2e"
+      }
+    },
+    "P12V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他們知道狼想吃掉他們。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A2"
+      }
+    },
+    "P12A3": {
+      "type": "read",
+      "data": {
+        "text": "這是非常非常正確的。",
+        "type": "file",
+        "id": "4d47ee1f-7f07-5054-a9a5-0268f32e05b8"
+      }
+    },
+    "P12V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "這是非常非常正確的。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A3"
+      }
+    },
+    "P12A4": {
+      "type": "read",
+      "data": {
+        "text": "狼一天沒吃東西了",
+        "type": "file",
+        "id": "e85c123a-6868-552f-b388-f417f1455524"
+      }
+    },
+    "P12V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "狼一天沒吃東西了"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A4"
+      }
+    },
+    "P12A5": {
+      "type": "read",
+      "data": {
+        "text": "他胃口大開，到處追豬",
+        "type": "file",
+        "id": "323c7769-4960-5fce-a389-96b1a3254159"
+      }
+    },
+    "P12V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他胃口大開，到處追豬"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A5"
+      }
+    },
+    "P12A6": {
+      "type": "read",
+      "data": {
+        "text": "現在他能聞到他們三個都在裡面",
+        "type": "file",
+        "id": "1e6eafb3-75a4-5096-9dd8-3309a00d19f8"
+      }
+    },
+    "P12V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "現在他能聞到他們三個都在裡面"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A6"
+      }
+    },
+    "P12A7": {
+      "type": "read",
+      "data": {
+        "text": "他知道三隻小豬會做一頓美餐。",
+        "type": "file",
+        "id": "c98327fd-a5ec-5ca8-b155-65b6dbd97024"
+      }
+    },
+    "P12V7": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他知道三隻小豬會做一頓美餐。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P12A7"
+      }
+    },
+    "P13A1": {
+      "type": "read",
+      "data": {
+        "text": "於是狼敲了敲門說：",
+        "type": "file",
+        "id": "c0f610c1-2d80-5dd2-a1e2-fb825fb8e764"
+      }
+    },
+    "P13V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "於是狼敲了敲門說："
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A1"
+      }
+    },
+    "P13A2": {
+      "type": "read",
+      "data": {
+        "text": "小豬！ 小豬！ 讓我進去！ 讓我進去！",
+        "type": "file",
+        "id": "5727191b-00da-5e61-84a3-d5f7c1d2b367"
+      }
+    },
+    "P13V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "小豬！ 小豬！ 讓我進去！ 讓我進去！"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A2"
+      }
+    },
+    "P13A3": {
+      "type": "read",
+      "data": {
+        "text": "但是小豬們從鑰匙孔裡看到了狼那雙細長的眼睛，",
+        "type": "file",
+        "id": "3137c4b4-65eb-553d-ad17-9978311a1cae"
+      }
+    },
+    "P13V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "但是小豬們從鑰匙孔裡看到了狼那雙細長的眼睛，"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A3"
+      }
+    },
+    "P13A4": {
+      "type": "read",
+      "data": {
+        "text": "所以他們回答說：",
+        "type": "file",
+        "id": "c3099de7-2b0d-5b76-b7fe-e29660b2ae83"
+      }
+    },
+    "P13V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "所以他們回答說："
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A4"
+      }
+    },
+    "P13A5": {
+      "type": "read",
+      "data": {
+        "text": "不！ 不！ 不！",
+        "type": "file",
+        "id": "34e40d1f-f7c9-590b-a1a1-89cdc2489669"
+      }
+    },
+    "P13V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "不！ 不！ 不！"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A5"
+      }
+    },
+    "P13A6": {
+      "type": "read",
+      "data": {
+        "text": "我下巴上的一根毛你都得不到！",
+        "type": "file",
+        "id": "1cc94223-fede-5cd4-ae79-429bccfb68df"
+      }
+    },
+    "P13V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "我下巴上的一根毛你都得不到！"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P13A6"
+      }
+    },
+    "P14A1": {
+      "type": "read",
+      "data": {
+        "text": "於是狼露出牙齒說：",
+        "type": "file",
+        "id": "0475a4ba-f5b6-5d1b-96d3-1eaa9c086ec4"
+      }
+    },
+    "P14V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "於是狼露出牙齒說："
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A1"
+      }
+    },
+    "P14A2": {
+      "type": "read",
+      "data": {
+        "text": "然後我會吹，我會吹",
+        "type": "file",
+        "id": "86079c32-9bde-5cae-a434-2b1679a0279d"
+      }
+    },
+    "P14V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "然後我會吹，我會吹"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A2"
+      }
+    },
+    "P14A3": {
+      "type": "read",
+      "data": {
+        "text": "我會吹倒你的房子。",
+        "type": "file",
+        "id": "a642d372-8638-5568-89ec-64ef3c1d66d2"
+      }
+    },
+    "P14V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "我會吹倒你的房子。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A3"
+      }
+    },
+    "P14A4": {
+      "type": "read",
+      "data": {
+        "text": "出色地！ 他喘著粗氣。",
+        "type": "file",
+        "id": "5f0c91bf-1f81-5c55-8295-6a5d994c9cc4"
+      }
+    },
+    "P14V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "出色地！ 他喘著粗氣。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A4"
+      }
+    },
+    "P14A5": {
+      "type": "read",
+      "data": {
+        "text": "他喘著粗氣。",
+        "type": "file",
+        "id": "2aee6f4a-d176-5e4d-bace-b68e1b8fd384"
+      }
+    },
+    "P14V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他喘著粗氣。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A5"
+      }
+    },
+    "P14A6": {
+      "type": "read",
+      "data": {
+        "text": "他哼了一聲，哼了一聲，",
+        "type": "file",
+        "id": "0e6e326b-46c5-58b3-9cf9-61600f84b7a8"
+      }
+    },
+    "P14V6": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他哼了一聲，哼了一聲，"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A6"
+      }
+    },
+    "P14A7": {
+      "type": "read",
+      "data": {
+        "text": "他喘著粗氣，喘著粗氣；",
+        "type": "file",
+        "id": "2b9f1d27-c48d-5cd9-aee1-703457e86c61"
+      }
+    },
+    "P14V7": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他喘著粗氣，喘著粗氣；"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A7"
+      }
+    },
+    "P14A8": {
+      "type": "read",
+      "data": {
+        "text": "但他不能把房子吹倒。",
+        "type": "file",
+        "id": "92a858ae-1d22-5a0f-b8c2-204c80a8165f"
+      }
+    },
+    "P14V8": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "但他不能把房子吹倒。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P14A8"
+      }
+    },
+    "P15A1": {
+      "type": "read",
+      "data": {
+        "text": "終於喘不過氣來",
+        "type": "file",
+        "id": "2c4f72f6-2152-579f-b68d-e464ac1007df"
+      }
+    },
+    "P15V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "終於喘不過氣來"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P15A1"
+      }
+    },
+    "P15A2": {
+      "type": "read",
+      "data": {
+        "text": "他不能怒氣沖衝",
+        "type": "file",
+        "id": "8a3e4b95-a916-5bda-bd64-59107cfdfdfe"
+      }
+    },
+    "P15V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他不能怒氣沖衝"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P15A2"
+      }
+    },
+    "P15A3": {
+      "type": "read",
+      "data": {
+        "text": "他再也喘不過氣來了。",
+        "type": "file",
+        "id": "c121f0f7-094e-5e38-8771-48af27504fad"
+      }
+    },
+    "P15V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "他再也喘不過氣來了。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P15A3"
+      }
+    },
+    "P15A4": {
+      "type": "read",
+      "data": {
+        "text": "於是他停下來休息",
+        "type": "file",
+        "id": "68592bd0-b8c3-5046-a693-ada26b8d987b"
+      }
+    },
+    "P15V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "於是他停下來休息"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P15A4"
+      }
+    },
+    "P15A5": {
+      "type": "read",
+      "data": {
+        "text": "想了一下。",
+        "type": "file",
+        "id": "d48b2240-36b6-584b-aa22-fffbd82f4eed"
+      }
+    },
+    "P15V5": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "想了一下。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P15A5"
+      }
+    },
+    "P16A1": {
+      "type": "read",
+      "data": {
+        "text": "但這太過分了。",
+        "type": "file",
+        "id": "3c988bde-d3b2-58fe-ae1d-b2f7bb6d3554"
+      }
+    },
+    "P16V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "但這太過分了。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P16A1"
+      }
+    },
+    "P16A2": {
+      "type": "read",
+      "data": {
+        "text": "狼氣得手舞足蹈",
+        "type": "file",
+        "id": "3f8d42a3-3d23-56cf-b9aa-dfcd9cfee2c5"
+      }
+    },
+    "P16V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "狼氣得手舞足蹈"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P16A2"
+      }
+    },
+    "P16A3": {
+      "type": "read",
+      "data": {
+        "text": "並發誓他會從煙囪裡下來",
+        "type": "file",
+        "id": "17dc3992-9004-5cfd-a256-eda06f9f7d48"
+      }
+    },
+    "P16V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "並發誓他會從煙囪裡下來"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P16A3"
+      }
+    },
+    "P16A4": {
+      "type": "read",
+      "data": {
+        "text": "把小豬當晚飯吃了。",
+        "type": "file",
+        "id": "58952ecb-a86e-5927-92e8-cd48c3b4df09"
+      }
+    },
+    "P16V4": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "把小豬當晚飯吃了。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P16A4"
+      }
+    },
+    "P17A1": {
+      "type": "read",
+      "data": {
+        "text": "但當他爬上屋頂時",
+        "type": "file",
+        "id": "c90132a0-22ba-50f7-a9d6-1fbf107e93d5"
+      }
+    },
+    "P17V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "但當他爬上屋頂時"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P17A1"
+      }
+    },
+    "P17A2": {
+      "type": "read",
+      "data": {
+        "text": "小豬點起了熊熊的火",
+        "type": "file",
+        "id": "cd1ad009-276e-5ec9-ab4e-b849ca5ed394"
+      }
+    },
+    "P17V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "小豬點起了熊熊的火"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P17A2"
+      }
+    },
+    "P17A3": {
+      "type": "read",
+      "data": {
+        "text": "並放上裝滿水的大鍋煮沸。",
+        "type": "file",
+        "id": "a3fbc2b5-bff0-5e61-b9bd-982a342f656d"
+      }
+    },
+    "P17V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "並放上裝滿水的大鍋煮沸。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P17A3"
+      }
+    },
+    "P18A1": {
+      "type": "read",
+      "data": {
+        "text": "然後，就在狼從煙囪裡下來的時候，",
+        "type": "file",
+        "id": "b8673b61-7bd2-5ed3-a15b-6e95f18bef24"
+      }
+    },
+    "P18V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "然後，就在狼從煙囪裡下來的時候，"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P18A1"
+      }
+    },
+    "P18A2": {
+      "type": "read",
+      "data": {
+        "text": "小豬拉開蓋子，",
+        "type": "file",
+        "id": "5eae9a2c-0fc5-5881-9729-040a01f3592d"
+      }
+    },
+    "P18V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "小豬拉開蓋子，"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P18A2"
+      }
+    },
+    "P18A3": {
+      "type": "read",
+      "data": {
+        "text": "撲通一聲！ 狼掉進了滾燙的水中。",
+        "type": "file",
+        "id": "877351a5-0487-5b8c-b30f-90ce680435a5"
+      }
+    },
+    "P18V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "撲通一聲！ 狼掉進了滾燙的水中。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P18A3"
+      }
+    },
+    "P19A1": {
+      "type": "read",
+      "data": {
+        "text": "狼以最快的速度逃跑了。",
+        "type": "file",
+        "id": "a1cea81c-4a06-5972-8d4c-e0c255b38212"
+      }
+    },
+    "P19V1": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "狼以最快的速度逃跑了。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P19A1"
+      }
+    },
+    "P19A2": {
+      "type": "read",
+      "data": {
+        "text": "三隻小豬從此過上了幸福的生活",
+        "type": "file",
+        "id": "c2caffbc-7a27-585f-89ce-82288f86da2d"
+      }
+    },
+    "P19V2": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "三隻小豬從此過上了幸福的生活"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P19A2"
+      }
+    },
+    "P19A3": {
+      "type": "read",
+      "data": {
+        "text": "在他們用磚砌成的房子裡。",
+        "type": "file",
+        "id": "4b227454-3a26-52d3-8f02-251b832ba7a6"
+      }
+    },
+    "P19V3": {
+      "type": "voice_input",
+      "data": {
+        "expect": [
+          "在他們用磚砌成的房子裡。"
+        ],
+        "duration": 5000,
+        "confidence": 0.6,
+        "failureAction": "P19A3"
+      }
+    }
+  },
+  "sounds": {
+  }
+}
