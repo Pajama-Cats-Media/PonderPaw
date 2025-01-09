@@ -10,6 +10,7 @@
 		CD0CD4602D2C791F00E75B7B /* ElevenLabsSDK in Frameworks */ = {isa = PBXBuildFile; productRef = CD0CD45F2D2C791F00E75B7B /* ElevenLabsSDK */; };
 		CD0CE5782D30512300E75B7B /* book in Resources */ = {isa = PBXBuildFile; fileRef = CD0CE5772D30512300E75B7B /* book */; };
 		CD0CE57B2D305CD900E75B7B /* PerfectHTTPServer in Frameworks */ = {isa = PBXBuildFile; productRef = CD0CE57A2D305CD900E75B7B /* PerfectHTTPServer */; };
+		CD0CE5842D306FDD00E75B7B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CD0CE5832D306FDD00E75B7B /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			buildPhase = CD0CD3E12D2C679200E75B7B /* Resources */;
 			membershipExceptions = (
+				Base64Utils.swift,
 				LocalHTTPServer.swift,
 			);
 		};
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD0CE5842D306FDD00E75B7B /* RxSwift in Frameworks */,
 				CD0CD4602D2C791F00E75B7B /* ElevenLabsSDK in Frameworks */,
 				CD0CE57B2D305CD900E75B7B /* PerfectHTTPServer in Frameworks */,
 			);
@@ -145,6 +148,7 @@
 			packageProductDependencies = (
 				CD0CD45F2D2C791F00E75B7B /* ElevenLabsSDK */,
 				CD0CE57A2D305CD900E75B7B /* PerfectHTTPServer */,
+				CD0CE5832D306FDD00E75B7B /* RxSwift */,
 			);
 			productName = PonderPaw;
 			productReference = CD0CD3E32D2C679200E75B7B /* PonderPaw.app */;
@@ -231,6 +235,7 @@
 			packageReferences = (
 				CD0CD45E2D2C791F00E75B7B /* XCRemoteSwiftPackageReference "ElevenLabsSwift" */,
 				CD0CE5792D305CD200E75B7B /* XCRemoteSwiftPackageReference "Perfect-HTTPServer" */,
+				CD0CE5822D306FB900E75B7B /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CD0CD3E42D2C679200E75B7B /* Products */;
@@ -619,6 +624,14 @@
 				minimumVersion = 3.0.23;
 			};
 		};
+		CD0CE5822D306FB900E75B7B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.8.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -631,6 +644,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CD0CE5792D305CD200E75B7B /* XCRemoteSwiftPackageReference "Perfect-HTTPServer" */;
 			productName = PerfectHTTPServer;
+		};
+		CD0CE5832D306FDD00E75B7B /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD0CE5822D306FB900E75B7B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
