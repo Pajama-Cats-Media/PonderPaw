@@ -4,11 +4,6 @@ this.PJC = this.PJC || {}; //Global var for SDK, all functions put inside it.
   "use strict";
   // message topics
   PJC.constants = {
-    GET_ASR_RESULT: "get_asr_result",
-    START_ASR: "start_asr",
-    STOP_ASR: "stop_asr",
-    RECOGNIZE_VOICE: "recognize_voice",
-    UNRECOGNIZE_VOICE: "unrecognize_voice",
     BOOK_START: "book_start",
     BOOK_END: "book_end",
     PAGE_CHANGE: "page_change",
@@ -22,29 +17,16 @@ this.PJC = this.PJC || {}; //Global var for SDK, all functions put inside it.
     PRESS_WT: "press_wt",
     RELEASE_WT: "release_wt",
     READ_START: "read_start", //use this for generic read: local file, tts, cloud...
-    READ_END: "read_end",
-    TTS_READ_START: "tts_read_start",
-    TTS_READ_END: "tts_read_end",
-    AI_SPEAK_START: "ai_speak_start",
-    AI_SPEAK_END: "ai_speak_start",
-    AI_LR_START: "ai_lr_start",
-    AI_LR_END: "ai_lr_start",
-    SOUND_START: "sound_start",
-    SOUND_END: "sound_end",
+    READ_END: "read_end"
   };
   // action names
   PJC.actionNames = {
     VOICE_INPUT: "voice_input",
-    ANIMATION: "animation",
-    READ: "read",
-    AI_SPEAK: "ai_speak",
-    AI_LISTEN_AND_RESPONSE: "ai_listen_and_response",
+    ANIMATION: "animation"
   };
 
   PJC.voiceInputMode = {
-    DEFAULT: "default",
-    AILR: "ailr",
-    MULTI: "multi",
+    DEFAULT: "default"
   };
 
   PJC.playbook = {}; // pages with actions in order
@@ -116,103 +98,17 @@ PJC.talkToNative = function (topic, data) {
   // for web browsers,  do nothing.
 };
 
-// playing "movie clips" (easyjs) rather than tween
-// cb is for finish call, playing time have to be specified
+// Play js clip (e.g., highlighting)
+// Need to adopter to different format
 PJC.playClip = function (obj, time, cb) {
-  obj.gotoAndPlay(0);
+  //  play obj here
   setTimeout(function () {
-    obj.stop();
+    //  stop obj here
     cb();
   }, time);
 };
 
-//TODO: consider video in canvas
-//name is the html element id of the video tag
-// !The video feature has canvas issue, only for beta purpose
-PJC.playVideo = function (name, cb) {
-  setTimeout(function () {
-    //prepare style, based on adobe animate createjs canvas html5 format
-    let container = document.querySelector("#dom_overlay_container>div");
-    container.style.width = "100%";
-    container.style.height = "75%";
-    container.style.top = "12.5%";
-    container.style.bottom = "12.5%";
 
-    let v = document.querySelector("#" + name);
-    //TODO: check if v is a video
-    v.style.width = "100%";
-    v.style.height = "100%";
-    v.style.display = "block";
-    v.addEventListener("ended", cb, false);
-    v.play();
-  });
-};
-
-PJC.stopVideos = function () {
-  document.querySelectorAll("video").forEach((v) => {
-    v.pause();
-    v.currentTime = 0;
-    v.style.display = "none";
-  });
-};
-
-PJC.resetTweens = function () {
-  PJC.viewingTweens.forEach((item) => {
-    if (item.gotoAndStop) item.gotoAndStop(0);
-  });
-  PJC.viewingTweens = [];
-};
-
-PJC.stimulateRecognized = function () {
-  let message = JSON.stringify({
-    topic: "get_asr_result",
-    data: {
-      similarity: 0.8,
-      confidence: 0.5,
-    },
-  });
-  window.postMessage(message);
-};
-
-PJC.stimulatePartialRecognized = function () {
-  let message = JSON.stringify({
-    topic: "get_asr_result",
-    data: {
-      mode: PJC.voiceInputMode.MULTI,
-      similarityOfOptions: {
-        a: 0.8,
-        b: 0.6,
-        c: 0.3,
-        d: 0.1,
-      },
-      confidence: 0.6,
-    },
-  });
-  window.postMessage(message);
-};
-
-PJC.stimulateNluWithParamRecognized = function () {
-  let message = JSON.stringify({
-    topic: "get_asr_result",
-    data: {
-      mode: "nlu",
-      intent: "move",
-      entity: ["100", "200"],
-    },
-  });
-  window.postMessage(message);
-};
-
-PJC.stimulateUnrecognized = function () {
-  let message = JSON.stringify({
-    topic: "get_asr_result",
-    data: {
-      similarity: 0.3,
-      confidence: 0.5,
-    },
-  });
-  window.postMessage(message);
-};
 
 PJC.utoa = function (data) {
   // Encode the string to Base64 with URL encoding
@@ -235,17 +131,6 @@ PJC.testAction = function (actionName) {
   } else {
     console.error("No such action");
   }
-};
-
-PJC.getActionParam = function (name, index) {
-  if (PJC.nluContext && PJC.nluContext[name]) {
-    if (index === undefined) {
-      return PJC.nluContext[name];
-    } else {
-      return PJC.nluContext[name][index];
-    }
-  }
-  return null;
 };
 
 // finite state machine https://github.com/jakesgordon/javascript-state-machine
@@ -931,35 +816,6 @@ PJC.voiceInputActionHandler = function (name, action) {
   return rxjs.concat(startListen, waitInput);
 };
 
-// more action handels for chatgpt integration
-// PJC.readActionHandler = function (name, action) {
-//   "use strict";
-//   // Send text to tss engine once fire the action
-//   const tts = new rxjs.Observable((subscriber) => {
-//     setTimeout(function () {
-//       console.log("TTS read action:" + name);
-//       // send message to native to start tts read
-//       PJC.talkToNative(PJC.constants.TTS_READ_START, action.data);
-//       subscriber.next(name);
-//       subscriber.complete();
-//     }, PJC.config.tts_start_delay);
-//   });
-
-//   //start tts read, then wait until receive the finish singal or timeout
-//   const ttsf = PJC.ttsf$.pipe(
-//     rxjs.operators.tap(console.log),
-//     rxjs.operators.first()
-//   );
-
-//   const erx = new rxjs.Observable((subscriber) => {
-//     setTimeout(function () {
-//       subscriber.next(name);
-//       subscriber.complete();
-//     }, PJC.config.tts_gap);
-//   });
-
-//   return rxjs.concat(tts, ttsf, erx);
-// };
 
 // generic read
 PJC.readActionHandler = function (name, action) {
@@ -1108,16 +964,6 @@ PJC.playActions = function (arr) {
             action.data.mode = PJC.voiceInputMode.DEFAULT;
           }
           actionChain.push(PJC.voiceInputActionHandler(item, action));
-        } else if (PJC.actions[item].type == PJC.actionNames.READ) {
-          actionChain.push(PJC.readActionHandler(item, PJC.actions[item]));
-        } else if (PJC.actions[item].type == PJC.actionNames.AI_SPEAK) {
-          actionChain.push(PJC.aiSpeakActionHandler(item, PJC.actions[item]));
-        } else if (
-          PJC.actions[item].type == PJC.actionNames.AI_LISTEN_AND_RESPONSE
-        ) {
-          actionChain.push(
-            PJC.aiListenAndResponseActionHandler(item, PJC.actions[item])
-          );
         } else {
           actionChain.push(PJC.unknownActionHandler(item, PJC.actions[item]));
         }

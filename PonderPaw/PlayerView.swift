@@ -29,6 +29,8 @@ struct PlayerView: View {
                     .background(Color.blue.opacity(0.7))
                     .foregroundColor(.white)
                     .cornerRadius(8)
+                    .opacity(0) // Makes it invisible
+                    .accessibility(hidden: false)
             }
             .padding()
         }
