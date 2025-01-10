@@ -1,0 +1,67 @@
+{
+    "meta": {
+        "book_id": "8e28a441-7be5-40b0-a9b5-f207a8977197",
+        "book_name": "The Three Little Pigs",
+        "language": "en-US",
+        "age_group": "4+",
+        "voice_engine": "native",
+        "default_mode": "interactive",
+        "base_context": "You are telling three little pigs"
+    },
+    "playbookOrder": [
+        "cover",
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8",
+        "p9",
+        "p10",
+        "p11",
+        "p12",
+        "p13",
+        "p14",
+        "p15",
+        "p16",
+        "p17",
+        "p18",
+        "p19",
+        "p20"
+    ],
+    "playbook": {
+        "cover": [],
+        "p1": [
+            "P1A1"
+        ],
+        "p2": [
+            "P2A1"
+        ],
+        "p3": [
+            "P3A1"
+        ]
+    },
+    "actions": {
+        "P1A1": {
+            "type": "agent",
+            "data": {
+                "context": "Once upon a time there was an old mother pig"
+            }
+        },
+        "P1A2": {
+            "type": "agent",
+            "data": {
+                "context": "who had three little pigs"
+            }
+        },
+        "P1A3": {
+            "type": "agent",
+            "data": {
+                "context": "and not enough food to feed them"
+            }
+        }
+    },
+    "sounds": {}
+}

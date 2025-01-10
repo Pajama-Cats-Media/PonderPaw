@@ -7,6 +7,9 @@ struct WebContentView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
+        
+        // Disable user interaction
+        webView.isUserInteractionEnabled = false
 
         // Enable Safari Web Inspector
         #if DEBUG
