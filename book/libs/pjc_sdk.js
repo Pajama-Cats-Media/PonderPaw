@@ -12,12 +12,6 @@ this.PJC = this.PJC || {}; //Global var for SDK, all functions put inside it.
     PAGE_PLAY: "page_play",
     NEXT_PAGE: "next_page",
     PREV_PAGE: "prev_page",
-    READY_WT: "ready_wt", //"ready speak" in FSM. ready for press and talk (only for walie talkie mode)
-    STOP_WT: "stop_wt",
-    PRESS_WT: "press_wt",
-    RELEASE_WT: "release_wt",
-    READ_START: "read_start", //use this for generic read: local file, tts, cloud...
-    READ_END: "read_end"
   };
   // action names
   PJC.actionNames = {
@@ -118,19 +112,6 @@ PJC.utoa = function (data) {
 PJC.atou = function (base64) {
   // Decode the Base64 string and URL decode it
   return decodeURIComponent(atob(base64));
-};
-
-
-PJC.testAction = function (actionName) {
-  if (actionName && PJC.actions[actionName]) {
-    PJC.animationActionHandler(actionName, PJC.actions[actionName]).subscribe(
-      () => {
-        console.log("Test to run the action: " + actionName);
-      }
-    );
-  } else {
-    console.error("No such action");
-  }
 };
 
 // finite state machine https://github.com/jakesgordon/javascript-state-machine
