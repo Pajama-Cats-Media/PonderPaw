@@ -89,7 +89,7 @@ this.PJC = this.PJC || {}; //Global var for SDK, all functions put inside it.
     act_delay: 500,
     extra_processing: 2000,
     default_playbook: "default",
-    default_language: "en_us",
+    default_language: "en-us",
     default_mode: "wt",
     no_action_wait: 3000,
     retry_factor: 0.1,
@@ -213,6 +213,17 @@ PJC.stimulateUnrecognized = function () {
   });
   window.postMessage(message);
 };
+
+PJC.utoa = function (data) {
+  // Encode the string to Base64 with URL encoding
+  return btoa(encodeURIComponent(data));
+};
+
+PJC.atou = function (base64) {
+  // Decode the Base64 string and URL decode it
+  return decodeURIComponent(atob(base64));
+};
+
 
 PJC.testAction = function (actionName) {
   if (actionName && PJC.actions[actionName]) {
@@ -1273,7 +1284,11 @@ PJC.loadBook = function (book) {
   // partition into asr and control streams
   const source$ = rxjs
     .fromEvent(window, "message")
-    .pipe(rxjs.operators.map((event) => JSON.parse(event.data)));
+    .pipe(
+          rxjs.operators.tap((event) => console.log("Raw event:", event.data)),
+          rxjs.operators.map((event) => JSON.parse(PJC.atou(event.data))),
+          rxjs.operators.tap((parsedData) => console.log("Parsed data:", parsedData)) // Log the parsed data
+    );
 
   // seperate messages by topics
   const [asr$, temp$] = source$.pipe(

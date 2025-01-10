@@ -9,15 +9,19 @@ import SwiftUI
 struct PlayerView: View {
     let url: URL
     private let webEventController = WebEventController() // Shared event controller
-
+    
     var body: some View {
         ZStack {
             // Underlying WebView
             WebContentView(url: url, eventController: webEventController)
-
+            
             // Button overlay to send a throttled event
             Button(action: {
-                let message = "Button clicked at \(Date())"
+                let message  = #"""
+{
+  "topic": "next_page"
+}
+"""#
                 webEventController.sendEvent(message) // Send event using the shared controller
             }) {
                 Text("Click Anywhere")

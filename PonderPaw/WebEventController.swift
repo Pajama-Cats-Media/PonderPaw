@@ -18,7 +18,7 @@ class WebEventController {
 
     /// Adds a new event to the stream
     func sendEvent(_ message: String) {
-        throttledEventStream.onNext(Base64Utils.utoa(data:message) ?? "")
+        throttledEventStream.onNext(message)
     }
 
     /// Subscribes to the throttled event stream
