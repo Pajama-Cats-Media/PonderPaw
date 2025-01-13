@@ -24,6 +24,33 @@ struct ContentView: View {
         }
         .onAppear {
             startLocalServer()
+            
+            let jsonManifest = """
+            {
+              "pages": [
+                {
+                  "pageNumber": 1,
+                  "actions": [
+                    {"type": "read", "content": "Once upon a time..."},
+                    {"type": "suggestion", "content": "Think about the main character."}
+                  ]
+                },
+                {
+                  "pageNumber": 2,
+                  "actions": [
+                    {"type": "read", "content": "The cat jumped over the moon."},
+                    {"type": "suggestion", "content": "Why do you think the cat jumped?"}
+                  ]
+                }
+              ]
+            }
+            """
+
+            let coPilot = ReadingCoPilot()
+            coPilot.loadJson(jsonManifest: jsonManifest) // Create the observable chain
+            coPilot.startReading() // Subscribe to start the flow
+            
+            
         }
         .onDisappear {
             stopLocalServer()

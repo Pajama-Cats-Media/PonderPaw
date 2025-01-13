@@ -11,6 +11,7 @@
 		CD0CE5782D30512300E75B7B /* book in Resources */ = {isa = PBXBuildFile; fileRef = CD0CE5772D30512300E75B7B /* book */; };
 		CD0CE57B2D305CD900E75B7B /* PerfectHTTPServer in Frameworks */ = {isa = PBXBuildFile; productRef = CD0CE57A2D305CD900E75B7B /* PerfectHTTPServer */; };
 		CD0CE5842D306FDD00E75B7B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CD0CE5832D306FDD00E75B7B /* RxSwift */; };
+		CD0CE5B02D35644E00E75B7B /* GameplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0CE5AF2D35644D00E75B7B /* GameplayKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		CD0CD3F52D2C679200E75B7B /* PonderPawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PonderPawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD0CD3FF2D2C679200E75B7B /* PonderPawUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PonderPawUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD0CE5772D30512300E75B7B /* book */ = {isa = PBXFileReference; lastKnownFileType = folder; path = book; sourceTree = "<group>"; };
+		CD0CE5AF2D35644D00E75B7B /* GameplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameplayKit.framework; path = System/Library/Frameworks/GameplayKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD0CE5B02D35644E00E75B7B /* GameplayKit.framework in Frameworks */,
 				CD0CE5842D306FDD00E75B7B /* RxSwift in Frameworks */,
 				CD0CD4602D2C791F00E75B7B /* ElevenLabsSDK in Frameworks */,
 				CD0CE57B2D305CD900E75B7B /* PerfectHTTPServer in Frameworks */,
@@ -122,6 +125,7 @@
 		CD0CD4242D2C69E500E75B7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD0CE5AF2D35644D00E75B7B /* GameplayKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
