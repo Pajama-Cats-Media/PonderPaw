@@ -3,13 +3,13 @@ import RxSwift
 
 class ReadActionHandler: NSObject {
     private var audioPlayer: AVAudioPlayer?
-    private var playbackCompletion: (() -> Void)? // Closure to notify playback completion
     private let speechSynthesizer = AVSpeechSynthesizer()
+    private var playbackCompletion: (() -> Void)?
 
     func read(action: [String: Any]) -> Observable<Void> {
         return Observable<Void>.create { observer in
             if let audioFile = action["audio"] as? String {
-                // Construct the path using Bundle
+                // Play audio file
                 guard let filePath = Bundle.main.path(forResource: audioFile, ofType: nil, inDirectory: "book/sounds/en-US") else {
                     print("Audio file not found: \(audioFile)")
                     observer.onCompleted()
@@ -30,13 +30,10 @@ class ReadActionHandler: NSObject {
                 }
 
                 return Disposables.create {
-                    // Stop playback and clear resources if the observer is disposed
-                    self.audioPlayer?.stop()
-                    self.audioPlayer = nil
-                    self.playbackCompletion = nil
+                    self.stopAudioPlayback()
                 }
             } else if let content = action["content"] as? String {
-                // Use TTS to read the content
+                // Use TTS
                 let utterance = AVSpeechUtterance(string: content)
                 utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                 self.speechSynthesizer.delegate = self
@@ -47,26 +44,41 @@ class ReadActionHandler: NSObject {
                 self.speechSynthesizer.speak(utterance)
 
                 return Disposables.create {
-                    // Stop TTS and clear resources if the observer is disposed
-                    self.speechSynthesizer.stopSpeaking(at: .immediate)
-                    self.playbackCompletion = nil
+                    self.stopTTSPlayback()
                 }
             } else {
                 print("Invalid action: missing both 'audio' and 'content' fields.")
-                observer.onError(NSError(domain: "ReadActionHandler", code: 400, userInfo: [NSLocalizedDescriptionKey: "Missing 'audio' and 'content' fields"]))
+                observer.onCompleted() // Complete even for invalid action
                 return Disposables.create()
             }
         }
     }
+
+    private func stopAudioPlayback() {
+        if let player = audioPlayer {
+            player.stop()
+            audioPlayer = nil
+        }
+        playbackCompletion = nil
+    }
+
+    private func stopTTSPlayback() {
+        speechSynthesizer.stopSpeaking(at: .immediate)
+        playbackCompletion = nil
+    }
 }
 
-extension ReadActionHandler: AVAudioPlayerDelegate, AVSpeechSynthesizerDelegate {
+// MARK: - AVAudioPlayerDelegate
+extension ReadActionHandler: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("Audio playback finished with success: \(flag)")
         playbackCompletion?()
         playbackCompletion = nil
     }
+}
 
+// MARK: - AVSpeechSynthesizerDelegate
+extension ReadActionHandler: AVSpeechSynthesizerDelegate {
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         print("TTS playback finished successfully.")
         playbackCompletion?()

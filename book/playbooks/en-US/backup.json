@@ -19,14 +19,34 @@
                 "pageNumber": 2,
                 "actions": [
                     {
-                        "type": "suggestion",
+                        "type": "read",
                         "content": "Once upon a time there was an old mother pig",
                         "audio": "f71e3275-9e3d-5a52-bfcc-89108e7bec33.mp3"
                     },
                     {
-                        "type": "suggestion",
+                        "type": "read",
                         "content": "who had three little pigs",
                         "audio": "db4ad9f9-8e5f-58e9-bf36-91abca7ad80c.mp3"
+                    },
+                    {
+                        "type": "read",
+                        "content": "and not enough food to feed them.",
+                        "audio": "e6d75bda-facf-510c-b111-177dad2dcaf7.mp3"
+                    },
+                    {
+                        "type": "read",
+                        "content": "So when they were old enough,",
+                        "audio": "ad5fa894-fe78-5070-81ab-013ae7618176.mp3"
+                    },
+                    {
+                        "type": "read",
+                        "content": "she sent them out into the world",
+                        "audio": "1036fc59-c989-5e97-9c49-4a1219de82d8.mp3"
+                    },
+                    {
+                        "type": "read",
+                        "content": "to seek their fortunes.",
+                        "audio": "92c9d5f9-ac30-5266-977a-9c1ef136733e.mp3"
                     }
                 ]
             },

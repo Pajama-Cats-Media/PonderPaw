@@ -103,41 +103,66 @@ class CoPilot {
             stateMachine.enter(ActionState.self)
             logStateChange()
         }
-        
-        print("Processing \(actions.count) actions...")
-        
-        return Observable.from(actions.enumerated()) // Process each action sequentially
+
+        print("Processing \(actions.count) actions sequentially...")
+
+        // Ensure each action is processed sequentially using concatMap
+        return Observable.from(actions.enumerated())
             .concatMap { index, action -> Observable<Void> in
+                // Log the action index and details
                 if let type = action["type"] as? String, let content = action["content"] as? String {
                     print("Processing Action \(index + 1): [Type: \(type.uppercased()), Content: \(content)]")
                 } else {
                     print("Processing Action \(index + 1): [Invalid action data]")
                 }
+
+                // Perform the action
                 return self.performAction(action)
+                    .do(onDispose: {
+                        print("Completed Action \(index + 1).")
+                    })
             }
-            .do(onSubscribe: {
-                print("Action processing started.")
-            }, onDispose: {
-                print("Action processing completed.")
-            })
+            .do(
+                onSubscribe: {
+                    print("Started processing actions sequentially...")
+                },
+                onDispose: {
+                    print("All actions completed.")
+                }
+            )
     }
+
     
     private func performAction(_ action: [String: Any]) -> Observable<Void> {
         guard let type = action["type"] as? String else {
+            print("Action has no type. Skipping.")
             return Observable.empty()
         }
-        
+
         if type == "read" {
+            // Extract content and audio usage details for logging
+            let content = action["content"] as? String ?? "No content provided"
+            let isAudioEnabled = ((action["audio"] as? String)?.isEmpty == false)
+            
+            // Use the readActionHandler and ensure it completes properly
             return readActionHandler.read(action: action)
+                .do(onSubscribe: {
+                    print("Started Action: [Type: READ], Content: \"\(content)\", Audio Enabled: \(isAudioEnabled ? "Yes" : "No")")
+                }, onDispose: {
+                    print("Completed Action: [Type: READ], Content: \"\(content)\"")
+                })
         } else {
+            // Simulate a delay for other actions
             return Observable<Void>.create { observer in
-                DispatchQueue.global().asyncAfter(deadline: .now() + self.ACTION_DELAY_TIME) { // Use constant for delay
+                DispatchQueue.global().asyncAfter(deadline: .now() + self.ACTION_DELAY_TIME) {
+                    print("Completed Action: [Type: \(type.uppercased())]")
                     observer.onCompleted()
                 }
                 return Disposables.create()
             }
         }
     }
+
     
     private func markCompletion() {
         if !hasCompleted {
