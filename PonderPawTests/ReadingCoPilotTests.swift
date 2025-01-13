@@ -11,22 +11,32 @@ final class CoPilotTests: XCTestCase {
     var coPilot: CoPilot!
     let testJson = """
     {
-      "pages": [
-        {
-          "pageNumber": 1,
-          "actions": [
-            {"type": "read", "content": "Once upon a time...", "audio": "0dbdbb39-6ff6-55a2-a436-0da2d017c126.mp3"},
-            {"type": "suggestion", "content": "Think about the main character."}
-          ]
+        "meta": {
+            "book_id": "8e28a441-7be5-40b0-a9b5-f207a8977197",
+            "book_name": "The Three Little Pigs",
+            "language": "en-US",
+            "age_group": "4+",
+            "voice_engine": "native",
+            "default_mode": "interactive"
         },
-        {
-          "pageNumber": 2,
-          "actions": [
-            {"type": "read", "content": "The cat jumped over the moon."},
-            {"type": "suggestion", "content": "Why do you think the cat jumped?"}
-          ]
+        "playbook": {
+            "pages": [
+                {
+                    "pageNumber": 1,
+                    "actions": [
+                        {"type": "read", "content": "Once upon a time...", "audio": "0dbdbb39-6ff6-55a2-a436-0da2d017c126.mp3"},
+                        {"type": "suggestion", "content": "Think about the main character."}
+                    ]
+                },
+                {
+                    "pageNumber": 2,
+                    "actions": [
+                        {"type": "read", "content": "The cat jumped over the moon."},
+                        {"type": "suggestion", "content": "Why do you think the cat jumped?"}
+                    ]
+                }
+            ]
         }
-      ]
     }
     """
 
