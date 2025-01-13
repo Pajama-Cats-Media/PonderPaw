@@ -6,7 +6,6 @@ struct ContentView: View {
     private let server = LocalHTTPServer()
     private let webEventController = WebEventController() // Shared event controller
     
-    
     var body: some View {
         ZStack {
             if isServerStarting {
@@ -24,33 +23,16 @@ struct ContentView: View {
         }
         .onAppear {
             startLocalServer()
-            
-            let jsonManifest = """
-            {
-              "pages": [
-                {
-                  "pageNumber": 1,
-                  "actions": [
-                    {"type": "read", "content": "Once upon a time...", "audio": "0dbdbb39-6ff6-55a2-a436-0da2d017c126.mp3"},
-                    {"type": "suggestion", "content": "Think about the main character."}
-                  ]
-                },
-                {
-                  "pageNumber": 2,
-                  "actions": [
-                    {"type": "read", "content": "The cat jumped over the moon."},
-                    {"type": "suggestion", "content": "Why do you think the cat jumped?"}
-                  ]
+                
+                if let jsonManifest = loadJsonManifest() {
+                    
+                    let coPilot = CoPilot()
+                    coPilot.loadJson(jsonManifest: jsonManifest) // Create the observable chain
+                    coPilot.startReading() // Subscribe to start the flow
+                    
+                } else {
+                    print("Failed to load JSON manifest.")
                 }
-              ]
-            }
-            """
-
-            let coPilot = CoPilot()
-            coPilot.loadJson(jsonManifest: jsonManifest) // Create the observable chain
-            coPilot.startReading() // Subscribe to start the flow
-            
-            
         }
         .onDisappear {
             stopLocalServer()
@@ -85,6 +67,21 @@ struct ContentView: View {
     
     private func stopLocalServer() {
         server.stopServer()
+    }
+    
+    private func loadJsonManifest() -> String? {
+        guard let filePath = Bundle.main.path(forResource: "default", ofType: "json", inDirectory: "book/playbooks/en-US") else {
+            print("Failed to locate 'default.json' in 'book/playbooks/en-US' directory.")
+            return nil
+        }
+        
+        do {
+            let jsonData = try String(contentsOfFile: filePath, encoding: .utf8)
+            return jsonData
+        } catch {
+            print("Failed to read JSON file: \(error.localizedDescription)")
+            return nil
+        }
     }
 }
 

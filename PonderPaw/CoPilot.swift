@@ -27,9 +27,11 @@ class CoPilot {
         // Parse JSON
         guard let data = jsonManifest.data(using: .utf8),
               let parsed = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-              let pages = parsed["pages"] as? [[String: Any]] else {
+              let playbook = parsed["playbook"] as? [String: Any],
+              let pages = playbook["pages"] as? [[String: Any]] else {
             fatalError("Invalid JSON manifest.")
         }
+        
         self.pages = pages
         print("JSON manifest loaded. \(pages.count) pages found.")
 

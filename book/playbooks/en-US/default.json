@@ -12,15 +12,28 @@
             {
                 "pageNumber": 1,
                 "actions": [
-                    {"type": "read", "content": "Once upon a time...", "audio": "0dbdbb39-6ff6-55a2-a436-0da2d017c126.mp3"},
-                    {"type": "suggestion", "content": "Think about the main character."}
+                    {
+                        "type": "read",
+                        "content": "Once upon a time...",
+                        "audio": "0dbdbb39-6ff6-55a2-a436-0da2d017c126.mp3"
+                    },
+                    {
+                        "type": "suggestion",
+                        "content": "Think about the main character."
+                    }
                 ]
             },
             {
                 "pageNumber": 2,
                 "actions": [
-                    {"type": "read", "content": "The cat jumped over the moon."},
-                    {"type": "suggestion", "content": "Why do you think the cat jumped?"}
+                    {
+                        "type": "read",
+                        "content": "The cat jumped over the moon."
+                    },
+                    {
+                        "type": "suggestion",
+                        "content": "Why do you think the cat jumped?"
+                    }
                 ]
             }
         ]
