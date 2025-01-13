@@ -8,21 +8,22 @@ class CoPilot {
     private let disposeBag = DisposeBag()
     private var readingObservable: Observable<Void>?
     private var hasCompleted = false // Flag to prevent redundant logs
-
+    private let readActionHandler = ReadActionHandler() // ReadActionHandler instance
+    
     init() {
         // Initialize FSM states
         let startState = StartState()
         let pageReadyState = PageReadyState()
         let actionState = ActionState()
         let finishState = FinishState()
-
+        
         stateMachine = GKStateMachine(states: [startState, pageReadyState, actionState, finishState])
-
+        
         // Enter the initial state
         stateMachine.enter(StartState.self)
         logStateChange()
     }
-
+    
     func loadJson(jsonManifest: String) {
         // Parse JSON
         guard let data = jsonManifest.data(using: .utf8),
@@ -34,7 +35,7 @@ class CoPilot {
         
         self.pages = pages
         print("JSON manifest loaded. \(pages.count) pages found.")
-
+        
         // Create the observable chain for reading
         readingObservable = Observable.from(pages.enumerated()) // Process each page sequentially
             .concatMap { [weak self] index, page -> Observable<Void> in
@@ -47,28 +48,28 @@ class CoPilot {
                 self?.markCompletion()
             })
     }
-
+    
     func startReading() {
         guard let observable = readingObservable else {
             print("No reading observable available. Ensure JSON is loaded before starting.")
             return
         }
-
+        
         // Subscribe to the observable to start processing
         observable
             .subscribe()
             .disposed(by: disposeBag)
     }
-
+    
     private func processPage(_ page: [String: Any], index: Int) -> Observable<Void> {
         if stateMachine.canEnterState(PageReadyState.self) {
             stateMachine.enter(PageReadyState.self)
             logStateChange()
             (stateMachine.currentState as? PageReadyState)?.configure(with: page)
         }
-
+        
         print("Processing Page \(index + 1)...")
-
+        
         // Process actions for the page
         if let actions = page["actions"] as? [[String: Any]], !actions.isEmpty {
             return processActions(actions)
@@ -80,15 +81,15 @@ class CoPilot {
             return Observable.empty()
         }
     }
-
+    
     private func processActions(_ actions: [[String: Any]]) -> Observable<Void> {
         if stateMachine.canEnterState(ActionState.self) {
             stateMachine.enter(ActionState.self)
             logStateChange()
         }
-
+        
         print("Processing \(actions.count) actions...")
-
+        
         return Observable.from(actions.enumerated()) // Process each action sequentially
             .concatMap { index, action -> Observable<Void> in
                 if let type = action["type"] as? String, let content = action["content"] as? String {
@@ -104,22 +105,25 @@ class CoPilot {
                 print("Action processing completed.")
             })
     }
-
+    
     private func performAction(_ action: [String: Any]) -> Observable<Void> {
-        return Observable<Void>.create { observer in
-            guard let type = action["type"] as? String, let content = action["content"] as? String else {
-                observer.onCompleted()
+        guard let type = action["type"] as? String else {
+            return Observable.empty()
+        }
+        
+        if type == "read" {
+            return readActionHandler.read(action: action)
+        } else {
+            return Observable<Void>.create { observer in
+                DispatchQueue.global().asyncAfter(deadline: .now() + 3) { // Simulate 3-second delay for other actions
+                    observer.onCompleted()
+                }
                 return Disposables.create()
             }
-
-            print("[\(type.uppercased())]: \(content)")
-            DispatchQueue.global().asyncAfter(deadline: .now() + 3) { // Simulate 3-second delay for action execution
-                observer.onCompleted()
-            }
-            return Disposables.create()
         }
     }
-
+    
+    
     private func markCompletion() {
         if !hasCompleted {
             print("Reading completed.")
@@ -128,7 +132,7 @@ class CoPilot {
             logStateChange()
         }
     }
-
+    
     private func logStateChange() {
         guard let currentState = stateMachine.currentState else {
             print("State machine is not in a valid state.")
