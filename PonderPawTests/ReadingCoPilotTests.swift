@@ -15,7 +15,7 @@ final class CoPilotTests: XCTestCase {
         {
           "pageNumber": 1,
           "actions": [
-            {"type": "read", "content": "Once upon a time..."},
+            {"type": "read", "content": "Once upon a time...", "audio": "0dbdbb39-6ff6-55a2-a436-0da2d017c126.mp3"},
             {"type": "suggestion", "content": "Think about the main character."}
           ]
         },
@@ -51,7 +51,7 @@ final class CoPilotTests: XCTestCase {
         super.tearDown()
     }
 
-    func testReadingCoPilotProcessesPagesAndActionsCorrectly() {
+    func testCoPilotProcessesPagesAndActionsCorrectly() {
         // Load the JSON manifest
         coPilot.loadJson(jsonManifest: testJson)
 

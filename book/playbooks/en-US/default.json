@@ -7,66 +7,22 @@
         "voice_engine": "native",
         "default_mode": "interactive"
     },
-    "playbookOrder": [
-        "cover",
-        "p1",
-        "p2",
-        "p3",
-        "p4",
-        "p5",
-        "p6",
-        "p7",
-        "p8",
-        "p9",
-        "p10",
-        "p11",
-        "p12",
-        "p13",
-        "p14",
-        "p15",
-        "p16",
-        "p17",
-        "p18",
-        "p19",
-        "p20"
-    ],
     "playbook": {
-        "cover": [],
-        "p1": [
-            "P1A1"
-        ],
-        "p2": [
-            "P2A1"
-        ],
-        "p3": [
-            "P3A1"
+        "pages": [
+            {
+                "pageNumber": 1,
+                "actions": [
+                    {"type": "read", "content": "Once upon a time...", "audio": "0dbdbb39-6ff6-55a2-a436-0da2d017c126.mp3"},
+                    {"type": "suggestion", "content": "Think about the main character."}
+                ]
+            },
+            {
+                "pageNumber": 2,
+                "actions": [
+                    {"type": "read", "content": "The cat jumped over the moon."},
+                    {"type": "suggestion", "content": "Why do you think the cat jumped?"}
+                ]
+            }
         ]
-    },
-    "actions": {
-        "P1A1": {
-            "type": "read",
-            "data": {
-                "text": "Once upon a time there was an old mother pig",
-                "type": "file",
-                "id": "f71e3275-9e3d-5a52-bfcc-89108e7bec33"
-            }
-        },
-        "P1A2": {
-            "type": "read",
-            "data": {
-                "text": "who had three little pigs",
-                "type": "file",
-                "id": "db4ad9f9-8e5f-58e9-bf36-91abca7ad80c"
-            }
-        },
-        "P1A3": {
-            "type": "read",
-            "data": {
-                "text": "and not enough food to feed them.",
-                "type": "file",
-                "id": "e6d75bda-facf-510c-b111-177dad2dcaf7"
-            }
-        }
-    },
-    "sounds": {}
+    }
 }
