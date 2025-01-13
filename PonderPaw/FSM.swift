@@ -20,7 +20,7 @@ class StartState: GKState {
 }
 
 class PageReadyState: GKState {
-    weak var coPilot: ReadingCoPilot?
+    
     var page: [String: Any]?
 
     func configure(with page: [String: Any]) {
@@ -38,7 +38,6 @@ class PageReadyState: GKState {
 }
 
 class ActionState: GKState {
-    weak var coPilot: ReadingCoPilot?
 
     override func didEnter(from previousState: GKState?) {
         print("Entered ActionState. Waiting for ReadingCoPilot to execute actions.")

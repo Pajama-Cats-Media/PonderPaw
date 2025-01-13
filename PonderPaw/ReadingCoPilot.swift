@@ -2,7 +2,7 @@ import Foundation
 import GameplayKit
 import RxSwift
 
-class ReadingCoPilot {
+class CoPilot {
     public let stateMachine: GKStateMachine
     public var pages: [[String: Any]] = []
     private let disposeBag = DisposeBag()
@@ -17,10 +17,6 @@ class ReadingCoPilot {
         let finishState = FinishState()
 
         stateMachine = GKStateMachine(states: [startState, pageReadyState, actionState, finishState])
-
-        // Assign `coPilot` to states
-        pageReadyState.coPilot = self
-        actionState.coPilot = self
 
         // Enter the initial state
         stateMachine.enter(StartState.self)

@@ -7,8 +7,8 @@
 import XCTest
 @testable import PonderPaw
 
-final class ReadingCoPilotTests: XCTestCase {
-    var coPilot: ReadingCoPilot!
+final class CoPilotTests: XCTestCase {
+    var coPilot: CoPilot!
     let testJson = """
     {
       "pages": [
@@ -43,7 +43,7 @@ final class ReadingCoPilotTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        coPilot = ReadingCoPilot()
+        coPilot = CoPilot()
     }
 
     override func tearDown() {

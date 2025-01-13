@@ -46,7 +46,7 @@ struct ContentView: View {
             }
             """
 
-            let coPilot = ReadingCoPilot()
+            let coPilot = CoPilot()
             coPilot.loadJson(jsonManifest: jsonManifest) // Create the observable chain
             coPilot.startReading() // Subscribe to start the flow
             
