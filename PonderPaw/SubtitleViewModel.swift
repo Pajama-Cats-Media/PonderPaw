@@ -7,7 +7,6 @@ class SubtitleViewModel: ObservableObject {
     private let model: SubtitleModel
     private var timer: Timer?
     private var startTime: Date?
-    private var cancellables: Set<AnyCancellable> = []
 
     init(model: SubtitleModel) {
         self.model = model
@@ -15,10 +14,11 @@ class SubtitleViewModel: ObservableObject {
 
     func startPlayback() {
         guard model.isValid else {
-            print("Invalid subtitle data.")
+            AppLogger.shared.logError(category: "subtitle", message: "Invalid subtitle data.")
             return
         }
 
+        AppLogger.shared.logError(category: "subtitle", message: "Starting subtitle playback...")
         startTime = Date()
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
             self?.updateSubtitle()
@@ -28,11 +28,13 @@ class SubtitleViewModel: ObservableObject {
     func stopPlayback() {
         timer?.invalidate()
         timer = nil
+        AppLogger.shared.logError(category: "subtitle", message: "Subtitle playback stopped.")
     }
 
     private func updateSubtitle() {
         guard let startTime = startTime else { return }
         let elapsedTime = Date().timeIntervalSince(startTime)
         currentSubtitle = model.getSubtitleText(at: elapsedTime)
+        AppLogger.shared.logError(category: "subtitle", message: "Current Subtitle Updated: \(currentSubtitle)")
     }
 }
