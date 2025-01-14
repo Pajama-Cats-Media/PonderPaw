@@ -103,33 +103,30 @@ class CoPilot {
             stateMachine.enter(ActionState.self)
             logStateChange()
         }
-        
-        print("Processing \(actions.count) actions sequentially...")
-        
+
+        AppLogger.shared.logInfo(category: "playbook", message: "Processing \(actions.count) actions sequentially...")
+
         // Ensure each action is processed sequentially using concatMap
         return Observable.from(actions.enumerated())
             .concatMap { index, action -> Observable<Void> in
-                // Log the action index and details
-                if let type = action["type"] as? String, let content = action["content"] as? String {
-                    print("Processing Action \(index + 1): [Type: \(type.uppercased()), Content: \(content)]")
-                } else {
-                    print("Processing Action \(index + 1): [Invalid action data]")
-                }
-                
                 // Perform the action
                 return self.performAction(action)
                     .do(onSubscribe: {
-                        print("Started Action \(index + 1).")
+                        if let type = action["type"] as? String, let content = action["content"] as? String {
+                            AppLogger.shared.logInfo(category: "playbook", message: "Started Action \(index + 1): [Type: \(type.uppercased()), Content: \(content)]")
+                        } else {
+                            AppLogger.shared.logError(category: "playbook", message: "Started Action \(index + 1): [Invalid action data]")
+                        }
                     }, onDispose: {
-                        print("Completed Action \(index + 1).")
+                        AppLogger.shared.logInfo(category: "playbook", message: "Completed Action \(index + 1).")
                     })
             }
             .do(
                 onSubscribe: {
-                    print("Started processing actions sequentially...")
+                    AppLogger.shared.logInfo(category: "playbook", message: "Started processing actions sequentially...")
                 },
                 onDispose: {
-                    print("All actions completed.")
+                    AppLogger.shared.logInfo(category: "playbook", message: "All actions completed.")
                 }
             )
     }
@@ -148,11 +145,6 @@ class CoPilot {
             
             // Use the readActionHandler and ensure it completes properly
             return readActionHandler.read(action: action)
-                .do(onSubscribe: {
-                    print("Started Action: [Type: READ], Content: \"\(content)\", Audio Enabled: \(isAudioEnabled ? "Yes" : "No")")
-                }, onDispose: {
-                    print("Completed Action: [Type: READ], Content: \"\(content)\"")
-                })
         } else {
             // Simulate a delay for other actions
             return Observable<Void>.create { observer in
