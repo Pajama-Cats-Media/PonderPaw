@@ -1,4 +1,5 @@
 import SwiftUI
+import RxSwift
 
 struct ContentView: View {
     @State private var localServerURL: URL? = nil
@@ -10,6 +11,7 @@ struct ContentView: View {
     
     private let server = LocalHTTPServer()
     private let webEventController = WebEventController() // Shared event controller
+    private let disposeBag = DisposeBag()
     
     var body: some View {
         ZStack {
@@ -37,8 +39,20 @@ struct ContentView: View {
                 if success, let jsonManifest = loadJsonManifest() {
                     let coPilot = CoPilot()
                     coPilot.loadJson(jsonManifest: jsonManifest) // Create the observable chain
+                    coPilot.subtitleEvent
+                                        .observe(on: MainScheduler.instance)
+                                        .subscribe(onNext: { subtitle in
+                                            if let chars = subtitle["chars"] as? [String],
+                                               let timings = subtitle["timing"] as? [Double] {
+                                                // Update subtitle view model
+                                                subtitleViewModel.updateSubtitles(chars: chars, timings: timings)
+                                                subtitleViewModel.startPlayback()
+                                            }
+                                        })
+                                        .disposed(by: disposeBag)
+                    
                     coPilot.startReading() // Subscribe to start the flow
-                    subtitleViewModel.startPlayback()
+                   
                 } else {
                     print("Failed to load JSON manifest.")
                 }

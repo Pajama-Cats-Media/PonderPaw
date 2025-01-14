@@ -5,6 +5,9 @@ import RxSwift
 class CoPilot {
     public let stateMachine: GKStateMachine
     public var pages: [[String: Any]] = []
+    // PublishSubject to broadcast subtitle events
+    public let subtitleEvent = PublishSubject<[String: Any]>()
+    
     private let disposeBag = DisposeBag()
     private var readingObservable: Observable<Void>?
     private var hasCompleted = false // Flag to prevent redundant logs
@@ -105,9 +108,9 @@ class CoPilot {
             stateMachine.enter(ActionState.self)
             logStateChange()
         }
-
+        
         AppLogger.shared.logInfo(category: "playbook", message: "Processing \(actions.count) actions sequentially...")
-
+        
         // Ensure each action is processed sequentially using concatMap
         return Observable.from(actions.enumerated())
             .concatMap { index, action -> Observable<Void> in
@@ -144,6 +147,12 @@ class CoPilot {
             // Extract content and audio usage details for logging
             let content = action["content"] as? String ?? "No content provided"
             let isAudioEnabled = ((action["audio"] as? String)?.isEmpty == false)
+            
+            // Update subtitle
+            if let subtitle = action["subtitle"] as? [String: Any] {
+                // Emit the subtitle data through the PublishSubject
+                subtitleEvent.onNext(subtitle)
+            }
             
             // Use the readActionHandler and ensure it completes properly
             return readActionHandler.read(action: action)
