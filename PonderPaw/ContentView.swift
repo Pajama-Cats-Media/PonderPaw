@@ -40,16 +40,23 @@ struct ContentView: View {
                     let coPilot = CoPilot()
                     coPilot.loadJson(jsonManifest: jsonManifest) // Create the observable chain
                     coPilot.subtitleEvent
-                                        .observe(on: MainScheduler.instance)
-                                        .subscribe(onNext: { subtitle in
-                                            if let chars = subtitle["chars"] as? [String],
-                                               let timings = subtitle["timing"] as? [Double] {
-                                                // Update subtitle view model
-                                                subtitleViewModel.updateSubtitles(chars: chars, timings: timings)
-                                                subtitleViewModel.startPlayback()
-                                            }
-                                        })
-                                        .disposed(by: disposeBag)
+                        .observe(on: MainScheduler.instance)
+                        .subscribe(onNext: { subtitleEvent in
+                            // Access `subtitle` and `content` directly from the `SubtitleEvent` struct
+                            let subtitle = subtitleEvent.subtitle
+                            let content = subtitleEvent.content
+                            
+                            if let chars = subtitle["chars"] as? [String],
+                               let timings = subtitle["timing"] as? [Double] {
+                                // Update subtitle view model with subtitle information
+                                subtitleViewModel.updateSubtitles(chars: chars, timings: timings)
+                                subtitleViewModel.startPlayback()
+                            }
+                            
+                            // Optionally handle the raw text content
+                            print("Raw text content: \(content)")
+                        })
+                        .disposed(by: disposeBag)
                     
                     coPilot.startReading() // Subscribe to start the flow
                    

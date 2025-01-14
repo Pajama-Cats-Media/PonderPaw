@@ -6,7 +6,7 @@ class CoPilot {
     public let stateMachine: GKStateMachine
     public var pages: [[String: Any]] = []
     // PublishSubject to broadcast subtitle events
-    public let subtitleEvent = PublishSubject<[String: Any]>()
+    public let subtitleEvent = PublishSubject<SubtitleEvent>()
     
     private let disposeBag = DisposeBag()
     private var readingObservable: Observable<Void>?
@@ -151,7 +151,11 @@ class CoPilot {
             // Update subtitle
             if let subtitle = action["subtitle"] as? [String: Any] {
                 // Emit the subtitle data through the PublishSubject
-                subtitleEvent.onNext(subtitle)
+                if let subtitle = action["subtitle"] as? [String: Any] {
+                    subtitleEvent.onNext(SubtitleEvent(subtitle: subtitle, content: content))
+                } else {
+                    subtitleEvent.onNext(SubtitleEvent(subtitle: [:], content: content))
+                }
             }
             
             // Use the readActionHandler and ensure it completes properly

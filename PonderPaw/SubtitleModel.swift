@@ -16,14 +16,16 @@ class SubtitleModel {
         !subtitle.characters.isEmpty && subtitle.characters.count == subtitle.timings.count
     }
 
+    /// Returns the entire subtitle sentence up to the current time.
     func getSubtitleText(at time: Double) -> String {
         guard isValid else { return "" }
         var subtitleText = ""
         for (index, timing) in subtitle.timings.enumerated() {
+            // Include characters whose timing is less than or equal to the current time
             if timing <= time {
                 subtitleText += subtitle.characters[index]
             } else {
-                break
+                break // Stop processing once timing exceeds the current time
             }
         }
         return subtitleText
