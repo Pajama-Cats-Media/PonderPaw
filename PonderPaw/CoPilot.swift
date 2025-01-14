@@ -14,6 +14,8 @@ class CoPilot {
     private let INITIAL_WAIT_TIME: TimeInterval = 5.0
     private let PAGE_DELAY_TIME: TimeInterval = 2.0
     private let ACTION_DELAY_TIME: TimeInterval = 3.0
+    private let READ_GAP_TIME: TimeInterval = 0.2
+    
     
     init() {
         // Initialize FSM states
@@ -145,6 +147,8 @@ class CoPilot {
             
             // Use the readActionHandler and ensure it completes properly
             return readActionHandler.read(action: action)
+                .delay(.milliseconds(Int(READ_GAP_TIME * 1000)), scheduler: MainScheduler.instance) // Add 200ms delay before starting the audio, important otherwise crash
+            
         } else {
             // Simulate a delay for other actions
             return Observable<Void>.create { observer in
