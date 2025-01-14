@@ -5,8 +5,9 @@ struct ContentView: View {
     @State private var localServerURL: URL? = nil
     @State private var isServerStarting = true
     @StateObject private var subtitleViewModel = SubtitleViewModel(model: SubtitleModel(
-        characters: ["O", "n", "c", "e", " ", "u", "p", "o", "n"],
-        timings:    [0.0, 0.07, 0.174, 0.244, 0.383, 0.43, 0.522, 0.592, 0.68]
+        content: "",
+        characters: [],
+        timings:    []
     ))
     
     private let server = LocalHTTPServer()
@@ -49,12 +50,9 @@ struct ContentView: View {
                             if let chars = subtitle["chars"] as? [String],
                                let timings = subtitle["timing"] as? [Double] {
                                 // Update subtitle view model with subtitle information
-                                subtitleViewModel.updateSubtitles(chars: chars, timings: timings)
+                                subtitleViewModel.updateSubtitles(content: content, chars: chars, timings: timings)
                                 subtitleViewModel.startPlayback()
                             }
-                            
-                            // Optionally handle the raw text content
-                            print("Raw text content: \(content)")
                         })
                         .disposed(by: disposeBag)
                     

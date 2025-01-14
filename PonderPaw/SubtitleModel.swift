@@ -2,14 +2,15 @@ import Foundation
 
 class SubtitleModel {
     struct Subtitle {
+        let content: String
         let characters: [String]
         let timings: [Double]
     }
 
     private let subtitle: Subtitle
 
-    init(characters: [String], timings: [Double]) {
-        self.subtitle = Subtitle(characters: characters, timings: timings)
+    init(content: String, characters: [String], timings: [Double]) {
+        self.subtitle = Subtitle(content: content, characters: characters, timings: timings)
     }
 
     var isValid: Bool {
@@ -25,9 +26,14 @@ class SubtitleModel {
             if timing <= time {
                 subtitleText += subtitle.characters[index]
             } else {
-                break // Stop processing once timing exceeds the current time
+                break
             }
         }
         return subtitleText
+    }
+
+    /// Returns the plain text content of the subtitle.
+    var content: String {
+        subtitle.content
     }
 }
