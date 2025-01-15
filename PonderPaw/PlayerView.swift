@@ -8,28 +8,22 @@ import SwiftUI
 
 struct PlayerView: View {
     let url: URL
-    private let webEventController = WebEventController() // Shared event controller
-    
+    @ObservedObject var viewModel: PlayerViewModel // Use @ObservedObject to allow shared viewModel
+
     var body: some View {
         ZStack {
-            // Underlying WebView
-            WebContentView(url: url, eventController: webEventController)
+            // Pass the accessible event controller
+            WebContentView(url: url, eventController: viewModel.eventController)
             
-            // Button overlay to send a throttled event
             Button(action: {
-                let message  = #"""
-{
-  "topic": "next_page"
-}
-"""#
-                webEventController.sendEvent(message) // Send event using the shared controller
+                viewModel.turnPage()
             }) {
                 Text("Click Anywhere")
                     .padding()
                     .background(Color.blue.opacity(0.7))
                     .foregroundColor(.white)
                     .cornerRadius(8)
-                    .opacity(0) // Makes it invisible
+                    .opacity(1) // Makes it invisible
                     .accessibility(hidden: false)
             }
             .padding()

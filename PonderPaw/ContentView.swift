@@ -9,9 +9,9 @@ struct ContentView: View {
         characters: [],
         timings:    []
     ))
+    @StateObject private var playerViewModel = PlayerViewModel() // Manage PlayerViewModel
     
     private let server = LocalHTTPServer()
-    private let webEventController = WebEventController() // Shared event controller
     private let disposeBag = DisposeBag()
     
     var body: some View {
@@ -19,12 +19,17 @@ struct ContentView: View {
             if isServerStarting {
                 Text("Starting server...")
             } else if let url = localServerURL {
-                PlayerView(url: url)
-                    .navigationBarTitle("DEMO", displayMode: .inline)
-                
-                SubtitleView(viewModel: subtitleViewModel)
-                    .frame(height: 100)
-                    .padding()
+                VStack {
+                    PlayerView(url: url, viewModel: playerViewModel)
+                        .navigationBarTitle("DEMO", displayMode: .inline)
+                    
+                    Spacer() // Pushes the SubtitleView to the bottom
+                    
+                    SubtitleView(viewModel: subtitleViewModel)
+                        .frame(height: 100)
+                        .padding()
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity) 
                 
             } else {
                 Text("Failed to start the server.")
@@ -60,13 +65,12 @@ struct ContentView: View {
                         .observe(on: MainScheduler.instance) // Ensure events are observed on the main thread
                         .subscribe(onNext: { pageNumber in
                             print("Turn page here: \(pageNumber) ")
-                            // Handle page completion logic here
-                            // For example, update the UI or log progress
+                            playerViewModel.turnPage() // Turn the page in PlayerView
                         })
                         .disposed(by: disposeBag)
                     
                     coPilot.startReading() // Subscribe to start the flow
-                   
+                    
                 } else {
                     print("Failed to load JSON manifest.")
                 }
