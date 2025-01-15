@@ -29,7 +29,7 @@ class PageReadyState: GKState {
 
     override func didEnter(from previousState: GKState?) {
         guard let page = page, let pageNumber = page["pageNumber"] as? Int else { return }
-        print("Page \(pageNumber) is ready.")
+        print("[FSM] Page \(pageNumber) is ready.")
     }
 
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
@@ -40,7 +40,7 @@ class PageReadyState: GKState {
 class ActionState: GKState {
 
     override func didEnter(from previousState: GKState?) {
-        print("Entered ActionState. Waiting for ReadingCoPilot to execute actions.")
+        print("[FSM] Entered ActionState. Waiting for ReadingCoPilot to execute actions.")
     }
 
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {

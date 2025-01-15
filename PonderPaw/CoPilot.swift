@@ -86,9 +86,10 @@ class CoPilot {
             (stateMachine.currentState as? PageReadyState)?.configure(with: page)
         }
         
-        print("Processing Page \(index + 1)...")
-        
         return Observable.just(())
+            .do(onNext: {
+                print("Start to play Page \(index + 1)...")
+            })
             .concatMap { [weak self] in
                 guard let self = self else { return Observable<Void>.empty() }
                 if let actions = page["actions"] as? [[String: Any]], !actions.isEmpty {
