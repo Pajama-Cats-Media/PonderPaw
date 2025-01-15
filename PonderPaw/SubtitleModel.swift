@@ -8,23 +8,22 @@ class SubtitleModel {
     }
 
     private var subtitle: Subtitle
-    private var maxChunkLength: Int
+    private let maxChunkLength: Int = 40 // Maximum characters per chunk (constant)
 
-    init(content: String, characters: [String], timings: [Double], maxChunkLength: Int = 40) {
+    init(content: String, characters: [String], timings: [Double]) {
         self.subtitle = Subtitle(content: content, characters: characters, timings: timings)
-        self.maxChunkLength = maxChunkLength
     }
 
     var isValid: Bool {
         !subtitle.characters.isEmpty && subtitle.characters.count == subtitle.timings.count
     }
 
-    func updateSubtitle(content: String, characters: [String], timings: [Double], maxChunkLength: Int = 40) {
+    /// Updates the subtitle data
+    func updateSubtitle(content: String, characters: [String], timings: [Double]) {
         self.subtitle = Subtitle(content: content, characters: characters, timings: timings)
-        self.maxChunkLength = maxChunkLength
     }
 
-    /// Calculates chunks and their start timings dynamically
+    /// Calculates chunks and their start timings dynamically (syncing with audio)
     func calculateChunksAndTimings() -> ([String], [Double]) {
         var chunks: [String] = []
         var chunkTimings: [Double] = []
@@ -41,10 +40,20 @@ class SubtitleModel {
 
             currentChunk += char
 
-            // Create a new chunk when reaching max length or sentence-ending punctuation
-            if currentChunk.count >= maxChunkLength || char == "." || char == "!" || char == "?" {
+            // Ensure chunks are split only at word boundaries
+            if currentChunk.count >= maxChunkLength && char == " " {
                 if let startTiming = chunkStartTiming {
-                    chunks.append(currentChunk)
+                    chunks.append(currentChunk.trimmingCharacters(in: .whitespaces))
+                    chunkTimings.append(startTiming)
+                }
+                currentChunk = ""
+                chunkStartTiming = nil
+            }
+
+            // Create a new chunk for punctuation or when max chunk length is reached
+            if char == "." || char == "!" || char == "?" {
+                if let startTiming = chunkStartTiming {
+                    chunks.append(currentChunk.trimmingCharacters(in: .whitespaces))
                     chunkTimings.append(startTiming)
                 }
                 currentChunk = ""
@@ -54,17 +63,19 @@ class SubtitleModel {
 
         // Add the last chunk if it exists
         if !currentChunk.isEmpty, let startTiming = chunkStartTiming {
-            chunks.append(currentChunk)
+            chunks.append(currentChunk.trimmingCharacters(in: .whitespaces))
             chunkTimings.append(startTiming)
         }
 
         return (chunks, chunkTimings)
     }
 
-    /// Gets the current chunk based on elapsed time
+    /// Returns the current chunk based on elapsed time
     func getCurrentChunk(at time: Double) -> String {
         let (chunks, chunkTimings) = calculateChunksAndTimings()
-        let index = chunkTimings.lastIndex(where: { $0 <= time }) ?? 0
+        guard let index = chunkTimings.lastIndex(where: { $0 <= time }) else {
+            return "" // No chunk matches the current time
+        }
         return chunks[index]
     }
 }

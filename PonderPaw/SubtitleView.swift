@@ -4,21 +4,18 @@ struct SubtitleView: View {
     @ObservedObject var viewModel: SubtitleViewModel
 
     var body: some View {
-        ZStack {
-            // Display the current chunk of subtitle
-            Text(viewModel.currentChunk)
-                .font(.system(size: 24))
-                .multilineTextAlignment(.center)
-                .foregroundColor(.red) // Highlighted text in red
-                .padding()
-        }
-        .frame(maxWidth: .infinity, maxHeight: 100)
-        .background(Color.white.opacity(0.8))
-        .onAppear {
-            viewModel.startPlayback()
-        }
-        .onDisappear {
-            viewModel.stopPlayback()
-        }
+        Text(viewModel.currentChunk) // Display the current subtitle chunk
+            .font(.system(size: 20)) // Set font size
+            .multilineTextAlignment(.center) // Center-align text
+            .foregroundColor(.white) // White text color
+            .padding() // Add padding around the text
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom) // Align at the bottom
+            .background(Color.black.opacity(0.8)) // Semi-transparent black background
+            .onAppear {
+                viewModel.startPlayback()
+            }
+            .onDisappear {
+                viewModel.stopPlayback()
+            }
     }
 }

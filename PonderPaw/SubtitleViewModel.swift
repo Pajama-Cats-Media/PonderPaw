@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 class SubtitleViewModel: ObservableObject {
-    @Published var currentChunk: String = ""
+    @Published var currentChunk: String = "" // The current subtitle chunk
 
     private var model: SubtitleModel
     private var timer: Timer?
@@ -31,18 +31,18 @@ class SubtitleViewModel: ObservableObject {
         timer = nil
     }
 
-    /// Updates the subtitle dynamically
-    func updateSubtitles(content: String, chars: [String], timings: [Double]) {
-        model.updateSubtitle(content: content, characters: chars, timings: timings)
+    /// Updates the subtitle content
+    func updateSubtitles(content: String, characters: [String], timings: [Double]) {
+        model.updateSubtitle(content: content, characters: characters, timings: timings)
         startPlayback()
     }
 
-    /// Updates the current chunk dynamically
+    /// Updates the current chunk based on elapsed time
     private func updatePlayback() {
         guard let startTime = startTime else { return }
         let elapsedTime = Date().timeIntervalSince(startTime)
 
-        // Update the current chunk based on elapsed time
+        // Fetch the current chunk
         currentChunk = model.getCurrentChunk(at: elapsedTime)
     }
 }

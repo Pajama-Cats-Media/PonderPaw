@@ -50,7 +50,7 @@ struct ContentView: View {
                             if let chars = subtitle["chars"] as? [String],
                                let timings = subtitle["timing"] as? [Double] {
                                 // Update subtitle view model with subtitle information
-                                subtitleViewModel.updateSubtitles(content: content, chars: chars, timings: timings)
+                                subtitleViewModel.updateSubtitles(content: content, characters: chars, timings: timings)
                                 subtitleViewModel.startPlayback()
                             }
                         })
