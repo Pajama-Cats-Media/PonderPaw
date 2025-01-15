@@ -3,7 +3,6 @@ import Combine
 
 class SubtitleViewModel: ObservableObject {
     @Published var currentChunk: String = ""
-    @Published var highlightedText: String = ""
 
     private var model: SubtitleModel
     private var timer: Timer?
@@ -13,6 +12,7 @@ class SubtitleViewModel: ObservableObject {
         self.model = model
     }
 
+    /// Starts subtitle playback
     func startPlayback() {
         guard model.isValid else {
             print("Invalid subtitle data.")
@@ -25,23 +25,24 @@ class SubtitleViewModel: ObservableObject {
         }
     }
 
+    /// Stops subtitle playback
     func stopPlayback() {
         timer?.invalidate()
         timer = nil
     }
 
+    /// Updates the subtitle dynamically
     func updateSubtitles(content: String, chars: [String], timings: [Double]) {
-        stopPlayback()
-        model = SubtitleModel(content: content, characters: chars, timings: timings)
+        model.updateSubtitle(content: content, characters: chars, timings: timings)
         startPlayback()
     }
 
+    /// Updates the current chunk dynamically
     private func updatePlayback() {
         guard let startTime = startTime else { return }
         let elapsedTime = Date().timeIntervalSince(startTime)
 
-        // Update highlighted text and current chunk
-        highlightedText = model.getHighlightedText(at: elapsedTime)
+        // Update the current chunk based on elapsed time
         currentChunk = model.getCurrentChunk(at: elapsedTime)
     }
 }
