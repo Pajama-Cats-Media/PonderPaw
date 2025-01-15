@@ -5,31 +5,27 @@ struct SubtitleView: View {
 
     var body: some View {
         ZStack {
-//            // Full content as the background text
-//            Text(viewModel.content)
-//                .font(.system(size: 24))
-//                .multilineTextAlignment(.center)
-//                .foregroundColor(.gray.opacity(0.5)) // Light gray color for background text
-//                .padding()
+            // Highlighted progressive text
+            Text(viewModel.highlightedText)
+                .font(.system(size: 24))
+                .multilineTextAlignment(.center)
+                .foregroundColor(.green.opacity(0.8)) // Progressive text in green
+                .padding()
 
             // Highlighted current chunk
             Text(viewModel.currentChunk)
                 .font(.system(size: 24))
                 .multilineTextAlignment(.center)
-                .foregroundColor(.red) // Highlighted text in yellow
+                .foregroundColor(.red) // Current chunk in red
                 .padding()
-
-//            // Progressive highlighting text
-//            Text(viewModel.highlightedText)
-//                .font(.system(size: 24))
-//                .multilineTextAlignment(.center)
-//                .foregroundColor(.green) // Highlighted progressive text in green
-//                .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: 100)
         .background(Color.white.opacity(0.8))
         .onAppear {
-            print("SubtitleView appeared")
+            viewModel.startPlayback()
+        }
+        .onDisappear {
+            viewModel.stopPlayback()
         }
     }
 }
