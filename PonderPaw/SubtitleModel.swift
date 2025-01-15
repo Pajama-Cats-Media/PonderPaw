@@ -5,35 +5,62 @@ class SubtitleModel {
         let content: String
         let characters: [String]
         let timings: [Double]
+        let chunks: [String]
     }
 
     private let subtitle: Subtitle
+    private var currentChunkIndex: Int = 0
 
-    init(content: String, characters: [String], timings: [Double]) {
-        self.subtitle = Subtitle(content: content, characters: characters, timings: timings)
+    /// Expose the content property for ViewModel compatibility
+    var content: String {
+        subtitle.content
+    }
+
+    init(content: String, characters: [String], timings: [Double], maxChunkLength: Int = 40) {
+        // Generate chunks before initializing properties
+        let chunks = SubtitleModel.breakSubtitleIntoChunks(text: content, maxLength: maxChunkLength)
+        self.subtitle = Subtitle(content: content, characters: characters, timings: timings, chunks: chunks)
     }
 
     var isValid: Bool {
         !subtitle.characters.isEmpty && subtitle.characters.count == subtitle.timings.count
     }
 
+    func getChunks() -> [String] {
+        return subtitle.chunks
+    }
+
     /// Returns the entire subtitle sentence up to the current time.
-    func getSubtitleText(at time: Double) -> String {
+    func getHighlightedText(at time: Double) -> String {
         guard isValid else { return "" }
-        var subtitleText = ""
+        var highlightedText = ""
         for (index, timing) in subtitle.timings.enumerated() {
-            // Include characters whose timing is less than or equal to the current time
             if timing <= time {
-                subtitleText += subtitle.characters[index]
+                highlightedText += subtitle.characters[index]
             } else {
                 break
             }
         }
-        return subtitleText
+        return highlightedText
     }
 
-    /// Returns the plain text content of the subtitle.
-    var content: String {
-        subtitle.content
+    /// Breaks the subtitle content into chunks for rotation.
+    static func breakSubtitleIntoChunks(text: String, maxLength: Int) -> [String] {
+        var chunks: [String] = []
+        var currentChunk = ""
+
+        for word in text.split(separator: " ") {
+            if currentChunk.count + word.count + 1 > maxLength {
+                chunks.append(currentChunk)
+                currentChunk = ""
+            }
+            currentChunk += (currentChunk.isEmpty ? "" : " ") + word
+        }
+
+        if !currentChunk.isEmpty {
+            chunks.append(currentChunk)
+        }
+
+        return chunks
     }
 }
