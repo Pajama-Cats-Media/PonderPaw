@@ -30,6 +30,7 @@ class SubtitleModel {
 
         var currentChunk = ""
         var chunkStartTiming: Double? = nil
+        let punctuationSet: Set<Character> = [".", ",", "!", "?", "'", "\""]
 
         for (index, char) in subtitle.characters.enumerated() {
             let timing = subtitle.timings[index]
@@ -40,18 +41,20 @@ class SubtitleModel {
 
             currentChunk += char
 
-            // Ensure chunks are split only at word boundaries
-            if currentChunk.count >= maxChunkLength && char == " " {
-                if let startTiming = chunkStartTiming {
-                    chunks.append(currentChunk.trimmingCharacters(in: .whitespaces))
-                    chunkTimings.append(startTiming)
+            // Ensure chunks are split only at word boundaries and avoid cutting punctuation
+            if currentChunk.count >= maxChunkLength {
+                if char == " " || punctuationSet.contains(char) {
+                    if let startTiming = chunkStartTiming {
+                        chunks.append(currentChunk.trimmingCharacters(in: .whitespaces))
+                        chunkTimings.append(startTiming)
+                    }
+                    currentChunk = ""
+                    chunkStartTiming = nil
                 }
-                currentChunk = ""
-                chunkStartTiming = nil
             }
 
             // Create a new chunk for punctuation or when max chunk length is reached
-            if char == "." || char == "!" || char == "?" {
+            if punctuationSet.contains(char) && currentChunk.count >= maxChunkLength - 1 {
                 if let startTiming = chunkStartTiming {
                     chunks.append(currentChunk.trimmingCharacters(in: .whitespaces))
                     chunkTimings.append(startTiming)
