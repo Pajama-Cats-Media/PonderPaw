@@ -29,7 +29,7 @@ struct ContentView: View {
                         .padding()
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .onChange(of: playerViewModel.isDOMReady) { ready in
+                .onChange(of: playerViewModel.isDOMReady) { noReady, ready in
                            if ready {
                                loadCopilot()
                            }
