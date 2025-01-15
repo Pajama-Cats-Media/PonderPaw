@@ -29,6 +29,11 @@ struct ContentView: View {
                         .padding()
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .onChange(of: playerViewModel.isDOMReady) { ready in
+                           if ready {
+                               loadCopilot()
+                           }
+                       }
 
             } else {
                 Text("Failed to start the server.")
@@ -50,14 +55,14 @@ struct ContentView: View {
     private func initializeApplication() {
         startLocalServer { success in
             if success {
-                waitForReadySignalAndLoadCopilot()
+                log.info("Local server started successfully.")
             } else {
-                print("Failed to start the local server.")
+                log.error("Failed to start the local server.")
             }
         }
     }
 
-    private func waitForReadySignalAndLoadCopilot() {
+    private func loadCopilot() {
         guard let jsonManifest = loadJsonManifest() else {
             print("Failed to load JSON manifest.")
             return

@@ -1,19 +1,13 @@
-//
-//  PlayerView.swift
-//  PonderPaw
-//
-//  Created by Homer Quan on 1/9/25.
-//
 import SwiftUI
 
 struct PlayerView: View {
     let url: URL
-    @ObservedObject var viewModel: PlayerViewModel // Use @ObservedObject to allow shared viewModel
+    @ObservedObject var viewModel: PlayerViewModel
 
     var body: some View {
         ZStack {
-            // Pass the accessible event controller
-            WebContentView(url: url, eventController: viewModel.eventController)
+            // Pass the WebContentViewModel instead of the event controller
+            WebContentView(url: url, viewModel: viewModel.webContentViewModel)
             
             Button(action: {
                 viewModel.turnPage()
@@ -23,7 +17,6 @@ struct PlayerView: View {
                     .background(Color.blue.opacity(0.7))
                     .foregroundColor(.white)
                     .cornerRadius(8)
-                    .opacity(1) // Makes it invisible
                     .accessibility(hidden: false)
             }
             .padding()

@@ -1,26 +1,23 @@
-//
-//  PlayerViewModel.swift
-//  PonderPaw
-//
-//  Created by Homer Quan on 1/15/25.
-//
-
-import SwiftUI
+import Foundation
+import Combine
 
 class PlayerViewModel: ObservableObject {
-    private let webEventController = WebEventController()
-    
-    func turnPage() {
-        let message = #"""
-        {
-          "topic": "next_page"
-        }
-        """#
-        webEventController.sendEvent(message)
+    let webContentViewModel: WebContentViewModel
+    private var cancellables = Set<AnyCancellable>()
+
+    // Published property to propagate DOM ready state
+    @Published var isDOMReady: Bool = false
+
+    init() {
+        self.webContentViewModel = WebContentViewModel()
+
+        // Observe the DOM ready state from WebContentViewModel
+        webContentViewModel.$isDOMReady
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$isDOMReady)
     }
-    
-    // Expose webEventController safely
-    var eventController: WebEventController {
-        webEventController
+
+    func turnPage() {
+        webContentViewModel.sendEvent("pageTurned")
     }
 }
