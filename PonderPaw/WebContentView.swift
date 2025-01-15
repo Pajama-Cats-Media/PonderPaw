@@ -7,7 +7,8 @@ struct WebContentView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
-        
+        webView.navigationDelegate = context.coordinator
+
         // Disable user interaction
         webView.isUserInteractionEnabled = false
 
@@ -40,7 +41,33 @@ struct WebContentView: UIViewRepresentable {
         // Update logic if needed
     }
 
-    func sendEventToWebView(_ message: String) {
-        eventController.sendEvent(message)
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(self)
+    }
+
+    // Coordinator for handling navigation events
+    class Coordinator: NSObject, WKNavigationDelegate {
+        var parent: WebContentView
+
+        init(_ parent: WebContentView) {
+            self.parent = parent
+        }
+
+        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+            // Inject JavaScript to notify when the page is fully loaded
+            let readyEventScript = """
+            document.addEventListener('DOMContentLoaded', function() {
+                window.postMessage(JSON.stringify({ event: 'ready' }));
+            });
+            """
+            webView.evaluateJavaScript(readyEventScript) { result, error in
+                if let error = error {
+                    print("Failed to inject ready event script: \(error)")
+                }
+            }
+
+            // Emit the ready event to the shared event controller
+            parent.eventController.sendEvent("ready")
+        }
     }
 }

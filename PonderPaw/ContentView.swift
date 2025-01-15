@@ -21,7 +21,6 @@ struct ContentView: View {
             } else if let url = localServerURL {
                 VStack {
                     PlayerView(url: url, viewModel: playerViewModel)
-                        .navigationBarTitle("DEMO", displayMode: .inline)
                     
                     Spacer() // Pushes the SubtitleView to the bottom
                     

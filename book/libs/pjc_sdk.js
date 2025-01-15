@@ -6,6 +6,7 @@ this.PJC = this.PJC || {}; // Global namespace for SDK
     PJC.constants = {
         NEXT_PAGE: "next_page",
         PREV_PAGE: "prev_page",
+        GOTO_PAGE: "goto_page"
     };
     
     // Utility functions for Base64 encoding and decoding with URL encoding
