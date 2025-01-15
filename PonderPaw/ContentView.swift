@@ -56,6 +56,15 @@ struct ContentView: View {
                         })
                         .disposed(by: disposeBag)
                     
+                    coPilot.pageCompletionEvent
+                        .observe(on: MainScheduler.instance) // Ensure events are observed on the main thread
+                        .subscribe(onNext: { pageNumber in
+                            print("Turn page here: \(pageNumber) ")
+                            // Handle page completion logic here
+                            // For example, update the UI or log progress
+                        })
+                        .disposed(by: disposeBag)
+                    
                     coPilot.startReading() // Subscribe to start the flow
                    
                 } else {

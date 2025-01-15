@@ -7,6 +7,7 @@ class CoPilot {
     public var pages: [[String: Any]] = []
     // PublishSubject to broadcast subtitle events
     public let subtitleEvent = PublishSubject<SubtitleEvent>()
+    public let pageCompletionEvent = PublishSubject<Int>()
     
     private let disposeBag = DisposeBag()
     private var readingObservable: Observable<Void>?
@@ -91,9 +92,11 @@ class CoPilot {
                     return self.processActions(actions)
                         .do(onDispose: {
                             log.info("Completed all actions for Page \(index + 1).")
+                            self.pageCompletionEvent.onNext(index + 1) // Emit page completion event
                         })
                 } else {
                     log.info("No actions for Page \(index + 1). Moving to the next page.")
+                    self.pageCompletionEvent.onNext(index + 1) // Emit page completion event for empty page
                     return Observable.empty()
                 }
             }
