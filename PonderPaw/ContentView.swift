@@ -7,13 +7,13 @@ struct ContentView: View {
     @StateObject private var subtitleViewModel = SubtitleViewModel(model: SubtitleModel(
         content: "",
         characters: [],
-        timings:    []
+        timings: []
     ))
     @StateObject private var playerViewModel = PlayerViewModel() // Manage PlayerViewModel
-    
+
     private let server = LocalHTTPServer()
     private let disposeBag = DisposeBag()
-    
+
     var body: some View {
         ZStack {
             if isServerStarting {
@@ -21,67 +21,92 @@ struct ContentView: View {
             } else if let url = localServerURL {
                 VStack {
                     PlayerView(url: url, viewModel: playerViewModel)
-                    
+
                     Spacer() // Pushes the SubtitleView to the bottom
-                    
+
                     SubtitleView(viewModel: subtitleViewModel)
                         .frame(height: 100)
                         .padding()
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity) 
-                
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+
             } else {
                 Text("Failed to start the server.")
             }
-            
+
             VStack {
                 ConversationalAIView() // Main content is displayed here
             }
         }
         .onAppear {
-            
-            startLocalServer { success in
-                if success, let jsonManifest = loadJsonManifest() {
-                    let coPilot = CoPilot()
-                    coPilot.loadJson(jsonManifest: jsonManifest) // Create the observable chain
-                    coPilot.subtitleEvent
-                        .observe(on: MainScheduler.instance)
-                        .subscribe(onNext: { subtitleEvent in
-                            // Access `subtitle` and `content` directly from the `SubtitleEvent` struct
-                            let subtitle = subtitleEvent.subtitle
-                            let content = subtitleEvent.content
-                            
-                            if let chars = subtitle["chars"] as? [String],
-                               let timings = subtitle["timing"] as? [Double] {
-                                // Update subtitle view model with subtitle information
-                                subtitleViewModel.updateSubtitles(content: content, characters: chars, timings: timings)
-                                subtitleViewModel.startPlayback()
-                            }
-                        })
-                        .disposed(by: disposeBag)
-                    
-                    coPilot.pageCompletionEvent
-                        .observe(on: MainScheduler.instance) // Ensure events are observed on the main thread
-                        .subscribe(onNext: { pageNumber in
-                            print("Turn page here: \(pageNumber) ")
-                            playerViewModel.turnPage() // Turn the page in PlayerView
-                        })
-                        .disposed(by: disposeBag)
-                    
-                    coPilot.startReading() // Subscribe to start the flow
-                    
-                } else {
-                    print("Failed to load JSON manifest.")
-                }
-            }
+            initializeApplication()
         }
         .onDisappear {
-            subtitleViewModel.stopPlayback()
-            stopLocalServer()
+            cleanupApplication()
         }
         .statusBarHidden(true) // This hides the status bar
     }
-    
+
+    private func initializeApplication() {
+        startLocalServer { success in
+            if success {
+                waitForReadySignalAndLoadCopilot()
+            } else {
+                print("Failed to start the local server.")
+            }
+        }
+    }
+
+    private func waitForReadySignalAndLoadCopilot() {
+        guard let jsonManifest = loadJsonManifest() else {
+            print("Failed to load JSON manifest.")
+            return
+        }
+
+        let coPilot = CoPilot()
+        coPilot.loadJson(jsonManifest: jsonManifest)
+
+        // Handle subtitle events
+        coPilot.subtitleEvent
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { subtitleEvent in
+                handleSubtitleEvent(subtitleEvent)
+            })
+            .disposed(by: disposeBag)
+
+        // Handle page completion events
+        coPilot.pageCompletionEvent
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { pageNumber in
+                handlePageCompletion(pageNumber)
+            })
+            .disposed(by: disposeBag)
+
+        coPilot.startReading()
+    }
+
+    private func handleSubtitleEvent(_ subtitleEvent: SubtitleEvent) {
+        let subtitle = subtitleEvent.subtitle
+        let content = subtitleEvent.content
+
+        if let chars = subtitle["chars"] as? [String],
+           let timings = subtitle["timing"] as? [Double] {
+            // Update subtitle view model with subtitle information
+            subtitleViewModel.updateSubtitles(content: content, characters: chars, timings: timings)
+            subtitleViewModel.startPlayback()
+        }
+    }
+
+    private func handlePageCompletion(_ pageNumber: Int) {
+        print("Turn page here: \(pageNumber)")
+        playerViewModel.turnPage()
+    }
+
+    private func cleanupApplication() {
+        subtitleViewModel.stopPlayback()
+        stopLocalServer()
+    }
+
     private func startLocalServer(completion: @escaping (Bool) -> Void) {
         DispatchQueue.global(qos: .background).async {
             guard let folderPath = Bundle.main.path(forResource: "book", ofType: nil) else {
@@ -92,7 +117,7 @@ struct ContentView: View {
                 }
                 return
             }
-            
+
             if let urlString = server.startServer(folderPath: folderPath),
                let url = URL(string: urlString) {
                 DispatchQueue.main.async {
@@ -109,17 +134,17 @@ struct ContentView: View {
             }
         }
     }
-    
+
     private func stopLocalServer() {
         server.stopServer()
     }
-    
+
     private func loadJsonManifest() -> String? {
         guard let filePath = Bundle.main.path(forResource: "default", ofType: "json", inDirectory: "book/playbooks/en-US") else {
             print("Failed to locate 'default.json' in 'book/playbooks/en-US' directory.")
             return nil
         }
-        
+
         do {
             let jsonData = try String(contentsOfFile: filePath, encoding: .utf8)
             return jsonData
