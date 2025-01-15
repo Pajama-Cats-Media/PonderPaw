@@ -5,37 +5,35 @@ import RxSwift
 class CoPilot {
     public let stateMachine: GKStateMachine
     public var pages: [[String: Any]] = []
-    // PublishSubject to broadcast subtitle events
     public let subtitleEvent = PublishSubject<SubtitleEvent>()
+    public var currentPage: Int = -1 // Tracks the current page
+    public var currentAction: [String: Any]? // Tracks the current action
     
     private let disposeBag = DisposeBag()
     private var readingObservable: Observable<Void>?
-    private var hasCompleted = false // Flag to prevent redundant logs
-    private let readActionHandler = ReadActionHandler() // ReadActionHandler instance
+    private var hasCompleted = false
+    private let readActionHandler = ReadActionHandler()
     
-    // Define constants for wait times
+    private var isPaused = false // Flag to check if CoPilot is paused
+    private let pauseSubject = PublishSubject<Void>() // Used to pause and resume actions
+
     private let INITIAL_WAIT_TIME: TimeInterval = 5.0
     private let PAGE_DELAY_TIME: TimeInterval = 2.0
     private let ACTION_DELAY_TIME: TimeInterval = 3.0
     private let READ_GAP_TIME: TimeInterval = 0.2
     
-    
     init() {
-        // Initialize FSM states
         let startState = StartState()
         let pageReadyState = PageReadyState()
         let actionState = ActionState()
         let finishState = FinishState()
         
         stateMachine = GKStateMachine(states: [startState, pageReadyState, actionState, finishState])
-        
-        // Enter the initial state
         stateMachine.enter(StartState.self)
         logStateChange()
     }
     
     func loadJson(jsonManifest: String) {
-        // Parse JSON
         guard let data = jsonManifest.data(using: .utf8),
               let parsed = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
               let playbook = parsed["playbook"] as? [String: Any],
@@ -46,15 +44,11 @@ class CoPilot {
         self.pages = pages
         print("JSON manifest loaded. \(pages.count) pages found.")
         
-        // Create the observable chain for reading
-        let initialDelay = Observable<Void>.just(())
-            .delay(.seconds(5), scheduler: MainScheduler.instance) // Wait for 5 seconds
-        
-        
         readingObservable = Observable.from(pages.enumerated())
             .concatMap { [weak self] index, page -> Observable<Void> in
                 guard let self = self else { return Observable.empty() }
-                return self.processPage(page, index: index) // Process actions within the page
+                self.currentPage = index
+                return self.processPage(page, index: index)
             }
             .do(onSubscribe: {
                 print("Reading started after initial wait...")
@@ -69,14 +63,29 @@ class CoPilot {
             return
         }
         
-        // Add delay before starting the subscription
-        // Add delay using DispatchQueue
         DispatchQueue.main.asyncAfter(deadline: .now() + INITIAL_WAIT_TIME) {
-            // Subscribe to the observable after the delay
             observable
                 .subscribe()
                 .disposed(by: self.disposeBag)
         }
+    }
+    
+    func stop() {
+        isPaused = true
+        pauseSubject.onNext(())
+        print("CoPilot has been paused.")
+    }
+    
+    func resume() {
+        guard isPaused, let currentAction = currentAction else {
+            print("Cannot resume. Either not paused or no current action.")
+            return
+        }
+        isPaused = false
+        print("Resuming current action...")
+        performAction(currentAction)
+            .subscribe()
+            .disposed(by: disposeBag)
     }
     
     private func processPage(_ page: [String: Any], index: Int) -> Observable<Void> {
@@ -111,31 +120,21 @@ class CoPilot {
         
         AppLogger.shared.logInfo(category: "playbook", message: "Processing \(actions.count) actions sequentially...")
         
-        // Ensure each action is processed sequentially using concatMap
         return Observable.from(actions.enumerated())
-            .concatMap { index, action -> Observable<Void> in
-                // Perform the action
+            .concatMap { [weak self] index, action -> Observable<Void> in
+                guard let self = self else { return Observable.empty() }
+                self.currentAction = action
                 return self.performAction(action)
-                    .do(onSubscribe: {
-                        if let type = action["type"] as? String, let content = action["content"] as? String {
-                            AppLogger.shared.logInfo(category: "playbook", message: "Started Action \(index + 1): [Type: \(type.uppercased()), Content: \(content)]")
-                        } else {
-                            AppLogger.shared.logError(category: "playbook", message: "Started Action \(index + 1): [Invalid action data]")
-                        }
-                    }, onDispose: {
-                        AppLogger.shared.logInfo(category: "playbook", message: "Completed Action \(index + 1).")
-                    })
             }
             .do(
                 onSubscribe: {
-                    AppLogger.shared.logInfo(category: "playbook", message: "Started processing actions sequentially...")
+                    print("Started processing actions...")
                 },
                 onDispose: {
-                    AppLogger.shared.logInfo(category: "playbook", message: "All actions completed.")
+                    print("All actions completed.")
                 }
             )
     }
-    
     
     private func performAction(_ action: [String: Any]) -> Observable<Void> {
         guard let type = action["type"] as? String else {
@@ -144,26 +143,32 @@ class CoPilot {
         }
         
         if type == "read" {
-            // Extract content and audio usage details for logging
             let content = action["content"] as? String ?? "No content provided"
-            let isAudioEnabled = ((action["audio"] as? String)?.isEmpty == false)
             
-            // Update subtitle
             if let subtitle = action["subtitle"] as? [String: Any] {
-                // Emit the subtitle data through the PublishSubject
-                if let subtitle = action["subtitle"] as? [String: Any] {
-                    subtitleEvent.onNext(SubtitleEvent(subtitle: subtitle, content: content))
-                } else {
-                    subtitleEvent.onNext(SubtitleEvent(subtitle: [:], content: content))
-                }
+                subtitleEvent.onNext(SubtitleEvent(subtitle: subtitle, content: content))
             }
             
-            // Use the readActionHandler and ensure it completes properly
-            return readActionHandler.read(action: action)
-                .delay(.milliseconds(Int(READ_GAP_TIME * 1000)), scheduler: MainScheduler.instance) // Add 200ms delay before starting the audio, important otherwise crash
+            // Use a replayable observable to allow resuming the action from where it was paused
+            let playbackObservable = readActionHandler.read(action: action)
+                .delay(.milliseconds(Int(READ_GAP_TIME * 1000)), scheduler: MainScheduler.instance)
+                .replay(1) // Replay the last emitted value to resume from where it left off
             
+            // Connect the observable to start the playback
+            let connectable = playbackObservable.connect()
+            pauseSubject
+                .asObservable()
+                .take(1) // Wait for the first pause signal
+                .subscribe(onNext: { _ in
+                    connectable.dispose() // Dispose the current playback to pause
+                })
+                .disposed(by: disposeBag)
+            
+            return playbackObservable
+                .do(onDispose: {
+                    print("Completed 'read' action: \(content)")
+                })
         } else {
-            // Simulate a delay for other actions
             return Observable<Void>.create { observer in
                 DispatchQueue.global().asyncAfter(deadline: .now() + self.ACTION_DELAY_TIME) {
                     print("Completed Action: [Type: \(type.uppercased())]")
@@ -173,7 +178,7 @@ class CoPilot {
             }
         }
     }
-    
+
     
     private func markCompletion() {
         if !hasCompleted {
