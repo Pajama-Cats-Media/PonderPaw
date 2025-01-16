@@ -10,7 +10,7 @@
                 "pageNumber": 1,
                 "actions": [{
                     "type": "wait",
-                    "length": 3
+                    "length": 5
                 }]
             },
             {
