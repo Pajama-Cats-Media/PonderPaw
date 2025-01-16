@@ -1046,13 +1046,9 @@
                         }
                     },
                     {
-                        "type": "wait",
-                        "length": 1
-                    },
-                    {
                         "type": "agent",
                         "prompt": "",
-                        "maxTime": 60
+                        "maxTime": 30
                     }
                 ]
             }

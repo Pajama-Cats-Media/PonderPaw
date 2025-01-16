@@ -60,7 +60,7 @@ class CoPilot {
                 return self.processPage(page, index: index)
             }
             .do(onSubscribe: {
-                log.info("Reading started after initial wait...")
+                log.info("Reading started...")
             }, onDispose: { [weak self] in
                 self?.markCompletion()
             })
@@ -118,8 +118,8 @@ class CoPilot {
             .concatMap { index, action -> Observable<Void> in
                 return self.performAction(action)
                     .do(onSubscribe: {
-                        if let type = action["type"] as? String, let content = action["content"] as? String {
-                            log.info("Started Action \(index + 1): [Type: \(type.uppercased()), Content: \(content)]")
+                        if let type = action["type"] as? String {
+                            log.info("Started Action \(index + 1): [Type: \(type.uppercased())]")
                         } else {
                             log.error("Started Action \(index + 1): [Invalid action data]")
                         }
@@ -155,6 +155,11 @@ class CoPilot {
             
             return readActionHandler.read(action: action)
                 .delay(.milliseconds(Int(READ_GAP_TIME * 1000)), scheduler: MainScheduler.instance)
+                .do(onCompleted: {
+                    self.subtitleEvent.onNext(SubtitleEvent(subtitle: [:], content: ""))
+                    print("One read action is completed!")
+                })
+            
         } else if type == "agent" {
             guard let maxTime = action["maxTime"] as? Int else {
                 log.error("Agent action missing 'maxTime'. Skipping.")
@@ -205,11 +210,11 @@ class CoPilot {
             }
         }
     }
-
+    
     
     private func markCompletion() {
         if !hasCompleted {
-            log.info("Reading completed.")
+            log.info("All reading completed.")
             hasCompleted = true
             stateMachine.enter(FinishState.self)
             logStateChange()

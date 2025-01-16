@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct ConversationalAIView: View {
-    @StateObject private var viewModel = ConversationalAIViewModel()
+    @ObservedObject var viewModel : ConversationalAIViewModel
     
     var body: some View {
         ZStack {
             GeometryReader { geometry in
                 VStack {
-                    OrbView(mode: $viewModel.mode, audioLevel: $viewModel.audioLevel)
+                    OrbView(mode: $viewModel.mode, audioLevel: $viewModel.audioLevel, status: $viewModel.status)
                         .padding(.top, 10)
                     
                     Spacer()
                     
-// //Enable it for testing
+//                    //Enable it for testing
 //                    Button(action: { viewModel.beginConversation() }) {
 //                        ZStack {
 //                            Circle()

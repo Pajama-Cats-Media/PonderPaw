@@ -48,7 +48,7 @@ struct ContentView: View {
             }
             
             VStack {
-                ConversationalAIView() // Main content is displayed here
+                ConversationalAIView(viewModel:conversationalAIViewModel) // Main content is displayed here
             }
         }
         .onAppear {
@@ -99,13 +99,17 @@ struct ContentView: View {
     }
     
     private func handleSubtitleEvent(_ subtitleEvent: SubtitleEvent) {
-        let subtitle = subtitleEvent.subtitle
+        let subtitle = subtitleEvent.subtitle ?? [:] // Use an empty dictionary if subtitle is nil
         let content = subtitleEvent.content
         
-        if let chars = subtitle["chars"] as? [String],
-           let timings = subtitle["timing"] as? [Double] {
-            // Update subtitle view model with subtitle information
-            subtitleViewModel.updateSubtitles(content: content, characters: chars, timings: timings)
+        // Attempt to extract "chars" and "timing" or use empty defaults
+        let chars = subtitle["chars"] as? [String] ?? []
+        let timings = subtitle["timing"] as? [Double] ?? []
+        
+        // Update subtitle view model regardless of availability
+        subtitleViewModel.updateSubtitles(content: content, characters: chars, timings: timings)
+        
+        if !chars.isEmpty && !timings.isEmpty {
             subtitleViewModel.startPlayback()
         }
     }
