@@ -151,6 +151,19 @@ class CoPilot {
             
             return readActionHandler.read(action: action)
                 .delay(.milliseconds(Int(READ_GAP_TIME * 1000)), scheduler: MainScheduler.instance)
+        } else if type == "wait" {
+            guard let length = action["length"] as? Int else {
+                log.error("Wait action missing 'length'. Skipping.")
+                return Observable.empty()
+            }
+            return Observable<Void>.create { observer in
+                log.info("Wait action started for \(length) seconds.")
+                DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(length)) {
+                    log.info("Wait action completed after \(length) seconds.")
+                    observer.onCompleted()
+                }
+                return Disposables.create()
+            }
         } else {
             return Observable<Void>.create { observer in
                 DispatchQueue.global().asyncAfter(deadline: .now() + self.ACTION_DELAY_TIME) {
@@ -161,6 +174,7 @@ class CoPilot {
             }
         }
     }
+
     
     private func markCompletion() {
         if !hasCompleted {

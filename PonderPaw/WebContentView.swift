@@ -43,9 +43,12 @@ struct WebContentView: UIViewRepresentable {
         }
 
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+            /// add 1s timeout to make sure content fully rendered
             let readyEventScript = """
             document.addEventListener('DOMContentLoaded', function() {
-                window.postMessage(JSON.stringify({ event: 'ready' }));
+                setTimeout(function() {
+                    window.postMessage(JSON.stringify({ event: 'ready' }));
+                }, 1000);
             });
             """
             webView.evaluateJavaScript(readyEventScript) { result, error in

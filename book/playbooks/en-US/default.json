@@ -8,7 +8,10 @@
         "pages": [
             {
                 "pageNumber": 1,
-                "actions": []
+                "actions": [{
+                    "type": "wait",
+                    "length": 3
+                }]
             },
             {
                 "pageNumber": 2,
