@@ -59,6 +59,14 @@ this.PJC = this.PJC || {}; // Global namespace for SDK
             } else if (obj.topic === PJC.constants.PREV_PAGE) {
                 console.log("Navigating to the previous page...");
                 PJC.prevPage?.();
+            } else if (obj.topic === PJC.constants.GOTO_PAGE) {
+                const pageNumber = obj.data?.pageNumber;
+                if (typeof pageNumber === "number" && pageNumber >= 0) {
+                    console.log(`Navigating to page ${pageNumber}...`);
+                    PJC.gotoPage?.(pageNumber);
+                } else {
+                    console.warn("Invalid pageNumber in goto_page event:", obj.data);
+                }
             } else {
                 console.warn("Unknown topic:", obj.topic);
             }
