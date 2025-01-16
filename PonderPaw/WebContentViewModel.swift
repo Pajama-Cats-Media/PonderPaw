@@ -14,17 +14,26 @@ class WebContentViewModel: ObservableObject {
     // Output: Exposed throttled event stream for binding
     var throttledEvent: Observable<String> {
         eventStream
-            .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
+            .throttle(.milliseconds(200), scheduler: MainScheduler.instance)
     }
 
-    /// Sends a new event into the stream
-    func sendEvent(_ message: String) {
-        eventStream.onNext(message)
+    /// Sends a new event into the stream with type and data
+    func sendEvent(topic: String, data: [String: Any]? = nil) {
+        var message: [String: Any] = ["topic": topic]
+        if let data = data {
+            message["data"] = data
+        }
+
+        if let jsonData = try? JSONSerialization.data(withJSONObject: message),
+           let jsonString = String(data: jsonData, encoding: .utf8) {
+            eventStream.onNext(jsonString)
+        } else {
+            print("Failed to serialize message to JSON")
+        }
     }
 
     /// Notifies when the DOM is ready
     func notifyDOMReady() {
         isDOMReady = true
-        sendEvent("ready")
     }
 }

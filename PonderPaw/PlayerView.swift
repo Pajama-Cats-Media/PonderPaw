@@ -10,7 +10,7 @@ struct PlayerView: View {
             WebContentView(url: url, viewModel: viewModel.webContentViewModel)
             
             Button(action: {
-                viewModel.turnPage()
+                viewModel.nextPage()
             }) {
                 Text("Click Anywhere")
                     .padding()

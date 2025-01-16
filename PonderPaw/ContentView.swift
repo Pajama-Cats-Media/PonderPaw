@@ -104,7 +104,7 @@ struct ContentView: View {
 
     private func handlePageCompletion(_ pageNumber: Int) {
         print("Turn page here: \(pageNumber)")
-        playerViewModel.turnPage()
+        playerViewModel.nextPage()
     }
 
     private func cleanupApplication() {
