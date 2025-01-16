@@ -19,13 +19,38 @@ class ConversationalAIViewModel: ObservableObject {
                 let config = ElevenLabsSDK.SessionConfig(agentId: agentId)
                 var callbacks = ElevenLabsSDK.Callbacks()
                 
-                callbacks.onConnect = { _ in self.status = .connected }
-                callbacks.onDisconnect = { self.status = .disconnected }
-                callbacks.onMessage = { message, _ in print(message) }
-                callbacks.onError = { errorMessage, _ in print("Error: \(errorMessage)") }
-                callbacks.onStatusChange = { newStatus in self.status = newStatus }
-                callbacks.onModeChange = { newMode in self.mode = newMode }
-                callbacks.onVolumeUpdate = { newVolume in self.audioLevel = newVolume }
+                // Capture 'self' weakly to avoid retain cycle
+                callbacks.onConnect = { [weak self] _ in
+                    DispatchQueue.main.async {
+                        self?.status = .connected
+                    }
+                }
+                callbacks.onDisconnect = { [weak self] in
+                    DispatchQueue.main.async {
+                        self?.status = .disconnected
+                    }
+                }
+                callbacks.onMessage = { message, _ in
+                    print(message)
+                }
+                callbacks.onError = { errorMessage, _ in
+                    print("Error: \(errorMessage)")
+                }
+                callbacks.onStatusChange = { [weak self] newStatus in
+                    DispatchQueue.main.async {
+                        self?.status = newStatus
+                    }
+                }
+                callbacks.onModeChange = { [weak self] newMode in
+                    DispatchQueue.main.async {
+                        self?.mode = newMode
+                    }
+                }
+                callbacks.onVolumeUpdate = { [weak self] newVolume in
+                    DispatchQueue.main.async {
+                        self?.audioLevel = newVolume
+                    }
+                }
                 
                 self.conversation = try await ElevenLabsSDK.Conversation.startSession(config: config, callbacks: callbacks)
             } catch {
@@ -39,7 +64,9 @@ class ConversationalAIViewModel: ObservableObject {
             Task {
                 conversation?.endSession()
                 conversation = nil
-                status = .disconnected
+                DispatchQueue.main.async {
+                    self.status = .disconnected
+                }
                 log.info("AI Conversation ended.")
             }
         } else {
