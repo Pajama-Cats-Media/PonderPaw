@@ -6,20 +6,21 @@ class ConversationalAIViewModel: ObservableObject {
     @Published var audioLevel: Float = 0.0
     @Published var mode: ElevenLabsSDK.Mode = .listening
     @Published var status: ElevenLabsSDK.Status = .disconnected
+    
+    private var conversation: ElevenLabsSDK.Conversation?
     private let agentId = "HLMUtO9U983aGkr0QrE2"
     
     func beginConversation() {
-        // Do nothing if already connected
         guard status != .connected else {
             log.info("AI Conversation already connected. No action taken.")
             return
         }
+        
         Task {
             do {
                 let config = ElevenLabsSDK.SessionConfig(agentId: agentId)
                 var callbacks = ElevenLabsSDK.Callbacks()
                 
-                // Capture 'self' weakly to avoid retain cycle
                 callbacks.onConnect = { [weak self] _ in
                     DispatchQueue.main.async {
                         self?.status = .connected
@@ -53,26 +54,47 @@ class ConversationalAIViewModel: ObservableObject {
                 }
                 
                 self.conversation = try await ElevenLabsSDK.Conversation.startSession(config: config, callbacks: callbacks)
+                
+                // Register client tools
+                self.registerClientTools()
             } catch {
-                print("Error starting AI conversation: \(error)")
+                print("Error starting conversation: \(error)")
             }
         }
     }
     
     func endConversation() {
-        if status == .connected {
-            Task {
-                conversation?.endSession()
-                conversation = nil
-                DispatchQueue.main.async {
-                    self.status = .disconnected
-                }
-                log.info("AI Conversation ended.")
-            }
-        } else {
+        guard status == .connected else {
             log.info("No active AI conversation to end.")
+            return
+        }
+        
+        Task {
+            conversation?.endSession()
+            conversation = nil
+            DispatchQueue.main.async {
+                self.status = .disconnected
+            }
+            log.info("AI Conversation ended.")
         }
     }
     
-    private var conversation: ElevenLabsSDK.Conversation?
+//    Not working yet
+    private func registerClientTools() {
+        guard let conversation = self.conversation else {
+            print("Cannot register tools: Conversation not initialized.")
+            return
+        }
+        
+        var clientTools = ElevenLabsSDK.ClientTools()
+        
+        // Register the end_call tool
+        clientTools.register("end_talk") { [weak self] _ async throws -> String? in
+            guard let self = self else { return nil }
+            print("end_talk tool invoked. Ending conversation.")
+            self.endConversation()
+            return nil
+        }
+    
+    }
 }

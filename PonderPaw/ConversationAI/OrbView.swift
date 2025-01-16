@@ -9,8 +9,8 @@ import SwiftUI
 import ElevenLabsSDK
 
 struct OrbView: View {
-    let mode: ElevenLabsSDK.Mode
-    let audioLevel: Float
+    @Binding var mode: ElevenLabsSDK.Mode
+    @Binding var audioLevel: Float
     
     private var iconName: String {
         switch mode {
@@ -22,15 +22,13 @@ struct OrbView: View {
     }
     
     private var scale: CGFloat {
-        0.9 + CGFloat(audioLevel * 3)
+        let calculatedScale = 0.9 + CGFloat(audioLevel * 3)
+        print("Calculated scale: \(calculatedScale)")
+        return calculatedScale
     }
     
     var body: some View {
         ZStack {
-            Image("orb")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 150)
             
             Circle()
                 .fill(.white)
@@ -45,6 +43,12 @@ struct OrbView: View {
                 .foregroundColor(.black)
                 .scaleEffect(scale)
                 .animation(.spring(response: 0.1, dampingFraction: 0.8), value: scale)
+        }
+        .onChange(of: mode) { _, newMode in
+            print("OrbView mode changed to: \(newMode)")
+        }
+        .onChange(of: audioLevel) { _, newAudioLevel in
+            print("OrbView audioLevel changed to: \(newAudioLevel)")
         }
     }
 }
