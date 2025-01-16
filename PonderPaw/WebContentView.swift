@@ -9,6 +9,9 @@ struct WebContentView: UIViewRepresentable {
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
         webView.navigationDelegate = context.coordinator
+        
+        // ignore safe area
+        webView.scrollView.contentInsetAdjustmentBehavior = .never
 
         #if DEBUG
         print("Enable web inspector")

@@ -19,28 +19,31 @@ struct ContentView: View {
             if isServerStarting {
                 Text("Starting server...")
             } else if let url = localServerURL {
-                VStack {
+                ZStack {
                     PlayerView(url: url, viewModel: playerViewModel)
 
-                    Spacer() // Pushes the SubtitleView to the bottom
-
-                    SubtitleView(viewModel: subtitleViewModel)
-                        .frame(height: 100)
-                        .padding()
+                    // Subtitle styled like a typical subtitle
+                    VStack {
+                        SubtitleView(viewModel: subtitleViewModel)
+                            .fixedSize(horizontal: true, vertical: false) 
+                            .frame(height: 40) // Fixed height of 40
+                            .background(Color.black.opacity(0.7)) // Semi-transparent black background
+                            .cornerRadius(20) // Rounded edges for better styling
+                            .foregroundColor(.white) // White text color for contrast
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                    .padding(.horizontal, 16) // Horizontal padding for aesthetic spacing
+                    .padding(.bottom, 24) // Positioned 20 points from the bottom
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea()
                 .onChange(of: playerViewModel.isDOMReady) { noReady, ready in
-                           if ready {
-                               loadCopilot()
-                           }
-                       }
-
+                    if ready {
+                        loadCopilot()
+                    }
+                }
             } else {
                 Text("Failed to start the server.")
-            }
-
-            VStack {
-                ConversationalAIView() // Main content is displayed here
             }
         }
         .onAppear {
