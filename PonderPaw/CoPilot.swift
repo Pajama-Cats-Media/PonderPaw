@@ -20,7 +20,11 @@ class CoPilot {
     private let ACTION_DELAY_TIME: TimeInterval = 3.0
     private let READ_GAP_TIME: TimeInterval = 0.2
     
-    init() {
+    private let conversationalAIViewModel: ConversationalAIViewModel
+    
+    init(conversationalAIViewModel:ConversationalAIViewModel) {
+        self.conversationalAIViewModel = conversationalAIViewModel
+        
         // Initialize FSM states
         let startState = StartState()
         let pageReadyState = PageReadyState()
@@ -151,6 +155,33 @@ class CoPilot {
             
             return readActionHandler.read(action: action)
                 .delay(.milliseconds(Int(READ_GAP_TIME * 1000)), scheduler: MainScheduler.instance)
+        } else if type == "agent" {
+            guard let maxTime = action["maxTime"] as? Int else {
+                log.error("Agent action missing 'maxTime'. Skipping.")
+                return Observable.empty()
+            }
+            
+            return Observable<Void>.create { observer in
+                log.info("Starting 'agent' action with a maximum time of \(maxTime) seconds.")
+                let workItem = DispatchWorkItem {
+                    log.info("Max time reached. Ending conversation.")
+                    self.conversationalAIViewModel.endConversation()
+                    observer.onCompleted()
+                }
+                
+                // Start conversation
+                self.conversationalAIViewModel.beginConversation()
+                
+                // Schedule work item to end conversation after maxTime
+                DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(maxTime), execute: workItem)
+                
+                return Disposables.create {
+                    // Ensure the workItem is canceled if disposed
+                    workItem.cancel()
+                    self.conversationalAIViewModel.endConversation()
+                    log.info("'agent' action completed or disposed.")
+                }
+            }
         } else if type == "wait" {
             guard let length = action["length"] as? Int else {
                 log.error("Wait action missing 'length'. Skipping.")

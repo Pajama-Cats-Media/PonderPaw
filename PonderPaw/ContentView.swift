@@ -10,6 +10,7 @@ struct ContentView: View {
         timings: []
     ))
     @StateObject private var playerViewModel = PlayerViewModel() // Manage PlayerViewModel
+    @StateObject private var conversationalAIViewModel = ConversationalAIViewModel()
     
     private let server = LocalHTTPServer()
     private let disposeBag = DisposeBag()
@@ -75,7 +76,7 @@ struct ContentView: View {
             return
         }
         
-        let coPilot = CoPilot()
+        let coPilot = CoPilot(conversationalAIViewModel:conversationalAIViewModel)
         coPilot.loadJson(jsonManifest: jsonManifest)
         
         // Handle subtitle events

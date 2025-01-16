@@ -1047,7 +1047,8 @@
                     },
                     {
                         "type": "agent",
-                        "prompt": ""
+                        "prompt": "",
+                        "maxTime": 60
                     }
                 ]
             }
