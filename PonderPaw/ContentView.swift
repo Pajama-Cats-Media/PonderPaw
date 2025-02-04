@@ -2,6 +2,9 @@ import SwiftUI
 import RxSwift
 
 struct ContentView: View {
+    // New parameter that identifies the story to display
+    let storyID: String
+    
     @State private var localServerURL: URL? = nil
     @State private var isServerStarting = true
     @StateObject private var subtitleViewModel = SubtitleViewModel(model: SubtitleModel(
@@ -18,7 +21,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             if isServerStarting {
-                Text("Starting server...")
+                Text("Starting server for story: \(storyID)...")
             } else if let url = localServerURL {
                 ZStack {
                     PlayerView(url: url, viewModel: playerViewModel)
@@ -26,15 +29,15 @@ struct ContentView: View {
                     // Subtitle styled like a typical subtitle
                     VStack {
                         SubtitleView(viewModel: subtitleViewModel)
-                            .fixedSize(horizontal: true, vertical: false) 
-                            .frame(height: 40) // Fixed height of 40
-                            .background(Color.black.opacity(0.7)) // Semi-transparent black background
-                            .cornerRadius(20) // Rounded edges for better styling
-                            .foregroundColor(.white) // White text color for contrast
+                            .fixedSize(horizontal: true, vertical: false)
+                            .frame(height: 40)
+                            .background(Color.black.opacity(0.7))
+                            .cornerRadius(20)
+                            .foregroundColor(.white)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-                    .padding(.horizontal, 16) // Horizontal padding for aesthetic spacing
-                    .padding(.bottom, 30) // Positioned 30 points from the bottom
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 30)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .ignoresSafeArea()
@@ -44,11 +47,11 @@ struct ContentView: View {
                     }
                 }
             } else {
-                Text("Failed to start the server.")
+                Text("Failed to start the server for story: \(storyID).")
             }
             
             VStack {
-                ConversationalAIView(viewModel:conversationalAIViewModel) // Main content is displayed here
+                ConversationalAIView(viewModel: conversationalAIViewModel)
             }
         }
         .onAppear {
@@ -57,15 +60,15 @@ struct ContentView: View {
         .onDisappear {
             cleanupApplication()
         }
-        .statusBarHidden(true) // This hides the status bar
+        .statusBarHidden(true) // Hides the status bar
     }
     
     private func initializeApplication() {
         startLocalServer { success in
             if success {
-                log.info("Local server started successfully.")
+                log.info("Local server started successfully for story: \(storyID).")
             } else {
-                log.error("Failed to start the local server.")
+                log.error("Failed to start the local server for story: \(storyID).")
             }
         }
     }
@@ -76,7 +79,7 @@ struct ContentView: View {
             return
         }
         
-        let coPilot = CoPilot(conversationalAIViewModel:conversationalAIViewModel)
+        let coPilot = CoPilot(conversationalAIViewModel: conversationalAIViewModel)
         coPilot.loadJson(jsonManifest: jsonManifest)
         
         // Handle subtitle events
@@ -99,14 +102,12 @@ struct ContentView: View {
     }
     
     private func handleSubtitleEvent(_ subtitleEvent: SubtitleEvent) {
-        let subtitle = subtitleEvent.subtitle ?? [:] // Use an empty dictionary if subtitle is nil
+        let subtitle = subtitleEvent.subtitle ?? [:]
         let content = subtitleEvent.content
         
-        // Attempt to extract "chars" and "timing" or use empty defaults
         let chars = subtitle["chars"] as? [String] ?? []
         let timings = subtitle["timing"] as? [Double] ?? []
         
-        // Update subtitle view model regardless of availability
         subtitleViewModel.updateSubtitles(content: content, characters: chars, timings: timings)
         
         if !chars.isEmpty && !timings.isEmpty {
@@ -117,7 +118,7 @@ struct ContentView: View {
     /// the pageName is the next page number
     private func handlePageCompletion(_ pageNumber: Int) {
         print("Turn page here: \(pageNumber)")
-        playerViewModel.gotoPage(number:pageNumber)
+        playerViewModel.gotoPage(number: pageNumber)
     }
     
     private func cleanupApplication() {
@@ -175,7 +176,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        // Provide a dummy storyID for preview purposes
+        ContentView(storyID: "previewID")
     }
 }
 

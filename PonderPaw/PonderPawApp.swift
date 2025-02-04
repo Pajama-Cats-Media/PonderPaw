@@ -13,7 +13,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     FirebaseApp.configure()
-
     return true
   }
 }
@@ -25,6 +24,7 @@ struct PonderPawApp: App {
     
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
+            // Add your models here if needed
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -37,7 +37,7 @@ struct PonderPawApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()  // Launch HomeView instead of ContentView
         }
         .modelContainer(sharedModelContainer)
     }
