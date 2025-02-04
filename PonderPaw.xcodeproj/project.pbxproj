@@ -13,6 +13,7 @@
 		CD0CE5842D306FDD00E75B7B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CD0CE5832D306FDD00E75B7B /* RxSwift */; };
 		CD0CE5B02D35644E00E75B7B /* GameplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0CE5AF2D35644D00E75B7B /* GameplayKit.framework */; };
 		CD0CE6442D3829EA00E75B7B /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = CD0CE6432D3829EA00E75B7B /* SwiftyBeaver */; };
+		CD9D25FC2D5289D000C30DD8 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = CD9D25FB2D5289D000C30DD8 /* FirebaseCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 				CD0CE5842D306FDD00E75B7B /* RxSwift in Frameworks */,
 				CD0CE6442D3829EA00E75B7B /* SwiftyBeaver in Frameworks */,
 				CD0CD4602D2C791F00E75B7B /* ElevenLabsSDK in Frameworks */,
+				CD9D25FC2D5289D000C30DD8 /* FirebaseCore in Frameworks */,
 				CD0CE57B2D305CD900E75B7B /* PerfectHTTPServer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +158,7 @@
 				CD0CE57A2D305CD900E75B7B /* PerfectHTTPServer */,
 				CD0CE5832D306FDD00E75B7B /* RxSwift */,
 				CD0CE6432D3829EA00E75B7B /* SwiftyBeaver */,
+				CD9D25FB2D5289D000C30DD8 /* FirebaseCore */,
 			);
 			productName = PonderPaw;
 			productReference = CD0CD3E32D2C679200E75B7B /* PonderPaw.app */;
@@ -244,6 +247,7 @@
 				CD0CE5792D305CD200E75B7B /* XCRemoteSwiftPackageReference "Perfect-HTTPServer" */,
 				CD0CE5822D306FB900E75B7B /* XCRemoteSwiftPackageReference "RxSwift" */,
 				CD0CE6422D3829D600E75B7B /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
+				CD9D25FA2D52892D00C30DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CD0CD3E42D2C679200E75B7B /* Products */;
@@ -450,6 +454,7 @@
 				DEVELOPMENT_TEAM = NDT977GT9N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PaperHeart;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "User voice input";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -482,6 +487,7 @@
 				DEVELOPMENT_TEAM = NDT977GT9N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PaperHeart;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "User voice input";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -648,6 +654,14 @@
 				minimumVersion = 2.1.1;
 			};
 		};
+		CD9D25FA2D52892D00C30DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.8.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -670,6 +684,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CD0CE6422D3829D600E75B7B /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
 			productName = SwiftyBeaver;
+		};
+		CD9D25FB2D5289D000C30DD8 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD9D25FA2D52892D00C30DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
