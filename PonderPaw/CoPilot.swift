@@ -5,41 +5,42 @@ import RxSwift
 class CoPilot {
     public let stateMachine: GKStateMachine
     public var pages: [[String: Any]] = []
-    // PublishSubject to broadcast subtitle events
+    
+    // PublishSubjects for events
     public let subtitleEvent = PublishSubject<SubtitleEvent>()
     public let pageCompletionEvent = PublishSubject<Int>()
     
     private let disposeBag = DisposeBag()
+    private var readingDisposeBag = DisposeBag() // DisposeBag for managing reading
     private var readingObservable: Observable<Void>?
-    private var hasCompleted = false // Flag to prevent redundant logs
-    private let readActionHandler = ReadActionHandler() // ReadActionHandler instance
     
-    // Define constants for wait times
+    private var hasCompleted = false
+    private let readActionHandler = ReadActionHandler()
+    
     private let INITIAL_WAIT_TIME: TimeInterval = 5.0
-    private let PAGE_DELAY_TIME: TimeInterval = 2.0
-    private let ACTION_DELAY_TIME: TimeInterval = 3.0
     private let READ_GAP_TIME: TimeInterval = 0.2
     
     private let conversationalAIViewModel: ConversationalAIViewModel
-    
-    init(conversationalAIViewModel:ConversationalAIViewModel) {
+
+    // Pause/Resume mechanism
+    private var isPaused = false
+    private let pauseSubject = PublishSubject<Void>()
+    private let resumeSubject = PublishSubject<Void>()
+
+    init(conversationalAIViewModel: ConversationalAIViewModel) {
         self.conversationalAIViewModel = conversationalAIViewModel
         
-        // Initialize FSM states
         let startState = StartState()
         let pageReadyState = PageReadyState()
         let actionState = ActionState()
         let finishState = FinishState()
         
         stateMachine = GKStateMachine(states: [startState, pageReadyState, actionState, finishState])
-        
-        // Enter the initial state
         stateMachine.enter(StartState.self)
         logStateChange()
     }
     
     func loadJson(jsonManifest: String) {
-        // Parse JSON
         guard let data = jsonManifest.data(using: .utf8),
               let parsed = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
               let playbook = parsed["playbook"] as? [String: Any],
@@ -49,15 +50,18 @@ class CoPilot {
         
         self.pages = pages
         log.info("JSON manifest loaded. \(pages.count) pages found.")
-        
-        // Create the observable chain for reading
-        let initialDelay = Observable<Void>.just(())
-            .delay(.seconds(5), scheduler: MainScheduler.instance)
-        
+
+        // Observable chain for reading with pause handling
         readingObservable = Observable.from(pages.enumerated())
             .concatMap { [weak self] index, page -> Observable<Void> in
                 guard let self = self else { return Observable.empty() }
+                
                 return self.processPage(page, index: index)
+                    .flatMap { _ in
+                        self.pauseSubject // Wait if paused
+                            .take(1) // Wait for a single resume event
+                            .flatMap { _ in Observable.just(()) }
+                    }
             }
             .do(onSubscribe: {
                 log.info("Reading started...")
@@ -72,13 +76,44 @@ class CoPilot {
             return
         }
         
+        readingDisposeBag = DisposeBag() // Reset dispose bag for new reading session
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + INITIAL_WAIT_TIME) {
             observable
                 .subscribe()
-                .disposed(by: self.disposeBag)
+                .disposed(by: self.readingDisposeBag)
         }
     }
     
+    func stopReading() {
+        log.info("Stopping reading process...")
+
+        readingDisposeBag = DisposeBag() // Dispose of all active observables
+        
+        hasCompleted = false
+        isPaused = false // Ensure it resets
+
+        if stateMachine.canEnterState(StartState.self) {
+            stateMachine.enter(StartState.self)
+            logStateChange()
+        }
+
+        pageCompletionEvent.onCompleted()
+        subtitleEvent.onCompleted()
+    }
+    
+    func togglePause() {
+        if isPaused {
+            log.info("Resuming reading process...")
+            isPaused = false
+            resumeSubject.onNext(())
+        } else {
+            log.info("Pausing reading process...")
+            isPaused = true
+            pauseSubject.onNext(())
+        }
+    }
+
     private func processPage(_ page: [String: Any], index: Int) -> Observable<Void> {
         if stateMachine.canEnterState(PageReadyState.self) {
             stateMachine.enter(PageReadyState.self)
@@ -96,11 +131,11 @@ class CoPilot {
                     return self.processActions(actions)
                         .do(onDispose: {
                             log.info("Completed all actions for Page \(index + 1).")
-                            self.pageCompletionEvent.onNext(index + 1) // Emit page completion event
+                            self.pageCompletionEvent.onNext(index + 1)
                         })
                 } else {
                     log.info("No actions for Page \(index + 1). Moving to the next page.")
-                    self.pageCompletionEvent.onNext(index + 1) // Emit page completion event for empty page
+                    self.pageCompletionEvent.onNext(index + 1)
                     return Observable.empty()
                 }
             }
@@ -117,24 +152,13 @@ class CoPilot {
         return Observable.from(actions.enumerated())
             .concatMap { index, action -> Observable<Void> in
                 return self.performAction(action)
-                    .do(onSubscribe: {
-                        if let type = action["type"] as? String {
-                            log.info("Started Action \(index + 1): [Type: \(type.uppercased())]")
-                        } else {
-                            log.error("Started Action \(index + 1): [Invalid action data]")
-                        }
-                    }, onDispose: {
+                    .do(onDispose: {
                         log.info("Completed Action \(index + 1).")
                     })
             }
-            .do(
-                onSubscribe: {
-                    log.info("Started processing actions sequentially...")
-                },
-                onDispose: {
-                    log.info("All actions completed.")
-                }
-            )
+            .do(onDispose: {
+                log.info("All actions completed.")
+            })
     }
     
     private func performAction(_ action: [String: Any]) -> Observable<Void> {
@@ -145,7 +169,6 @@ class CoPilot {
         
         if type == "read" {
             let content = action["content"] as? String ?? "No content provided"
-            let isAudioEnabled = ((action["audio"] as? String)?.isEmpty == false)
             
             if let subtitle = action["subtitle"] as? [String: Any] {
                 subtitleEvent.onNext(SubtitleEvent(subtitle: subtitle, content: content))
@@ -160,49 +183,9 @@ class CoPilot {
                     print("One read action is completed!")
                 })
             
-        } else if type == "agent" {
-            guard let maxTime = action["maxTime"] as? Int else {
-                log.error("Agent action missing 'maxTime'. Skipping.")
-                return Observable.empty()
-            }
-            
-            return Observable<Void>.create { observer in
-                log.info("Starting 'agent' action with a maximum time of \(maxTime) seconds.")
-                let workItem = DispatchWorkItem {
-                    log.info("Max time reached. Ending conversation.")
-                    self.conversationalAIViewModel.endConversation()
-                    observer.onCompleted()
-                }
-                
-                // Start conversation
-                self.conversationalAIViewModel.beginConversation()
-                
-                // Schedule work item to end conversation after maxTime
-                DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(maxTime), execute: workItem)
-                
-                return Disposables.create {
-                    // Ensure the workItem is canceled if disposed
-                    workItem.cancel()
-                    self.conversationalAIViewModel.endConversation()
-                    log.info("'agent' action completed or disposed.")
-                }
-            }
-        } else if type == "wait" {
-            guard let length = action["length"] as? Int else {
-                log.error("Wait action missing 'length'. Skipping.")
-                return Observable.empty()
-            }
-            return Observable<Void>.create { observer in
-                log.info("Wait action started for \(length) seconds.")
-                DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(length)) {
-                    log.info("Wait action completed after \(length) seconds.")
-                    observer.onCompleted()
-                }
-                return Disposables.create()
-            }
         } else {
             return Observable<Void>.create { observer in
-                DispatchQueue.global().asyncAfter(deadline: .now() + self.ACTION_DELAY_TIME) {
+                DispatchQueue.global().asyncAfter(deadline: .now() + 3.0) {
                     log.info("Completed Action: [Type: \(type.uppercased())]")
                     observer.onCompleted()
                 }
@@ -210,7 +193,6 @@ class CoPilot {
             }
         }
     }
-    
     
     private func markCompletion() {
         if !hasCompleted {

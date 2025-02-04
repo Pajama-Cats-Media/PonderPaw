@@ -14,6 +14,7 @@ struct ContentView: View {
     ))
     @StateObject private var playerViewModel = PlayerViewModel() // Manage PlayerViewModel
     @StateObject private var conversationalAIViewModel = ConversationalAIViewModel()
+    @State private var coPilotRef: CoPilot?    // Store CoPilot reference
     
     private let server = LocalHTTPServer()
     private let disposeBag = DisposeBag()
@@ -80,8 +81,8 @@ struct ContentView: View {
         }
         
         let coPilot = CoPilot(conversationalAIViewModel: conversationalAIViewModel)
+        coPilotRef = coPilot
         coPilot.loadJson(jsonManifest: jsonManifest)
-        
         // Handle subtitle events
         coPilot.subtitleEvent
             .observe(on: MainScheduler.instance)
@@ -122,6 +123,7 @@ struct ContentView: View {
     }
     
     private func cleanupApplication() {
+        coPilotRef?.stopReading()
         subtitleViewModel.stopPlayback()
         stopLocalServer()
     }

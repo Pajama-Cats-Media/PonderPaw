@@ -10,9 +10,9 @@ struct Story: Identifiable, Hashable {
 struct HomeView: View {
     // Dummy list of recent stories.
     @State private var recentStories: [Story] = [
-        Story(id: "1", title: "First Story", firebaseLink: URL(string: "https://example.com/story?storyID=1")),
-        Story(id: "2", title: "Second Story", firebaseLink: URL(string: "https://example.com/story?storyID=2")),
-        Story(id: "3", title: "Third Story", firebaseLink: URL(string: "https://example.com/story?storyID=3"))
+        Story(id: "1", title: "First Story", firebaseLink: URL(string: "https://example.com/story?storyID=1cd1708e-67f0-4148-a417-b9839e55716e")),
+        Story(id: "2", title: "Second Story", firebaseLink: URL(string: "https://example.com/story?storyID=1cd1708e-67f0-4148-a417-b9839e55716e")),
+        Story(id: "3", title: "Third Story", firebaseLink: URL(string: "https://example.com/story?storyID=1cd1708e-67f0-4148-a417-b9839e55716e"))
     ]
     
     // NavigationPath to allow programmatic navigation when a dynamic link is opened.
