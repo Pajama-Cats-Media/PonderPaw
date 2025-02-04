@@ -8,7 +8,8 @@ class ConversationalAIViewModel: ObservableObject {
     @Published var status: ElevenLabsSDK.Status = .disconnected
     
     private var conversation: ElevenLabsSDK.Conversation?
-    private let agentId = "HLMUtO9U983aGkr0QrE2"
+//    private let agentId = "HLMUtO9U983aGkr0QrE2"
+    private let agentId = "L5iAWMhMkBJk0WDweoLj"
     
     func beginConversation() {
         guard status != .connected else {

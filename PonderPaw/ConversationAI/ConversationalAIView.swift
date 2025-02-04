@@ -14,10 +14,11 @@ struct ConversationalAIView: View {
         ZStack {
             GeometryReader { geometry in
                 VStack {
-                    OrbView(mode: $viewModel.mode, audioLevel: $viewModel.audioLevel, status: $viewModel.status)
-                        .padding(.top, 10)
-                    
                     Spacer()
+                    OrbView(mode: $viewModel.mode, audioLevel: $viewModel.audioLevel, status: $viewModel.status)
+                        .padding(.bottom, 30)
+                    
+                    
                     
 //                    //Enable it for testing
 //                    Button(action: { viewModel.beginConversation() }) {
