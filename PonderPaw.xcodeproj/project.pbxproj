@@ -14,6 +14,8 @@
 		CD0CE5B02D35644E00E75B7B /* GameplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0CE5AF2D35644D00E75B7B /* GameplayKit.framework */; };
 		CD0CE6442D3829EA00E75B7B /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = CD0CE6432D3829EA00E75B7B /* SwiftyBeaver */; };
 		CD9D25FC2D5289D000C30DD8 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = CD9D25FB2D5289D000C30DD8 /* FirebaseCore */; };
+		E556B9C32D545327006D62A2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E556B9C22D545327006D62A2 /* FirebaseAuth */; };
+		E556B9C62D54538E006D62A2 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E556B9C52D54538E006D62A2 /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,16 @@
 		CD0CE5AF2D35644D00E75B7B /* GameplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameplayKit.framework; path = System/Library/Frameworks/GameplayKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E556B9CB2D545D18006D62A2 /* Exceptions for "PonderPaw" folder in "PonderPaw" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CD0CD3E22D2C679200E75B7B /* PonderPaw */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 		CD0CDA312D302AE200E75B7B /* Exceptions for "PonderPaw" folder in "Copy Bundle Resources" phase from "PonderPaw" target */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
@@ -56,6 +68,7 @@
 		CD0CD3E52D2C679200E75B7B /* PonderPaw */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				E556B9CB2D545D18006D62A2 /* Exceptions for "PonderPaw" folder in "PonderPaw" target */,
 				CD0CDA312D302AE200E75B7B /* Exceptions for "PonderPaw" folder in "Copy Bundle Resources" phase from "PonderPaw" target */,
 			);
 			path = PonderPaw;
@@ -81,8 +94,10 @@
 				CD0CE5B02D35644E00E75B7B /* GameplayKit.framework in Frameworks */,
 				CD0CE5842D306FDD00E75B7B /* RxSwift in Frameworks */,
 				CD0CE6442D3829EA00E75B7B /* SwiftyBeaver in Frameworks */,
+				E556B9C62D54538E006D62A2 /* GoogleSignInSwift in Frameworks */,
 				CD0CD4602D2C791F00E75B7B /* ElevenLabsSDK in Frameworks */,
 				CD9D25FC2D5289D000C30DD8 /* FirebaseCore in Frameworks */,
+				E556B9C32D545327006D62A2 /* FirebaseAuth in Frameworks */,
 				CD0CE57B2D305CD900E75B7B /* PerfectHTTPServer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,6 +174,8 @@
 				CD0CE5832D306FDD00E75B7B /* RxSwift */,
 				CD0CE6432D3829EA00E75B7B /* SwiftyBeaver */,
 				CD9D25FB2D5289D000C30DD8 /* FirebaseCore */,
+				E556B9C22D545327006D62A2 /* FirebaseAuth */,
+				E556B9C52D54538E006D62A2 /* GoogleSignInSwift */,
 			);
 			productName = PonderPaw;
 			productReference = CD0CD3E32D2C679200E75B7B /* PonderPaw.app */;
@@ -248,6 +265,7 @@
 				CD0CE5822D306FB900E75B7B /* XCRemoteSwiftPackageReference "RxSwift" */,
 				CD0CE6422D3829D600E75B7B /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 				CD9D25FA2D52892D00C30DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E556B9C42D54537D006D62A2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CD0CD3E42D2C679200E75B7B /* Products */;
@@ -454,6 +472,7 @@
 				DEVELOPMENT_TEAM = NDT977GT9N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PonderPaw/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PaperHeart;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "User voice input";
@@ -487,6 +506,7 @@
 				DEVELOPMENT_TEAM = NDT977GT9N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PonderPaw/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PaperHeart;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "User voice input";
@@ -662,6 +682,14 @@
 				minimumVersion = 11.8.0;
 			};
 		};
+		E556B9C42D54537D006D62A2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -689,6 +717,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CD9D25FA2D52892D00C30DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCore;
+		};
+		E556B9C22D545327006D62A2 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD9D25FA2D52892D00C30DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E556B9C52D54538E006D62A2 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E556B9C42D54537D006D62A2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
