@@ -15,6 +15,7 @@
 		CD0CE6442D3829EA00E75B7B /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = CD0CE6432D3829EA00E75B7B /* SwiftyBeaver */; };
 		CD9D25FC2D5289D000C30DD8 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = CD9D25FB2D5289D000C30DD8 /* FirebaseCore */; };
 		CD9D26532D550B3600C30DD8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CD9D26522D550B3600C30DD8 /* FirebaseFirestore */; };
+		CD9D26552D55116200C30DD8 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = CD9D26542D55116200C30DD8 /* FirebaseMessaging */; };
 		E556B9C32D545327006D62A2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E556B9C22D545327006D62A2 /* FirebaseAuth */; };
 		E556B9C62D54538E006D62A2 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E556B9C52D54538E006D62A2 /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,7 @@
 			files = (
 				CD0CE5B02D35644E00E75B7B /* GameplayKit.framework in Frameworks */,
 				CD0CE5842D306FDD00E75B7B /* RxSwift in Frameworks */,
+				CD9D26552D55116200C30DD8 /* FirebaseMessaging in Frameworks */,
 				CD0CE6442D3829EA00E75B7B /* SwiftyBeaver in Frameworks */,
 				E556B9C62D54538E006D62A2 /* GoogleSignInSwift in Frameworks */,
 				CD0CD4602D2C791F00E75B7B /* ElevenLabsSDK in Frameworks */,
@@ -179,6 +181,7 @@
 				E556B9C22D545327006D62A2 /* FirebaseAuth */,
 				E556B9C52D54538E006D62A2 /* GoogleSignInSwift */,
 				CD9D26522D550B3600C30DD8 /* FirebaseFirestore */,
+				CD9D26542D55116200C30DD8 /* FirebaseMessaging */,
 			);
 			productName = PonderPaw;
 			productReference = CD0CD3E32D2C679200E75B7B /* PonderPaw.app */;
@@ -469,6 +472,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PonderPaw/PonderPaw.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PonderPaw/Preview Content\"";
@@ -503,6 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PonderPaw/PonderPaw.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PonderPaw/Preview Content\"";
@@ -725,6 +730,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CD9D25FA2D52892D00C30DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		CD9D26542D55116200C30DD8 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD9D25FA2D52892D00C30DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 		E556B9C22D545327006D62A2 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
