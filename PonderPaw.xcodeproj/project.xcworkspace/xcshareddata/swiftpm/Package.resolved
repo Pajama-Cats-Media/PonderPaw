@@ -1,5 +1,5 @@
 {
-  "originHash" : "073276ee4c75d6275c9184e7ea248136f70c6698636c3b618623c9af420c7c27",
+  "originHash" : "c486b7e826e80e18c8d262520ee0adeacef2c350aebb6bca14b4e852366eb8fe",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -251,6 +251,15 @@
       "state" : {
         "revision" : "8cba041db09596183331d123f337d0eb2e6e8e91",
         "version" : "2.1.1"
+      }
+    },
+    {
+      "identity" : "zip",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/marmelroy/Zip.git",
+      "state" : {
+        "revision" : "67fa55813b9e7b3b9acee9c0ae501def28746d76",
+        "version" : "2.1.2"
       }
     }
   ],

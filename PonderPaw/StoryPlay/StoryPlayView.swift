@@ -1,3 +1,10 @@
+//
+//  StoryPlayView.swift
+//  PonderPaw
+//
+//  Created by Homer Quan on 2/6/25.
+//
+
 import SwiftUI
 import RxSwift
 
@@ -65,11 +72,25 @@ struct StoryPlayView: View {
     }
     
     private func initializeApplication() {
-        startLocalServer { success in
-            if success {
-                log.info("Local server started successfully for story: \(storyID).")
-            } else {
-                log.error("Failed to start the local server for story: \(storyID).")
+        // Use StoryManager to obtain the local folder path for the story.
+        StoryManager.getStoryPath(for: storyID) { localPath, error in
+            if let error = error {
+                print("Error retrieving story folder: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let localPath = localPath else {
+                print("Local path is nil.")
+                return
+            }
+            
+            // Start the local server using the obtained folder path.
+            startLocalServer(with: localPath) { success in
+                if success {
+                    log.info("Local server started successfully for story: \(storyID).")
+                } else {
+                    log.error("Failed to start the local server for story: \(storyID).")
+                }
             }
         }
     }
@@ -128,17 +149,11 @@ struct StoryPlayView: View {
         stopLocalServer()
     }
     
-    private func startLocalServer(completion: @escaping (Bool) -> Void) {
+    private func startLocalServer(with folderURL: URL, completion: @escaping (Bool) -> Void) {
+        print("Starting server using folder: \(folderURL.path)")
+        
         DispatchQueue.global(qos: .background).async {
-            guard let folderPath = Bundle.main.path(forResource: "book", ofType: nil) else {
-                print("Failed to locate 'book' directory in the project.")
-                DispatchQueue.main.async {
-                    self.isServerStarting = false
-                    completion(false)
-                }
-                return
-            }
-            
+            let folderPath = folderURL.path
             if let urlString = server.startServer(folderPath: folderPath),
                let url = URL(string: urlString) {
                 DispatchQueue.main.async {
