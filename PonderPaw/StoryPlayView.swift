@@ -1,7 +1,7 @@
 import SwiftUI
 import RxSwift
 
-struct ContentView: View {
+struct StoryPlayView: View {
     // New parameter that identifies the story to display
     let storyID: String
     
@@ -176,10 +176,10 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct StoryPlayView_Previews: PreviewProvider {
     static var previews: some View {
         // Provide a dummy storyID for preview purposes
-        ContentView(storyID: "previewID")
+        StoryPlayView(storyID: "previewID")
     }
 }
 

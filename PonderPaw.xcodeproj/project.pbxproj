@@ -14,6 +14,7 @@
 		CD0CE5B02D35644E00E75B7B /* GameplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0CE5AF2D35644D00E75B7B /* GameplayKit.framework */; };
 		CD0CE6442D3829EA00E75B7B /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = CD0CE6432D3829EA00E75B7B /* SwiftyBeaver */; };
 		CD9D25FC2D5289D000C30DD8 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = CD9D25FB2D5289D000C30DD8 /* FirebaseCore */; };
+		CD9D26532D550B3600C30DD8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CD9D26522D550B3600C30DD8 /* FirebaseFirestore */; };
 		E556B9C32D545327006D62A2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E556B9C22D545327006D62A2 /* FirebaseAuth */; };
 		E556B9C62D54538E006D62A2 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E556B9C52D54538E006D62A2 /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
@@ -96,6 +97,7 @@
 				CD0CE6442D3829EA00E75B7B /* SwiftyBeaver in Frameworks */,
 				E556B9C62D54538E006D62A2 /* GoogleSignInSwift in Frameworks */,
 				CD0CD4602D2C791F00E75B7B /* ElevenLabsSDK in Frameworks */,
+				CD9D26532D550B3600C30DD8 /* FirebaseFirestore in Frameworks */,
 				CD9D25FC2D5289D000C30DD8 /* FirebaseCore in Frameworks */,
 				E556B9C32D545327006D62A2 /* FirebaseAuth in Frameworks */,
 				CD0CE57B2D305CD900E75B7B /* PerfectHTTPServer in Frameworks */,
@@ -176,6 +178,7 @@
 				CD9D25FB2D5289D000C30DD8 /* FirebaseCore */,
 				E556B9C22D545327006D62A2 /* FirebaseAuth */,
 				E556B9C52D54538E006D62A2 /* GoogleSignInSwift */,
+				CD9D26522D550B3600C30DD8 /* FirebaseFirestore */,
 			);
 			productName = PonderPaw;
 			productReference = CD0CD3E32D2C679200E75B7B /* PonderPaw.app */;
@@ -717,6 +720,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CD9D25FA2D52892D00C30DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCore;
+		};
+		CD9D26522D550B3600C30DD8 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD9D25FA2D52892D00C30DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 		E556B9C22D545327006D62A2 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

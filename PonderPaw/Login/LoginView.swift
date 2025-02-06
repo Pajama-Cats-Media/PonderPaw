@@ -10,22 +10,28 @@ struct LoginView: View {
     @State private var errorMessage = ""
     @State private var isCreatingAccount = false
     @State private var isLoading = false // Loading state
-    
+
     var body: some View {
-        NavigationView {
-            VStack {
-                Text("My App Name") // Replace with your app name
+        // Use ZStack to center the login form in the main view.
+        ZStack {
+            Color(.systemBackground)
+                .ignoresSafeArea()
+
+            // The login form is now the main panel.
+            VStack(spacing: 16) {
+                Text("Login PaperHeart Viewer")
                     .font(.largeTitle)
-                    .padding()
+                    .bold()
+                    .padding(.bottom, 20)
                 
-                TextField("Enter your email", text: $email) // More descriptive placeholder
+                TextField("Enter your email", text: $email)
                     .keyboardType(.emailAddress)
                     .autocapitalization(.none)
                     .padding()
                     .background(Color(.systemGray6))
                     .cornerRadius(8)
                 
-                SecureField("Enter your password", text: $password) // More descriptive placeholder
+                SecureField("Enter your password", text: $password)
                     .padding()
                     .background(Color(.systemGray6))
                     .cornerRadius(8)
@@ -33,14 +39,18 @@ struct LoginView: View {
                 if !errorMessage.isEmpty {
                     Text(errorMessage)
                         .foregroundColor(.red)
-                        .padding()
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
                 }
                 
                 Button(action: {
                     loginWithEmailPassword()
                 }) {
                     if isLoading {
-                        ProgressView() // Loading indicator
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .frame(maxWidth: .infinity)
+                            .padding()
                     } else {
                         Text(isCreatingAccount ? "Create Account" : "Log In")
                             .frame(maxWidth: .infinity)
@@ -50,38 +60,40 @@ struct LoginView: View {
                             .cornerRadius(8)
                     }
                 }
-                .padding(.horizontal)
                 
                 Button(action: {
                     isCreatingAccount.toggle()
                 }) {
                     Text(isCreatingAccount ? "Already have an account? Log in" : "Create an account")
-                        .padding()
+                        .font(.subheadline)
+                        .foregroundColor(.blue)
                 }
                 
                 Divider()
-                    .padding()
+                    .padding(.vertical, 10)
                 
                 Button(action: {
                     signInWithGoogle()
                 }) {
                     HStack {
                         Text("Sign in with Google")
+                            .font(.headline)
                     }
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(Color.white)
                     .foregroundColor(.black)
-                    .cornerRadius(8)
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color.gray, lineWidth: 1)
                     )
                 }
-                .padding(.horizontal)
             }
-            .padding()
-            .navigationTitle("Welcome")
+            .padding(30)
+            .background(Color.white)
+            .cornerRadius(12)
+            .shadow(radius: 10)
+            .padding(.horizontal, 20)
         }
     }
     
@@ -124,7 +136,6 @@ struct LoginView: View {
             errorMessage = "User not found"
         case AuthErrorCode.wrongPassword.rawValue:
             errorMessage = "Incorrect password"
-        // ... handle other error cases as needed
         default:
             errorMessage = error.localizedDescription
         }
@@ -140,7 +151,7 @@ struct LoginView: View {
             return
         }
 
-        isLoading = true // Show loading indicator
+        isLoading = true
 
         GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController) { result, error in
             if let error = error {
