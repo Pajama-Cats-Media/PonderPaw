@@ -183,6 +183,33 @@ class CoPilot {
                     print("One read action is completed!")
                 })
             
+        } else if type == "agent" {
+            guard let maxTime = action["maxTime"] as? Int else {
+                log.error("Agent action missing 'maxTime'. Skipping.")
+                return Observable.empty()
+            }
+            
+            return Observable<Void>.create { observer in
+                log.info("Starting 'agent' action with a maximum time of \(maxTime) seconds.")
+                let workItem = DispatchWorkItem {
+                    log.info("Max time reached. Ending conversation.")
+                    self.conversationalAIViewModel.endConversation()
+                    observer.onCompleted()
+                }
+                
+                // Start conversation
+                self.conversationalAIViewModel.beginConversation()
+                
+                // Schedule work item to end conversation after maxTime
+                DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(maxTime), execute: workItem)
+                
+                return Disposables.create {
+                    // Ensure the workItem is canceled if disposed
+                    workItem.cancel()
+                    self.conversationalAIViewModel.endConversation()
+                    log.info("'agent' action completed or disposed.")
+                }
+            }
         } else {
             return Observable<Void>.create { observer in
                 DispatchQueue.global().asyncAfter(deadline: .now() + 3.0) {
