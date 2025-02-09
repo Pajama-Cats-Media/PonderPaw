@@ -4,6 +4,7 @@
 //
 //  Created by Homer Quan on 2/6/25.
 //  Updated on 2/6/25 for template + merge unzip logic.
+//  Updated on 2/9/25 to download all story files instead of a zip.
 //
 
 import Foundation
@@ -19,8 +20,8 @@ class StoryManager {
     /// The process now downloads a template zip based on the story’s type (from Firestore)
     /// from Firebase Storage at "common/templates/<storyType>.zip". If that file isn’t found
     /// (or if the type is nil), it falls back to "general.zip". It unzips the template first,
-    /// then downloads and unzips the story.zip (merging its contents). If errors occur during
-    /// the story.zip extraction, the story folder is moved to a failed location.
+    /// then downloads and “merges” (copies) all the story files from Firebase Storage.
+    /// If errors occur during the file download, the story folder is moved to a failed location.
     ///
     /// - Parameters:
     ///   - storyId: The identifier for the story.
@@ -79,8 +80,8 @@ class StoryManager {
                                     completion(nil, unzipError)
                                     return
                                 }
-                                // Proceed to download and merge the story zip.
-                                downloadAndMergeStoryZip(storyId: storyId, storyFolderURL: storyFolderURL, completion: completion)
+                                // Proceed to download and merge the story files.
+                                downloadAndMergeStoryFiles(storyId: storyId, destinationFolder: storyFolderURL, completion: completion)
                             }
                         }
                     } else {
@@ -96,8 +97,8 @@ class StoryManager {
                             completion(nil, unzipError)
                             return
                         }
-                        // Now download and merge the story.zip.
-                        downloadAndMergeStoryZip(storyId: storyId, storyFolderURL: storyFolderURL, completion: completion)
+                        // Now download and merge the story files.
+                        downloadAndMergeStoryFiles(storyId: storyId, destinationFolder: storyFolderURL, completion: completion)
                     }
                 }
             }
@@ -153,72 +154,116 @@ class StoryManager {
         }
     }
     
-    // MARK: - Story Zip Handling
+    // MARK: - Story Files Handling (Replacing Story Zip)
     
-    /// Downloads and merges the story zip into the story folder.
+    /// Downloads all files (including subfolders) from Firebase Storage at "stories/<storyId>"
+    /// and copies them into the provided destination folder.
     ///
     /// - Parameters:
     ///   - storyId: The identifier for the story.
-    ///   - storyFolderURL: The folder that already contains the unzipped template.
+    ///   - destinationFolder: The folder that already contains the unzipped template.
     ///   - completion: Completion handler with the final folder URL or an error.
-    private static func downloadAndMergeStoryZip(storyId: String, storyFolderURL: URL, completion: @escaping (URL?, Error?) -> Void) {
-        downloadStoryZip(for: storyId) { storyZipURL, error in
+    private static func downloadAndMergeStoryFiles(storyId: String, destinationFolder: URL, completion: @escaping (URL?, Error?) -> Void) {
+        downloadStoryFiles(for: storyId, into: destinationFolder) { error in
             if let error = error {
-                print("Error downloading story zip: \(error.localizedDescription)")
-                moveFolderToFailed(storyFolderURL)
+                print("Error downloading story files: \(error.localizedDescription)")
+                moveFolderToFailed(destinationFolder)
                 completion(nil, error)
-                return
-            }
-            
-            guard let storyZipURL = storyZipURL else {
-                moveFolderToFailed(storyFolderURL)
-                let err = NSError(domain: "StoryManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Story zip URL is nil"])
-                completion(nil, err)
-                return
-            }
-            
-            do {
-                // Unzip and merge (overwrite: true) so that any files from story.zip
-                // will override the template files if needed.
-                try Zip.unzipFile(storyZipURL, destination: storyFolderURL, overwrite: true, password: nil)
-                print("Successfully merged story.zip into folder: \(storyFolderURL.path)")
-                try FileManager.default.removeItem(at: storyZipURL)
-                completion(storyFolderURL, nil)
-            } catch {
-                print("Error unzipping story zip: \(error.localizedDescription)")
-                moveFolderToFailed(storyFolderURL)
-                completion(nil, error)
+            } else {
+                print("Successfully downloaded story files into folder: \(destinationFolder.path)")
+                completion(destinationFolder, nil)
             }
         }
     }
     
-    /// Downloads the story zip file from Firebase Storage at "stories/<storyId>/story.zip".
+    /// Downloads all files (and subfolders) from Firebase Storage at "stories/<storyId>" into the destination folder.
     ///
     /// - Parameters:
     ///   - storyId: The identifier for the story.
-    ///   - completion: Completion handler with the local URL of the downloaded zip or an error.
-    private static func downloadStoryZip(for storyId: String, completion: @escaping (URL?, Error?) -> Void) {
+    ///   - destinationURL: The local destination folder.
+    ///   - completion: Completion handler with an optional error.
+    private static func downloadStoryFiles(for storyId: String, into destinationURL: URL, completion: @escaping (Error?) -> Void) {
         let storage = Storage.storage()
-        let storageRef = storage.reference()
-        
-        // Reference to the story file at "stories/<storyId>/story.zip"
-        let fileRef = storageRef.child("stories/\(storyId)/story.zip")
-        
-        let tempDirectory = FileManager.default.temporaryDirectory
-        let localZipURL = tempDirectory.appendingPathComponent("story_\(storyId).zip")
-        
-        // Remove any existing file at the temp location.
-        if FileManager.default.fileExists(atPath: localZipURL.path) {
-            try? FileManager.default.removeItem(at: localZipURL)
-        }
-        
-        fileRef.write(toFile: localZipURL) { url, error in
+        let storyRef = storage.reference().child("stories/\(storyId)")
+        downloadFilesRecursively(from: storyRef, to: destinationURL, completion: completion)
+    }
+    
+    /// Recursively downloads files from the given StorageReference into the local folder.
+    ///
+    /// - Parameters:
+    ///   - storageRef: The Firebase Storage reference.
+    ///   - localURL: The local destination folder.
+    ///   - completion: Completion handler with an optional error.
+    private static func downloadFilesRecursively(from storageRef: StorageReference, to localURL: URL, completion: @escaping (Error?) -> Void) {
+        storageRef.listAll { (result, error) in
             if let error = error {
-                print("Error downloading story zip: \(error.localizedDescription)")
-                completion(nil, error)
-            } else {
-                print("Successfully downloaded story zip to: \(localZipURL.path)")
-                completion(localZipURL, nil)
+                completion(error)
+                return
+            }
+            
+            // Unwrap the optional result
+            guard let result = result else {
+                let unwrapError = NSError(domain: "StoryManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "No result returned from Firebase Storage"])
+                completion(unwrapError)
+                return
+            }
+            
+            let dispatchGroup = DispatchGroup()
+            var downloadError: Error?
+            
+            // Download files in the current directory.
+            for item in result.items {
+                dispatchGroup.enter()
+                let destinationFileURL = localURL.appendingPathComponent(item.name)
+                // Ensure the parent directory exists.
+                let parentDir = destinationFileURL.deletingLastPathComponent()
+                if !FileManager.default.fileExists(atPath: parentDir.path) {
+                    do {
+                        try FileManager.default.createDirectory(at: parentDir, withIntermediateDirectories: true, attributes: nil)
+                    } catch {
+                        print("Error creating directory \(parentDir.path): \(error.localizedDescription)")
+                        downloadError = error
+                        dispatchGroup.leave()
+                        continue
+                    }
+                }
+                item.write(toFile: destinationFileURL) { url, error in
+                    if let error = error {
+                        print("Error downloading file \(item.fullPath): \(error.localizedDescription)")
+                        downloadError = error
+                    } else {
+                        print("Downloaded file \(item.fullPath) to \(destinationFileURL.path)")
+                    }
+                    dispatchGroup.leave()
+                }
+            }
+            
+            // Process subdirectories.
+            for prefix in result.prefixes {
+                dispatchGroup.enter()
+                let subfolderURL = localURL.appendingPathComponent(prefix.name)
+                // Create the local subfolder if it doesn't exist.
+                if !FileManager.default.fileExists(atPath: subfolderURL.path) {
+                    do {
+                        try FileManager.default.createDirectory(at: subfolderURL, withIntermediateDirectories: true, attributes: nil)
+                    } catch {
+                        print("Error creating subfolder \(subfolderURL.path): \(error.localizedDescription)")
+                        downloadError = error
+                        dispatchGroup.leave()
+                        continue
+                    }
+                }
+                // Recursively download files from this subfolder.
+                downloadFilesRecursively(from: prefix, to: subfolderURL) { error in
+                    if let error = error {
+                        downloadError = error
+                    }
+                    dispatchGroup.leave()
+                }
+            }
+            
+            dispatchGroup.notify(queue: .main) {
+                completion(downloadError)
             }
         }
     }
@@ -289,7 +334,7 @@ class StoryManager {
         }
     }
     
-    /// Moves the story folder to a "failedStories" folder if an error occurs during the story.zip extraction.
+    /// Moves the story folder to a "failedStories" folder if an error occurs during the file download.
     ///
     /// - Parameter folderURL: The URL of the story folder.
     private static func moveFolderToFailed(_ folderURL: URL) {
