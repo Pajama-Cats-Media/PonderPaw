@@ -1,3 +1,10 @@
+//
+//  CoPilot.swift
+//  PonderPaw
+//
+//  Created by Homer Quan on 2/10/25.
+//
+
 import Foundation
 import GameplayKit
 import RxSwift
@@ -17,8 +24,9 @@ class CoPilot {
     private var hasCompleted = false
     private let readActionHandler: ReadActionHandler
     
-    private let INITIAL_WAIT_TIME: TimeInterval = 5.0
-    private let READ_GAP_TIME: TimeInterval = 0.2
+    private let INITIAL_WAIT_TIME: TimeInterval = 1.0
+    private let READ_GAP_TIME: TimeInterval = 0.25
+    private let PAGE_GAP_TIME: TimeInterval = 0.5
     
     private let conversationalAIViewModel: ConversationalAIViewModel
 
@@ -58,6 +66,7 @@ class CoPilot {
                 guard let self = self else { return Observable.empty() }
                 
                 return self.processPage(page, index: index)
+                    .concat(Observable.empty().delay(.milliseconds(Int(PAGE_GAP_TIME * 1000)), scheduler: MainScheduler.instance))
                     .flatMap { _ in
                         self.pauseSubject // Wait if paused
                             .take(1) // Wait for a single resume event
@@ -163,6 +172,9 @@ class CoPilot {
     }
     
     private func performAction(_ action: [String: Any]) -> Observable<Void> {
+        
+        log.info("Processing Action: \(action)")
+        
         guard let type = action["type"] as? String else {
             log.error("Action has no type. Skipping.")
             return Observable.empty()

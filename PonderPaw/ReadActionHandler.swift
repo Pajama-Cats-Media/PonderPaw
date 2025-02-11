@@ -12,9 +12,12 @@ class ReadActionHandler: NSObject {
         self.storyFolder = storyFolder
         super.init()
     }
-
+    
     func read(action: [String: Any]) -> Observable<Void> {
         return Observable<Void>.create { observer in
+            // Immediately stop any currently playing audio before starting a new one
+            self.stopAudioPlaybackNow()
+            
             if let audioFile = action["audio"] as? String {
                 // Play audio file
                 guard let storyFolder = self.storyFolder else {
@@ -34,10 +37,10 @@ class ReadActionHandler: NSObject {
                     print("Error initializing audio player: \(error.localizedDescription)")
                     observer.onCompleted()
                 }
-
+                
                 // Return cleanup logic for when the subscription is disposed
                 return Disposables.create {
-                    self.stopAudioPlayback() // Cleanup when the audio is complete or subscription is disposed
+                    self.stopAudioPlaybackNow() // Cleanup when the audio is complete or subscription is disposed
                 }
             } else {
                 print("Invalid action: missing 'audio' field.")
@@ -46,8 +49,16 @@ class ReadActionHandler: NSObject {
             }
         }
     }
-
-
+    
+    private func stopAudioPlaybackNow() {
+            if let player = audioPlayer {
+                player.stop()
+                audioPlayer = nil
+            }
+            playbackCompletion = nil
+        }
+    
+    
     private func stopAudioPlayback() {
         guard let player = audioPlayer else { return }
         
