@@ -15,7 +15,7 @@ class CoPilot {
     private var readingObservable: Observable<Void>?
     
     private var hasCompleted = false
-    private let readActionHandler = ReadActionHandler()
+    private let readActionHandler: ReadActionHandler
     
     private let INITIAL_WAIT_TIME: TimeInterval = 5.0
     private let READ_GAP_TIME: TimeInterval = 0.2
@@ -27,8 +27,9 @@ class CoPilot {
     private let pauseSubject = PublishSubject<Void>()
     private let resumeSubject = PublishSubject<Void>()
 
-    init(conversationalAIViewModel: ConversationalAIViewModel) {
+    init(conversationalAIViewModel: ConversationalAIViewModel, storyFolder: URL?) {
         self.conversationalAIViewModel = conversationalAIViewModel
+        self.readActionHandler = ReadActionHandler(storyFolder: storyFolder)
         
         let startState = StartState()
         let pageReadyState = PageReadyState()

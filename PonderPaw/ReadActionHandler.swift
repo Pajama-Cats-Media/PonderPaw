@@ -4,20 +4,27 @@ import RxSwift
 class ReadActionHandler: NSObject {
     private var audioPlayer: AVAudioPlayer?
     private var playbackCompletion: (() -> Void)?
+    
+    private var storyFolder: URL?
+    
+    // Then add this initializer:
+    init(storyFolder: URL?) {
+        self.storyFolder = storyFolder
+        super.init()
+    }
 
     func read(action: [String: Any]) -> Observable<Void> {
         return Observable<Void>.create { observer in
             if let audioFile = action["audio"] as? String {
                 // Play audio file
-                guard let filePath = Bundle.main.path(forResource: audioFile, ofType: nil, inDirectory: "book/sounds/en-US") else {
-                    print("Audio file not found: \(audioFile)")
+                guard let storyFolder = self.storyFolder else {
+                    print("Story folder is not available.")
                     observer.onCompleted()
                     return Disposables.create()
                 }
-
+                let audioFileURL = storyFolder.appendingPathComponent("sounds/en-US/\(audioFile)")
                 do {
-                    let fileURL = URL(fileURLWithPath: filePath)
-                    self.audioPlayer = try AVAudioPlayer(contentsOf: fileURL)
+                    self.audioPlayer = try AVAudioPlayer(contentsOf: audioFileURL)
                     self.audioPlayer?.delegate = self
                     self.playbackCompletion = {
                         observer.onCompleted() // Notify completion of the observable

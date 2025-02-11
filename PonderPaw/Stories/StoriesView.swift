@@ -22,7 +22,7 @@ struct StoriesView: View {
                 List(viewModel.stories) { story in
                     NavigationLink(destination: StoryPlayView(storyID: story.id)) {
                         // For now, simply show the story's id.
-                        Text(story.id)
+                        Text(story.doc_title)
                             .padding(.vertical, 8)
                     }
                 }

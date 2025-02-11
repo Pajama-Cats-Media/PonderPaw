@@ -13,6 +13,8 @@ struct StoryPlayView: View {
     let storyID: String
     
     @State private var localServerURL: URL? = nil
+    // New state property to hold the local folder URL for the story.
+    @State private var storyFolderURL: URL? = nil
     @State private var isServerStarting = true
     @StateObject private var subtitleViewModel = SubtitleViewModel(model: SubtitleModel(
         content: "",
@@ -84,6 +86,9 @@ struct StoryPlayView: View {
                 return
             }
             
+            // Store the obtained local folder URL for later use.
+            self.storyFolderURL = localPath
+            
             // Start the local server using the obtained folder path.
             startLocalServer(with: localPath) { success in
                 if success {
@@ -101,7 +106,7 @@ struct StoryPlayView: View {
             return
         }
         
-        let coPilot = CoPilot(conversationalAIViewModel: conversationalAIViewModel)
+        let coPilot = CoPilot(conversationalAIViewModel: conversationalAIViewModel, storyFolder: storyFolderURL)
         coPilotRef = coPilot
         coPilot.loadJson(jsonManifest: jsonManifest)
         // Handle subtitle events
@@ -175,17 +180,23 @@ struct StoryPlayView: View {
         server.stopServer()
     }
     
+    /// Loads the JSON manifest from the story's local folder.
+    /// Instead of a fixed bundle path, it uses the local folder URL (obtained when starting the server)
+    /// and appends the relative path "playbook/en-US/default.json".
     private func loadJsonManifest() -> String? {
-        guard let filePath = Bundle.main.path(forResource: "default", ofType: "json", inDirectory: "book/playbooks/en-US") else {
-            print("Failed to locate 'default.json' in 'book/playbooks/en-US' directory.")
+        guard let storyFolderURL = storyFolderURL else {
+            print("Story folder URL is nil.")
             return nil
         }
         
+        // Build the full URL to the JSON manifest file.
+        // TODO: switch language later
+        let manifestURL = storyFolderURL.appendingPathComponent("playbooks/en-US/default.json")
         do {
-            let jsonData = try String(contentsOfFile: filePath, encoding: .utf8)
+            let jsonData = try String(contentsOf: manifestURL, encoding: .utf8)
             return jsonData
         } catch {
-            print("Failed to read JSON file: \(error.localizedDescription)")
+            print("Failed to read JSON file at \(manifestURL.path): \(error.localizedDescription)")
             return nil
         }
     }
