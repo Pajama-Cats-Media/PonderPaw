@@ -17,23 +17,6 @@ struct ConversationalAIView: View {
                     Spacer()
                     OrbView(mode: $viewModel.mode, audioLevel: $viewModel.audioLevel, status: $viewModel.status)
                         .padding(.bottom, 30)
-                    
-                    
-                    
-//                    //Enable it for testing
-//                    Button(action: { viewModel.beginConversation() }) {
-//                        ZStack {
-//                            Circle()
-//                                .fill(viewModel.status == .connected ? Color.red : Color.black)
-//                                .frame(width: 80, height: 80)
-//                                .shadow(radius: 5)
-//                            
-//                            Image(systemName: viewModel.status == .connected ? "speaker.wave.2.fill" : "mic.fill")
-//                                .font(.system(size: 32, weight: .bold))
-//                                .foregroundColor(.white)
-//                        }
-//                    }
-//                    .padding(.bottom, 40)
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height)
             }

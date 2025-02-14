@@ -4,7 +4,7 @@ import Combine
 class SubtitleViewModel: ObservableObject {
     @Published var currentChunk: String = "" // The current subtitle chunk
 
-    private var model: SubtitleModel
+    @Published var model: SubtitleModel
     private var timer: Timer?
     private var startTime: Date?
 
@@ -12,13 +12,17 @@ class SubtitleViewModel: ObservableObject {
         self.model = model
     }
 
-    /// Starts subtitle playback
     func startPlayback() {
         guard model.isValid else {
             print("Invalid subtitle data.")
             return
         }
-
+        
+        if model.isPlainText {
+            currentChunk = model.getCurrentChunk(at: 0)
+            return
+        }
+        
         startTime = Date()
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
             self?.updatePlayback()

@@ -40,7 +40,6 @@ struct StoryPlayView: View {
                     VStack {
                         SubtitleView(viewModel: subtitleViewModel)
                             .fixedSize(horizontal: true, vertical: false)
-                            .frame(height: 40)
                             .background(Color.black.opacity(0.7))
                             .cornerRadius(20)
                             .foregroundColor(.white)
@@ -63,6 +62,11 @@ struct StoryPlayView: View {
             VStack {
                 ConversationalAIView(viewModel: conversationalAIViewModel)
             }
+        }
+        .onChange(of: conversationalAIViewModel.subtitle) { newSubtitle in
+            print("subtitle from AI agent: \(newSubtitle)")
+            let event = SubtitleEvent(subtitle: [:], content: newSubtitle)
+                    handleSubtitleEvent(event)
         }
         .onAppear {
             initializeApplication()
@@ -138,7 +142,11 @@ struct StoryPlayView: View {
         subtitleViewModel.updateSubtitles(content: content, characters: chars, timings: timings)
         
         if !chars.isEmpty && !timings.isEmpty {
+            // Timed mode: start playback using the timer.
             subtitleViewModel.startPlayback()
+        } else {
+            // Plain text mode: simply display the content immediately.
+            subtitleViewModel.currentChunk = content
         }
     }
     

@@ -6,9 +6,10 @@ class ConversationalAIViewModel: ObservableObject {
     @Published var audioLevel: Float = 0.0
     @Published var mode: ElevenLabsSDK.Mode = .listening
     @Published var status: ElevenLabsSDK.Status = .disconnected
+    @Published var subtitle: String = ""
     
     private var conversation: ElevenLabsSDK.Conversation?
-//    private let agentId = "HLMUtO9U983aGkr0QrE2"
+    //    private let agentId = "HLMUtO9U983aGkr0QrE2"
     private let agentId = "L5iAWMhMkBJk0WDweoLj"
     
     func beginConversation() {
@@ -32,8 +33,17 @@ class ConversationalAIViewModel: ObservableObject {
                         self?.status = .disconnected
                     }
                 }
-                callbacks.onMessage = { message, _ in
-                    print(message)
+                callbacks.onMessage = { [weak self] message, role in
+                    print("\(role.rawValue): \(message)")
+                    if role.rawValue == "ai" {
+                        DispatchQueue.main.async {
+                            self?.subtitle = message
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            self?.subtitle = ""
+                        }
+                    }
                 }
                 callbacks.onError = { errorMessage, _ in
                     print("Error: \(errorMessage)")
@@ -80,7 +90,7 @@ class ConversationalAIViewModel: ObservableObject {
         }
     }
     
-//    Not working yet
+    //    Not working yet
     private func registerClientTools() {
         guard let conversation = self.conversation else {
             print("Cannot register tools: Conversation not initialized.")
@@ -96,6 +106,6 @@ class ConversationalAIViewModel: ObservableObject {
             self.endConversation()
             return nil
         }
-    
+        
     }
 }
