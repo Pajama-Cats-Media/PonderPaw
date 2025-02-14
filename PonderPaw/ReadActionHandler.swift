@@ -57,31 +57,6 @@ class ReadActionHandler: NSObject {
             }
             playbackCompletion = nil
         }
-    
-    
-    private func stopAudioPlayback() {
-        guard let player = audioPlayer else { return }
-        
-        let fadeOutDuration: TimeInterval = 1.0 // 1 second fade-out
-        let fadeOutSteps = 10 // Reduce volume in 10 small steps
-        let fadeOutInterval = fadeOutDuration / Double(fadeOutSteps) // 100ms per step
-        
-        var currentStep = 0
-        
-        // using fade out
-        Timer.scheduledTimer(withTimeInterval: fadeOutInterval, repeats: true) { timer in
-            if currentStep < fadeOutSteps {
-                let newVolume = max(0, player.volume - (1.0 / Float(fadeOutSteps))) // Decrease volume smoothly
-                player.volume = newVolume
-                currentStep += 1
-            } else {
-                timer.invalidate()
-                player.stop()
-                self.audioPlayer = nil
-                self.playbackCompletion = nil
-            }
-        }
-    }
 }
 
 // MARK: - AVAudioPlayerDelegate
