@@ -9,10 +9,9 @@ class ConversationalAIViewModel: ObservableObject {
     @Published var subtitle: String = ""
     
     private var conversation: ElevenLabsSDK.Conversation?
-    //    private let agentId = "HLMUtO9U983aGkr0QrE2"
-    private let agentId = "L5iAWMhMkBJk0WDweoLj"
+    private let agentId = "SZ3AaTQGuaVGyBINtz1Q"
     
-    func beginConversation() {
+    func beginConversation(initialPrompt:String, firstMessage:String, voiceId:String) {
         guard status != .connected else {
             log.info("AI Conversation already connected. No action taken.")
             return
@@ -20,7 +19,16 @@ class ConversationalAIViewModel: ObservableObject {
         
         Task {
             do {
-                let config = ElevenLabsSDK.SessionConfig(agentId: agentId)
+                // Configure the agent with this prompt (and any other needed settings like language)
+                // The prompt include necessary knowledge base for this conversationa s well
+                let agentPrompt = ElevenLabsSDK.AgentPrompt(prompt: initialPrompt)
+                // Configure the agent with this prompt (and any other needed settings like language)
+                let agentConfig = ElevenLabsSDK.AgentConfig(prompt: agentPrompt, firstMessage: firstMessage)
+                // Create an overrides object with the agent configuration
+                let ttsConfig = ElevenLabsSDK.TTSConfig(voiceId: voiceId)
+                let overrides = ElevenLabsSDK.ConversationConfigOverride(agent:agentConfig, tts: ttsConfig)
+                // Prepare the session configuration with the overrides
+                let config = ElevenLabsSDK.SessionConfig(agentId: self.agentId, overrides: overrides)
                 var callbacks = ElevenLabsSDK.Callbacks()
                 
                 callbacks.onConnect = { [weak self] _ in

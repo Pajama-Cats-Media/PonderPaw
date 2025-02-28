@@ -197,7 +197,7 @@ class CoPilot {
                 })
             
         } else if type == "agent" {
-            guard let maxTime = action["maxTime"] as? Int else {
+            guard let maxTime = action["max_time"] as? Int else {
                 log.error("Agent action missing 'maxTime'. Skipping.")
                 return Observable.empty()
             }
@@ -211,7 +211,13 @@ class CoPilot {
                 }
                 
                 // Start conversation
-                self.conversationalAIViewModel.beginConversation()
+                if let prompt = action["prompt"] as? String,
+                   let opening = action["opening"] as? String {
+                    self.conversationalAIViewModel.beginConversation(initialPrompt: prompt, firstMessage: opening, voiceId: "gOkFV1JMCt0G0n9xmBwV")
+                } else {
+                    // Handle the case where the cast fails
+                    print("Error: Unable to cast prompt or opening to String.")
+                }
                 
                 // Schedule work item to end conversation after maxTime
                 DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(maxTime), execute: workItem)

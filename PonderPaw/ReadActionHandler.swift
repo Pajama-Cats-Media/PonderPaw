@@ -26,7 +26,12 @@ class ReadActionHandler: NSObject {
                     return Disposables.create()
                 }
                 let audioFileURL = storyFolder.appendingPathComponent("sounds/en-US/\(audioFile)")
+                
+                
                 do {
+                    // allow play in silent mode
+                    try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                    try AVAudioSession.sharedInstance().setActive(true)
                     self.audioPlayer = try AVAudioPlayer(contentsOf: audioFileURL)
                     self.audioPlayer?.delegate = self
                     self.playbackCompletion = {
