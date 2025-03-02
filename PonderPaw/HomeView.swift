@@ -3,6 +3,7 @@ import FirebaseAuth
 
 /// The HomeView includes the StoriesView as a child, passing in the current user's Firebase ID.
 struct HomeView: View {
+    
     var body: some View {
         NavigationStack {
             VStack {

@@ -64,7 +64,6 @@ struct StoryPlayView: View {
             }
         }
         .onChange(of: conversationalAIViewModel.subtitle) { newSubtitle in
-            print("subtitle from AI agent: \(newSubtitle)")
             let event = SubtitleEvent(subtitle: [:], content: newSubtitle)
                     handleSubtitleEvent(event)
         }

@@ -10,10 +10,21 @@ import UserNotifications
 
 import FirebaseCore
 import FirebaseMessaging
+import FirebaseDynamicLinks
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
+    
+    func handleIncomingDynamicLink(_ url: URL) {
+        let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        if let storyId = components?.queryItems?.first(where: { $0.name == "storyId" })?.value {
+            print("Story ID: \(storyId)")
+            DispatchQueue.main.async {
+                DeepLinkManager.shared.storyID = storyId
+            }
+        }
+    }
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication
@@ -42,6 +53,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             
                             return true
                         }
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        guard let incomingURL = userActivity.webpageURL else { return false }
+        print("Incoming URL is \(incomingURL)")
+        
+        let handled = DynamicLinks.dynamicLinks().handleUniversalLink(incomingURL) { [weak self] (dynamicLink, error) in
+            if let error = error {
+                print("Failed to handle dynamic link: \(error.localizedDescription)")
+                return
+            }
+            
+            if let dynamicLink = dynamicLink, let url = dynamicLink.url {
+                self?.handleIncomingDynamicLink(url)
+            }
+        }
+        
+        return handled
+    }
     
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {

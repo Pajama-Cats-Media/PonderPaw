@@ -173,23 +173,24 @@ class CoPilot {
     
     private func performAction(_ action: [String: Any]) -> Observable<Void> {
         
-        log.info("Processing Action: \(action)")
-        
         guard let type = action["type"] as? String else {
             log.error("Action has no type. Skipping.")
             return Observable.empty()
         }
         
+        log.info("Processing Action type: \(type)")
+        
         if type == "read" {
             let content = action["content"] as? String ?? "No content provided"
             
-            if let subtitle = action["subtitle"] as? [String: Any] {
-                subtitleEvent.onNext(SubtitleEvent(subtitle: subtitle, content: content))
-            } else {
-                subtitleEvent.onNext(SubtitleEvent(subtitle: [:], content: content))
-            }
-            
             return readActionHandler.read(action: action)
+                .do(onSubscribe: {
+                    if let subtitle = action["subtitle"] as? [String: Any] {
+                        self.subtitleEvent.onNext(SubtitleEvent(subtitle: subtitle, content: content))
+                    } else {
+                        self.subtitleEvent.onNext(SubtitleEvent(subtitle: [:], content: content))
+                    }
+                })
                 .delay(.milliseconds(Int(READ_GAP_TIME * 1000)), scheduler: MainScheduler.instance)
                 .do(onCompleted: {
                     self.subtitleEvent.onNext(SubtitleEvent(subtitle: [:], content: ""))

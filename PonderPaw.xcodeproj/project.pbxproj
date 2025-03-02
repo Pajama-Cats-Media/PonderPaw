@@ -19,6 +19,7 @@
 		CD9D266A2D5546DB00C30DD8 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = CD9D26692D5546DB00C30DD8 /* Zip */; };
 		E556B9C32D545327006D62A2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E556B9C22D545327006D62A2 /* FirebaseAuth */; };
 		E556B9C62D54538E006D62A2 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E556B9C52D54538E006D62A2 /* GoogleSignInSwift */; };
+		E5F7BC522D7490B600513A0E /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = E5F7BC512D7490B600513A0E /* FirebaseDynamicLinks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 				CD9D26672D55468800C30DD8 /* FirebaseStorage in Frameworks */,
 				E556B9C32D545327006D62A2 /* FirebaseAuth in Frameworks */,
 				CD0CE57B2D305CD900E75B7B /* PerfectHTTPServer in Frameworks */,
+				E5F7BC522D7490B600513A0E /* FirebaseDynamicLinks in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +187,7 @@
 				CD9D26542D55116200C30DD8 /* FirebaseMessaging */,
 				CD9D26662D55468800C30DD8 /* FirebaseStorage */,
 				CD9D26692D5546DB00C30DD8 /* Zip */,
+				E5F7BC512D7490B600513A0E /* FirebaseDynamicLinks */,
 			);
 			productName = PonderPaw;
 			productReference = CD0CD3E32D2C679200E75B7B /* PonderPaw.app */;
@@ -766,6 +769,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E556B9C42D54537D006D62A2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		E5F7BC512D7490B600513A0E /* FirebaseDynamicLinks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD9D25FA2D52892D00C30DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDynamicLinks;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
