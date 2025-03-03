@@ -18,13 +18,15 @@ struct StoriesView: View {
                     .foregroundColor(.gray)
                     .padding()
             } else {
-                // Display the list of stories.
+                // Display the list of stories with pull-to-refresh.
                 List(viewModel.stories) { story in
                     NavigationLink(destination: StoryPlayView(storyID: story.id)) {
-                        // For now, simply show the story's id.
                         Text(story.doc_title)
                             .padding(.vertical, 8)
                     }
+                }
+                .refreshable {
+                    viewModel.loadStories()
                 }
             }
         }

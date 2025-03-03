@@ -8,5 +8,7 @@
 	<array>
 		<string>applinks:paperheart-203fc.web.app</string>
 	</array>
+	<key>com.apple.developer.usernotifications.communication</key>
+	<true/>
 </dict>
 </plist>
