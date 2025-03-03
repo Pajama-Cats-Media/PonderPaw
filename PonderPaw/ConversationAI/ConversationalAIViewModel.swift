@@ -31,6 +31,29 @@ class ConversationalAIViewModel: ObservableObject {
                 let config = ElevenLabsSDK.SessionConfig(agentId: self.agentId, overrides: overrides)
                 var callbacks = ElevenLabsSDK.Callbacks()
                 
+                // Create client tools instance
+                var clientTools = ElevenLabsSDK.ClientTools()
+                
+                // Register a custom tool with an async handler
+                clientTools.register("generic_tool") { parameters async throws -> String? in
+                    // Parameters is a [String: Any] dictionary
+                    print("generic_tool received: \(parameters)")
+                    
+                    // Check for the "summary" key; if it's not present, return immediately.
+                    guard let summary = parameters["summary"] as? String else {
+                        return nil
+                    }
+                    
+                    let title = "Notification"
+                    
+                    print("notification message: \(summary)")
+                    
+                    // Use the summary as the body of the notification
+                    NotificationManager.shared.scheduleNotification(title: title, body: summary)
+                    
+                    return "done"
+                }
+                
                 callbacks.onConnect = { [weak self] _ in
                     DispatchQueue.main.async {
                         self?.status = .connected
@@ -72,10 +95,9 @@ class ConversationalAIViewModel: ObservableObject {
                     }
                 }
                 
-                self.conversation = try await ElevenLabsSDK.Conversation.startSession(config: config, callbacks: callbacks)
+                self.conversation = try await ElevenLabsSDK.Conversation.startSession(config: config, callbacks: callbacks, clientTools: clientTools)
                 
-                // Register client tools
-                self.registerClientTools()
+                
             } catch {
                 print("Error starting conversation: \(error)")
             }
@@ -96,24 +118,5 @@ class ConversationalAIViewModel: ObservableObject {
             }
             log.info("AI Conversation ended.")
         }
-    }
-    
-    //    Not working yet
-    private func registerClientTools() {
-        guard let conversation = self.conversation else {
-            print("Cannot register tools: Conversation not initialized.")
-            return
-        }
-        
-        var clientTools = ElevenLabsSDK.ClientTools()
-        
-        // Register the end_call tool
-        clientTools.register("end_talk") { [weak self] _ async throws -> String? in
-            guard let self = self else { return nil }
-            print("end_talk tool invoked. Ending conversation.")
-            self.endConversation()
-            return nil
-        }
-        
     }
 }

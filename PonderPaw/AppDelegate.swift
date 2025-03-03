@@ -153,8 +153,12 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         // Print full message.
         print(userInfo)
         
-        // Use AlertPresenter to show the alert.
-        AlertPresenter.showAlert(title: "New Story", message: "got a new story")
+        // Extract dynamic title and body from the notification content.
+        let title = notification.request.content.title
+        let body = notification.request.content.body
+        
+        // Use AlertPresenter to show the alert with the actual notification content.
+        AlertPresenter.showAlert(title: title, message: body)
         
         // Change this to your preferred presentation option
         return [[.alert, .sound]]

@@ -182,7 +182,7 @@ class CoPilot {
         
         if type == "read" {
             let content = action["content"] as? String ?? "No content provided"
-            
+        
             return readActionHandler.read(action: action)
                 .do(onSubscribe: {
                     if let subtitle = action["subtitle"] as? [String: Any] {
