@@ -12,6 +12,7 @@ import RxSwift
 class CoPilot {
     public let stateMachine: GKStateMachine
     public var pages: [[String: Any]] = []
+    public var sharedKnowledge: [String: Any] = [:]
     
     // PublishSubjects for events
     public let subtitleEvent = PublishSubject<SubtitleEvent>()
@@ -50,16 +51,37 @@ class CoPilot {
     }
     
     func loadJson(jsonManifest: String) {
-        guard let data = jsonManifest.data(using: .utf8),
-              let parsed = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-              let playbook = parsed["playbook"] as? [String: Any],
-              let pages = playbook["pages"] as? [[String: Any]] else {
-            fatalError("Invalid JSON manifest.")
+
+        guard let data = jsonManifest.data(using: .utf8) else {
+            fatalError("Invalid JSON manifest: Failed to convert jsonManifest to Data.")
+        }
+
+        guard let parsed = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+            fatalError("Invalid JSON manifest: Failed to parse JSON.")
+        }
+
+        guard let meta = parsed["meta"] as? [String: Any] else {
+            fatalError("Invalid JSON manifest: Missing or invalid 'meta' key.")
+        }
+
+        guard let sharedKnowledge = parsed["knowledge"] as? [String: Any] else {
+            fatalError("Invalid JSON manifest: Missing or invalid 'knowledge' key.")
+        }
+
+        guard let playbook = parsed["playbook"] as? [String: Any] else {
+            fatalError("Invalid JSON manifest: Missing or invalid 'playbook' key.")
+        }
+
+        guard let pages = playbook["pages"] as? [[String: Any]] else {
+            fatalError("Invalid JSON manifest: Missing or invalid 'pages' key in 'playbook'.")
         }
         
-        self.pages = pages
         log.info("JSON manifest loaded. \(pages.count) pages found.")
-
+        log.info("shared knowledge. \(sharedKnowledge)")
+        
+        self.pages = pages
+        self.sharedKnowledge = sharedKnowledge
+        
         // Observable chain for reading with pause handling
         readingObservable = Observable.from(pages.enumerated())
             .concatMap { [weak self] index, page -> Observable<Void> in
@@ -214,7 +236,7 @@ class CoPilot {
                 // Start conversation
                 if let prompt = action["prompt"] as? String,
                    let opening = action["opening"] as? String {
-                    self.conversationalAIViewModel.beginConversation(initialPrompt: prompt, firstMessage: opening, voiceId: "gOkFV1JMCt0G0n9xmBwV")
+                    self.conversationalAIViewModel.beginConversation(initialPrompt: prompt, firstMessage: opening, voiceId: "gOkFV1JMCt0G0n9xmBwV", knowledge: self.sharedKnowledge)
                 } else {
                     // Handle the case where the cast fails
                     print("Error: Unable to cast prompt or opening to String.")

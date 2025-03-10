@@ -42,12 +42,12 @@ class StoryManager {
             // Destination folder for this story in the app’s Application Support directory.
             let storyFolderURL = getApplicationSupportDirectory().appendingPathComponent(storyId)
             
-            // If the folder already exists, return it.
-            if FileManager.default.fileExists(atPath: storyFolderURL.path) {
-                print("Story folder exists for storyId: \(storyId)")
-                completion(storyFolderURL, nil)
-                return
-            }
+//            // If the folder already exists, return it.
+//            if FileManager.default.fileExists(atPath: storyFolderURL.path) {
+//                print("Story folder exists for storyId: \(storyId)")
+//                completion(storyFolderURL, nil)
+//                return
+//            }
             
             // Create the folder.
             do {

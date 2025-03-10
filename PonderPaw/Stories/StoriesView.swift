@@ -2,10 +2,8 @@ import SwiftUI
 
 /// A view that displays a list of stories for a given user.
 struct StoriesView: View {
-    // The view model is initialized with the input userId.
     @StateObject private var viewModel: StoriesViewModel
 
-    /// Initialize StoriesView with a Firebase userId.
     init(userId: String) {
         _viewModel = StateObject(wrappedValue: StoriesViewModel(userId: userId))
     }
@@ -13,23 +11,49 @@ struct StoriesView: View {
     var body: some View {
         Group {
             if viewModel.stories.isEmpty {
-                // Show a message when there are no items.
-                Text("No items here...")
-                    .foregroundColor(.gray)
-                    .padding()
+                VStack(spacing: 12) {
+                    Image(systemName: "doc.text.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 60, height: 60)
+                        .foregroundColor(.gray.opacity(0.7))
+                    
+                    Text("No stories available")
+                        .font(.headline)
+                        .foregroundColor(.secondary)
+                    
+                    Text("Check back later or try refreshing.")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
+                .padding()
             } else {
-                // Display the list of stories with pull-to-refresh.
                 List(viewModel.stories) { story in
                     NavigationLink(destination: StoryPlayView(storyID: story.id)) {
-                        Text(story.doc_title)
-                            .padding(.vertical, 8)
+                        HStack(spacing: 12) {
+                            Image(systemName: "doc.fill")
+                                .foregroundColor(.accentColor)
+                            
+                            VStack(alignment: .leading) {
+                                Text(story.doc_title)
+                                    .font(.headline)
+                                    .foregroundColor(.primary)
+                                
+                                Text("Tap to read")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                        .padding(.vertical, 8)
                     }
                 }
+                .listStyle(.plain)
                 .refreshable {
                     viewModel.loadStories()
                 }
             }
         }
-        .navigationTitle("Stories")
+        .navigationTitle("Documents")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
