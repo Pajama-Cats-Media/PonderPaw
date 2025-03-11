@@ -96,10 +96,22 @@ struct StoryPlayView: View {
                         .font(.title2)
                         .foregroundColor(.white) // Ensure white icon for visibility
                         .padding(8)
-                        .background(Color.black.opacity(0.6)) // Dark semi-transparent background
+                        .background(Color.black) // Dark semi-transparent background
                         .clipShape(Circle()) // Circular shape
                 }
             }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        coPilotRef?.togglePause()
+                    }) {
+                        Image(systemName: "pause.circle")
+                            .font(.title2)
+                            .foregroundColor(.white)
+                            .padding(8)
+                            .background(Color.black) // Dark semi-transparent background
+                            .clipShape(Circle()) 
+                    }
+                }
         }
     }
 

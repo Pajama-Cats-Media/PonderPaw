@@ -28,7 +28,7 @@ struct SubtitleView: View {
         if !viewModel.currentChunk.isEmpty {
             let isPortrait = UIDevice.current.orientation.isPortrait
             let isIPhone = UIDevice.current.userInterfaceIdiom == .phone
-            let fontSize: CGFloat = (isPortrait && isIPhone) ? 12 : 20  // Smaller font only for iPhones in portrait mode
+            let fontSize: CGFloat = (isIPhone) ? 12 : 20  // Smaller font only for iPhones
             
             let isPlainMode = viewModel.model.isPlainText // Access the model's flag
             let displayText = isPlainMode ? viewModel.currentChunk.autoWrap(maxLineLength: 50) : viewModel.currentChunk
