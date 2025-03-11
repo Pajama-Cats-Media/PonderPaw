@@ -64,9 +64,8 @@ class CoPilot {
             fatalError("Invalid JSON manifest: Missing or invalid 'meta' key.")
         }
 
-        guard let sharedKnowledge = parsed["knowledge"] as? [String: Any] else {
-            fatalError("Invalid JSON manifest: Missing or invalid 'knowledge' key.")
-        }
+        //        this one is optional
+        let sharedKnowledge = (parsed["knowledge"] as? [String: Any]) ?? [:]
 
         guard let playbook = parsed["playbook"] as? [String: Any] else {
             fatalError("Invalid JSON manifest: Missing or invalid 'playbook' key.")
