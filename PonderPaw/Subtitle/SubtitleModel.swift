@@ -8,7 +8,7 @@ class SubtitleModel {
     }
     
     private var subtitle: Subtitle
-    private let maxChunkLength: Int = 60 // Maximum characters per chunk (constant)
+    private let maxChunkLength: Int = 50 // Maximum characters per chunk (constant)
     
     // New computed property: a larger chunk length for plain text mode.
     private var effectiveMaxChunkLength: Int {

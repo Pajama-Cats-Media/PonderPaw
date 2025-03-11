@@ -9,7 +9,7 @@ struct StoriesView: View {
     }
     
     var body: some View {
-        Group {
+        List {
             if viewModel.stories.isEmpty {
                 VStack(spacing: 12) {
                     Image(systemName: "doc.text.fill")
@@ -18,7 +18,7 @@ struct StoriesView: View {
                         .frame(width: 60, height: 60)
                         .foregroundColor(.gray.opacity(0.7))
                     
-                    Text("No stories available")
+                    Text("No document available")
                         .font(.headline)
                         .foregroundColor(.secondary)
                     
@@ -26,9 +26,9 @@ struct StoriesView: View {
                         .font(.subheadline)
                         .foregroundColor(.gray)
                 }
-                .padding()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
-                List(viewModel.stories) { story in
+                ForEach(viewModel.stories) { story in
                     NavigationLink(destination: StoryPlayView(storyID: story.id)) {
                         HStack(spacing: 12) {
                             Image(systemName: "doc.fill")
@@ -47,11 +47,12 @@ struct StoriesView: View {
                         .padding(.vertical, 8)
                     }
                 }
-                .listStyle(.plain)
-                .refreshable {
-                    viewModel.loadStories()
-                }
             }
+        }
+        .listStyle(.plain)
+        .refreshable {
+            print("Refreshing...")  // Debugging statement
+            viewModel.loadStories()
         }
         .navigationTitle("Documents")
         .navigationBarTitleDisplayMode(.inline)

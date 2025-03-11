@@ -26,17 +26,17 @@ struct SubtitleView: View {
     
     var body: some View {
         if !viewModel.currentChunk.isEmpty {
-            let isPlainMode = viewModel.model.isPlainText // Access the model's flag
-            let displayText = isPlainMode ? viewModel.currentChunk.autoWrap(maxLineLength: 60) : viewModel.currentChunk
-            Text(displayText)
-                .font(.system(size: 20))
+            let isPortrait = UIDevice.current.orientation.isPortrait
+            let isIPhone = UIDevice.current.userInterfaceIdiom == .phone
+            let fontSize: CGFloat = (isPortrait && isIPhone) ? 12 : 20  // Smaller font only for iPhones in portrait mode
+            
+            Text(viewModel.currentChunk)
+                .font(.system(size: fontSize))
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
                 .padding()
-                .frame(maxWidth: .infinity, maxHeight: isPlainMode ? 160 : 40, alignment: .center)
-                // When in plain text mode, let the text wrap to multiple lines
-                .lineLimit(isPlainMode ? nil : 1)
-                // Ensure the Text view can expand vertically to show all lines
+                .frame(maxWidth: .infinity, maxHeight: 40, alignment: .center)
+                .lineLimit(1)
                 .fixedSize(horizontal: false, vertical: true)
                 .background(Color.black.opacity(0.8))
                 .onAppear {

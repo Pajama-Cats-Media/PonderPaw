@@ -12,29 +12,50 @@ struct LoginView: View {
     @State private var isLoading = false // Loading state
 
     var body: some View {
-        // Use ZStack to center the login form in the main view.
         ZStack {
             Color(.systemBackground)
                 .ignoresSafeArea()
 
-            // The login form is now the main panel.
             VStack(spacing: 16) {
-                Text("Login PaperHeart Viewer")
-                    .font(.largeTitle)
+                // Welcome Message with Adaptive Color
+                Text("Welcome to PaperHeart")
+                    .font(.title)
                     .bold()
-                    .padding(.bottom, 20)
+                    .foregroundColor(.primary)
+                    .padding(.top, 10)
                 
+                // Google Sign-In Button at the Top
+                Button(action: {
+                    signInWithGoogle()
+                }) {
+                    HStack {
+                        Image(systemName: "globe")
+                        Text("Sign in with Google")
+                            .font(.headline)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color(.systemGray5))
+                    .foregroundColor(.primary)
+                    .cornerRadius(8)
+                }
+                .padding(.bottom, 10)
+                
+                // Email Field
                 TextField("Enter your email", text: $email)
                     .keyboardType(.emailAddress)
                     .autocapitalization(.none)
                     .padding()
                     .background(Color(.systemGray6))
                     .cornerRadius(8)
+                    .foregroundColor(.primary)
                 
+                // Password Field
                 SecureField("Enter your password", text: $password)
                     .padding()
                     .background(Color(.systemGray6))
                     .cornerRadius(8)
+                    .foregroundColor(.primary)
                 
                 if !errorMessage.isEmpty {
                     Text(errorMessage)
@@ -43,6 +64,7 @@ struct LoginView: View {
                         .padding(.horizontal)
                 }
                 
+                // Login/Create Account Button
                 Button(action: {
                     loginWithEmailPassword()
                 }) {
@@ -61,6 +83,7 @@ struct LoginView: View {
                     }
                 }
                 
+                // Toggle Create Account Option
                 Button(action: {
                     isCreatingAccount.toggle()
                 }) {
@@ -68,29 +91,9 @@ struct LoginView: View {
                         .font(.subheadline)
                         .foregroundColor(.blue)
                 }
-                
-                Divider()
-                    .padding(.vertical, 10)
-                
-                Button(action: {
-                    signInWithGoogle()
-                }) {
-                    HStack {
-                        Text("Sign in with Google")
-                            .font(.headline)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.white)
-                    .foregroundColor(.black)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
-                }
             }
             .padding(30)
-            .background(Color.white)
+            .background(Color(.secondarySystemBackground)) // Adaptive background
             .cornerRadius(12)
             .shadow(radius: 10)
             .padding(.horizontal, 20)
@@ -110,7 +113,6 @@ struct LoginView: View {
                     self.handleAuthError(error)
                     return
                 }
-                // Successful account creation
                 self.isLoggedIn = true
             }
         } else {
@@ -120,7 +122,6 @@ struct LoginView: View {
                     self.handleAuthError(error)
                     return
                 }
-                // Successful login
                 self.isLoggedIn = true
             }
         }
@@ -176,7 +177,6 @@ struct LoginView: View {
                     self.errorMessage = error.localizedDescription
                     return
                 }
-                // Successful Google sign-in
                 self.isLoggedIn = true
             }
         }
@@ -185,6 +185,11 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(isLoggedIn: .constant(false))
+        Group {
+            LoginView(isLoggedIn: .constant(false))
+                .preferredColorScheme(.light) // Light mode preview
+            LoginView(isLoggedIn: .constant(false))
+                .preferredColorScheme(.dark)  // Dark mode preview
+        }
     }
 }
