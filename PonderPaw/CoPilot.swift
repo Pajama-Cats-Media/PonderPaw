@@ -30,12 +30,10 @@ class CoPilot {
     private let PAGE_GAP_TIME: TimeInterval = 0.5
     
     private let conversationalAIViewModel: ConversationalAIViewModel
-
+    
     // Pause/Resume mechanism
-    private var isPaused = false
-    private let pauseSubject = PublishSubject<Void>()
-    private let resumeSubject = PublishSubject<Void>()
-
+    private var pauseSubject = BehaviorSubject<Bool>(value: false)
+    
     init(conversationalAIViewModel: ConversationalAIViewModel, storyFolder: URL?) {
         self.conversationalAIViewModel = conversationalAIViewModel
         self.readActionHandler = ReadActionHandler(storyFolder: storyFolder)
@@ -51,26 +49,26 @@ class CoPilot {
     }
     
     func loadJson(jsonManifest: String) {
-
+        
         guard let data = jsonManifest.data(using: .utf8) else {
             fatalError("Invalid JSON manifest: Failed to convert jsonManifest to Data.")
         }
-
+        
         guard let parsed = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
             fatalError("Invalid JSON manifest: Failed to parse JSON.")
         }
-
+        
         guard let meta = parsed["meta"] as? [String: Any] else {
             fatalError("Invalid JSON manifest: Missing or invalid 'meta' key.")
         }
-
+        
         //        this one is optional
         let sharedKnowledge = (parsed["knowledge"] as? [String: Any]) ?? [:]
-
+        
         guard let playbook = parsed["playbook"] as? [String: Any] else {
             fatalError("Invalid JSON manifest: Missing or invalid 'playbook' key.")
         }
-
+        
         guard let pages = playbook["pages"] as? [[String: Any]] else {
             fatalError("Invalid JSON manifest: Missing or invalid 'pages' key in 'playbook'.")
         }
@@ -88,11 +86,6 @@ class CoPilot {
                 
                 return self.processPage(page, index: index)
                     .concat(Observable.empty().delay(.milliseconds(Int(PAGE_GAP_TIME * 1000)), scheduler: MainScheduler.instance))
-                    .flatMap { _ in
-                        self.pauseSubject // Wait if paused
-                            .take(1) // Wait for a single resume event
-                            .flatMap { _ in Observable.just(()) }
-                    }
             }
             .do(onSubscribe: {
                 log.info("Reading started...")
@@ -118,33 +111,34 @@ class CoPilot {
     
     func stopReading() {
         log.info("Stopping reading process...")
-
+        
         readingDisposeBag = DisposeBag() // Dispose of all active observables
         
         hasCompleted = false
-        isPaused = false // Ensure it resets
-
+        
         if stateMachine.canEnterState(StartState.self) {
             stateMachine.enter(StartState.self)
             logStateChange()
         }
-
+        
         pageCompletionEvent.onCompleted()
         subtitleEvent.onCompleted()
     }
     
-    func togglePause() {
-        if isPaused {
-            log.info("Resuming reading process...")
-            isPaused = false
-            resumeSubject.onNext(())
-        } else {
-            log.info("Pausing reading process...")
-            isPaused = true
-            pauseSubject.onNext(())
+    func togglePause() -> Bool {
+        do {
+            let currentPauseState = try pauseSubject.value() // Get current pause state
+            let newPauseState = !currentPauseState
+            pauseSubject.onNext(newPauseState) // Emit new pause state
+            let status = newPauseState ? "paused" : "resumed"
+            log.info("Stream is now \(status).")
+            return newPauseState
+        } catch {
+            log.error("Failed to toggle pause: \(error)")
+            return false
         }
     }
-
+    
     private func processPage(_ page: [String: Any], index: Int) -> Observable<Void> {
         if stateMachine.canEnterState(PageReadyState.self) {
             stateMachine.enter(PageReadyState.self)
@@ -203,8 +197,8 @@ class CoPilot {
         
         if type == "read" {
             let content = action["content"] as? String ?? "No content provided"
-        
-            return readActionHandler.read(action: action)
+            
+            return readActionHandler.read(action: action, pause: pauseSubject)
                 .do(onSubscribe: {
                     if let subtitle = action["subtitle"] as? [String: Any] {
                         self.subtitleEvent.onNext(SubtitleEvent(subtitle: subtitle, content: content))

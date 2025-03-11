@@ -45,6 +45,7 @@ struct StoriesView: View {
                             }
                         }
                         .padding(.vertical, 8)
+                        .statusBarHidden(true)
                     }
                 }
             }
@@ -58,3 +59,4 @@ struct StoriesView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
+

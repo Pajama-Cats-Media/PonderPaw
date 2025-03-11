@@ -10,10 +10,10 @@ import SwiftUI
 
 struct StoryPlayView: View {
     @Environment(\.dismiss) private var dismiss  // Inject dismiss environment
-
+    
     // New parameter that identifies the story to display
     let storyID: String
-
+    
     @State private var localServerURL: URL? = nil
     // New state property to hold the local folder URL for the story.
     @State private var storyFolderURL: URL? = nil
@@ -26,12 +26,13 @@ struct StoryPlayView: View {
         ))
     @StateObject private var playerViewModel = PlayerViewModel()  // Manage PlayerViewModel
     @StateObject private var conversationalAIViewModel =
-        ConversationalAIViewModel()
+    ConversationalAIViewModel()
     @State private var coPilotRef: CoPilot?  // Store CoPilot reference
-
+    @State private var isPaused: Bool = false // Define isPaused
+    
     private let server = LocalHTTPServer()
     private let disposeBag = DisposeBag()
-
+    
     var body: some View {
         ZStack {
             if isServerStarting {
@@ -44,7 +45,7 @@ struct StoryPlayView: View {
             } else if let url = localServerURL {
                 ZStack {
                     PlayerView(url: url, viewModel: playerViewModel)
-
+                    
                     // Subtitle styled like a typical subtitle
                     VStack {
                         SubtitleView(viewModel: subtitleViewModel)
@@ -70,7 +71,7 @@ struct StoryPlayView: View {
             } else {
                 Text("Failed to start the server for story: \(storyID).")
             }
-
+            
             VStack {
                 ConversationalAIView(viewModel: conversationalAIViewModel)
             }
@@ -101,20 +102,27 @@ struct StoryPlayView: View {
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        coPilotRef?.togglePause()
-                    }) {
-                        Image(systemName: "pause.circle")
-                            .font(.title2)
-                            .foregroundColor(.white)
-                            .padding(8)
-                            .background(Color.black) // Dark semi-transparent background
-                            .clipShape(Circle()) 
+                Button(action: {
+                    if let newState = coPilotRef?.togglePause() {
+                        isPaused = newState
+                        if isPaused {
+                            subtitleViewModel.pausePlayback()
+                        } else {
+                            subtitleViewModel.startPlayback()
+                        }
                     }
+                }) {
+                    Image(systemName: isPaused ? "play.fill" : "pause.fill")
+                        .font(.title2)
+                        .foregroundColor(.white)
+                        .padding(8)
+                        .background(Color.black) // Dark semi-transparent background
+                        .clipShape(Circle())
                 }
+            }
         }
     }
-
+    
     private func initializeApplication() {
         // Use StoryManager to obtain the local folder path for the story.
         StoryManager.getStoryPath(for: storyID) { localPath, error in
@@ -124,15 +132,15 @@ struct StoryPlayView: View {
                 )
                 return
             }
-
+            
             guard let localPath = localPath else {
                 print("Local path is nil.")
                 return
             }
-
+            
             // Store the obtained local folder URL for later use.
             self.storyFolderURL = localPath
-
+            
             // Start the local server using the obtained folder path.
             startLocalServer(with: localPath) { success in
                 if success {
@@ -147,13 +155,13 @@ struct StoryPlayView: View {
             }
         }
     }
-
+    
     private func loadCopilot() {
         guard let jsonManifest = loadJsonManifest() else {
             print("Failed to load JSON manifest.")
             return
         }
-
+        
         let coPilot = CoPilot(
             conversationalAIViewModel: conversationalAIViewModel,
             storyFolder: storyFolderURL)
@@ -166,7 +174,7 @@ struct StoryPlayView: View {
                 handleSubtitleEvent(subtitleEvent)
             })
             .disposed(by: disposeBag)
-
+        
         // Handle page completion events
         coPilot.pageCompletionEvent
             .observe(on: MainScheduler.instance)
@@ -174,20 +182,20 @@ struct StoryPlayView: View {
                 handlePageCompletion(pageNumber)
             })
             .disposed(by: disposeBag)
-
+        
         coPilot.startReading()
     }
-
+    
     private func handleSubtitleEvent(_ subtitleEvent: SubtitleEvent) {
         let subtitle = subtitleEvent.subtitle ?? [:]
         let content = subtitleEvent.content
-
+        
         let chars = subtitle["chars"] as? [String] ?? []
         let timings = subtitle["timing"] as? [Double] ?? []
-
+        
         subtitleViewModel.updateSubtitles(
             content: content, characters: chars, timings: timings)
-
+        
         if !chars.isEmpty && !timings.isEmpty {
             // Timed mode: start playback using the timer.
             subtitleViewModel.startPlayback()
@@ -196,28 +204,28 @@ struct StoryPlayView: View {
             subtitleViewModel.currentChunk = content
         }
     }
-
+    
     /// the pageName is the next page number
     private func handlePageCompletion(_ pageNumber: Int) {
         print("Turn page here: \(pageNumber)")
         playerViewModel.gotoPage(number: pageNumber)
     }
-
+    
     private func cleanupApplication() {
         coPilotRef?.stopReading()
         subtitleViewModel.stopPlayback()
         stopLocalServer()
     }
-
+    
     private func startLocalServer(
         with folderURL: URL, completion: @escaping (Bool) -> Void
     ) {
         print("Starting server using folder: \(folderURL.path)")
-
+        
         DispatchQueue.global(qos: .background).async {
             let folderPath = folderURL.path
             if let urlString = server.startServer(folderPath: folderPath),
-                let url = URL(string: urlString)
+               let url = URL(string: urlString)
             {
                 DispatchQueue.main.async {
                     self.localServerURL = url
@@ -233,11 +241,11 @@ struct StoryPlayView: View {
             }
         }
     }
-
+    
     private func stopLocalServer() {
         server.stopServer()
     }
-
+    
     /// Loads the JSON manifest from the story's local folder.
     /// Instead of a fixed bundle path, it uses the local folder URL (obtained when starting the server)
     /// and appends the relative path "playbook/en-US/default.json".
@@ -246,7 +254,7 @@ struct StoryPlayView: View {
             print("Story folder URL is nil.")
             return nil
         }
-
+        
         // Build the full URL to the JSON manifest file.
         // TODO: switch language later
         let manifestURL = storyFolderURL.appendingPathComponent(

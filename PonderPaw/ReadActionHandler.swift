@@ -13,7 +13,7 @@ class ReadActionHandler: NSObject {
         super.init()
     }
     
-    func read(action: [String: Any]) -> Observable<Void> {
+    func read(action: [String: Any], pause: Observable<Bool> = Observable.just(false)) -> Observable<Void> {
         return Observable<Void>.create { observer in
             // Immediately stop any currently playing audio before starting a new one
             self.stopAudioPlaybackNow()
@@ -27,25 +27,37 @@ class ReadActionHandler: NSObject {
                 }
                 let audioFileURL = storyFolder.appendingPathComponent("sounds/en-US/\(audioFile)")
                 
-                
                 do {
-                    // allow play in silent mode
+                    // Allow play in silent mode
                     try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
                     try AVAudioSession.sharedInstance().setActive(true)
+                    
                     self.audioPlayer = try AVAudioPlayer(contentsOf: audioFileURL)
                     self.audioPlayer?.delegate = self
                     self.playbackCompletion = {
                         observer.onCompleted() // Notify completion of the observable
                     }
-                    self.audioPlayer?.play()
+                    
+                    self.audioPlayer?.play() // Default behavior: Start playing
+                    
+                    // Observe the pause state dynamically
+                    let pauseSubscription = pause.subscribe(onNext: { isPaused in
+                        if isPaused {
+                            self.audioPlayer?.pause()
+                        } else {
+                            self.audioPlayer?.play()
+                        }
+                    })
+                    
+                    // Return cleanup logic for when the subscription is disposed
+                    return Disposables.create {
+                        pauseSubscription.dispose() // Dispose pause observer
+                        self.stopAudioPlaybackNow() // Cleanup when audio is complete or subscription is disposed
+                    }
                 } catch {
                     print("Error initializing audio player: \(error.localizedDescription)")
                     observer.onCompleted()
-                }
-                
-                // Return cleanup logic for when the subscription is disposed
-                return Disposables.create {
-                    self.stopAudioPlaybackNow() // Cleanup when the audio is complete or subscription is disposed
+                    return Disposables.create()
                 }
             } else {
                 print("Invalid action: missing 'audio' field.")
