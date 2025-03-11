@@ -3,29 +3,35 @@ import FirebaseAuth
 
 struct HomeView: View {
     @State private var isLoggedIn: Bool = Auth.auth().currentUser != nil
-
+    
     var body: some View {
         NavigationStack {
             if isLoggedIn {
                 // Show bottom tab navigation if user is logged in
                 TabView {
-                    StoriesView(userId: Auth.auth().currentUser?.uid ?? "")
-                        .tabItem {
-                            Image(systemName: "doc.text") // Document icon
-                            Text("Documents")
-                        }
-
-                    ScanView()
-                        .tabItem {
-                            Image(systemName: "camera.viewfinder") // Scan icon
-                            Text("Scan")
-                        }
-
-                    UserView()
-                        .tabItem {
-                            Image(systemName: "person.crop.circle") // Profile icon
-                            Text("Profile")
-                        }
+                    NavigationStack {
+                        StoriesView(userId: Auth.auth().currentUser?.uid ?? "")
+                    }
+                    .tabItem {
+                        Image(systemName: "doc.text") // Document icon
+                        Text("Documents")
+                    }
+                    
+                    NavigationStack {
+                        ScanView()
+                    }
+                    .tabItem {
+                        Image(systemName: "camera.viewfinder") // Scan icon
+                        Text("Scan")
+                    }
+                    
+                    NavigationStack {
+                        UserView()
+                    }
+                    .tabItem {
+                        Image(systemName: "person.crop.circle") // Profile icon
+                        Text("Profile")
+                    }
                 }
             } else {
                 // Show login screen if user is not logged in
@@ -50,14 +56,14 @@ struct HomeView: View {
             listenForAuthChanges()
         }
     }
-
+    
     /// Listens for authentication state changes
     private func listenForAuthChanges() {
         Auth.auth().addStateDidChangeListener { _, user in
             isLoggedIn = user != nil
         }
     }
-
+    
     /// Dummy login function (replace with real Firebase login logic)
     private func login() {
         Auth.auth().signInAnonymously { result, error in
