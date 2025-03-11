@@ -3,6 +3,8 @@ import AVFoundation
 
 struct ScanView: View {
     @State private var showDetail = false
+    @State private var showRedeemPrompt = false
+    @State private var redeemCode = ""
     
     var body: some View {
         NavigationStack {
@@ -29,9 +31,33 @@ struct ScanView: View {
                 .navigationDestination(isPresented: $showDetail) {
                     ScanDetailView()
                 }
+                
+                Button(action: {
+                    showRedeemPrompt = true
+                }) {
+                    Text("Redeem Code")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: 200)
+                        .background(Color.green)
+                        .cornerRadius(10)
+                }
+                .alert("Enter Redeem Code", isPresented: $showRedeemPrompt) {
+                    TextField("Code", text: $redeemCode)
+                    Button("Cancel", role: .cancel) {}
+                    Button("Redeem") {
+                        redeemCodeAction()
+                    }
+                }
             }
             .padding()
         }
+    }
+    
+    private func redeemCodeAction() {
+        print("Redeem code entered: \(redeemCode)")
+        // Handle redemption logic here
     }
 }
 
