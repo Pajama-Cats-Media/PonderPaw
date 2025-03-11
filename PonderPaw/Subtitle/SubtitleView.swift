@@ -30,13 +30,16 @@ struct SubtitleView: View {
             let isIPhone = UIDevice.current.userInterfaceIdiom == .phone
             let fontSize: CGFloat = (isPortrait && isIPhone) ? 12 : 20  // Smaller font only for iPhones in portrait mode
             
-            Text(viewModel.currentChunk)
+            let isPlainMode = viewModel.model.isPlainText // Access the model's flag
+            let displayText = isPlainMode ? viewModel.currentChunk.autoWrap(maxLineLength: 50) : viewModel.currentChunk
+            
+            Text(displayText)
                 .font(.system(size: fontSize))
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
                 .padding()
                 .frame(maxWidth: .infinity, maxHeight: 40, alignment: .center)
-                .lineLimit(1)
+                .lineLimit(isPlainMode ? 4 : 1)
                 .fixedSize(horizontal: false, vertical: true)
                 .background(Color.black.opacity(0.8))
                 .onAppear {
