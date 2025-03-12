@@ -8,6 +8,7 @@
 import Foundation
 import GameplayKit
 import RxSwift
+import Combine
 
 class CoPilot {
     public let stateMachine: GKStateMachine
@@ -19,6 +20,7 @@ class CoPilot {
     public let pageCompletionEvent = PublishSubject<Int>()
     
     private let disposeBag = DisposeBag()
+    private let skipAgentSubject = PublishSubject<Void>()
     private var readingDisposeBag = DisposeBag() // DisposeBag for managing reading
     private var readingObservable: Observable<Void>?
     
@@ -31,11 +33,14 @@ class CoPilot {
     
     private let conversationalAIViewModel: ConversationalAIViewModel
     
+    private var cancellables = Set<AnyCancellable>()
+    
     // Pause/Resume mechanism
     private var pauseSubject = BehaviorSubject<Bool>(value: false)
     
     init(conversationalAIViewModel: ConversationalAIViewModel, storyFolder: URL?) {
         self.conversationalAIViewModel = conversationalAIViewModel
+        
         self.readActionHandler = ReadActionHandler(storyFolder: storyFolder)
         
         let startState = StartState()
@@ -100,6 +105,18 @@ class CoPilot {
             return
         }
         
+        // Observe changes in status
+        self.conversationalAIViewModel.$status
+            .sink { newStatus in
+                print("New Status changed to: \(newStatus)")
+                if(newStatus == .disconnected){
+                    print("skip agent action in conversation")
+                    self.conversationalAIViewModel.endConversation()
+                    self.skipAgentAction()
+                }
+            }
+            .store(in: &cancellables)
+        
         readingDisposeBag = DisposeBag() // Reset dispose bag for new reading session
         
         DispatchQueue.main.asyncAfter(deadline: .now() + INITIAL_WAIT_TIME) {
@@ -139,6 +156,10 @@ class CoPilot {
         }
     }
     
+    func skipAgentAction() {
+        skipAgentSubject.onNext(())
+    }
+    
     private func processPage(_ page: [String: Any], index: Int) -> Observable<Void> {
         if stateMachine.canEnterState(PageReadyState.self) {
             stateMachine.enter(PageReadyState.self)
@@ -148,7 +169,10 @@ class CoPilot {
         
         return Observable.just(())
             .do(onNext: {
-                log.info("Start to play Page \(index + 1)...")
+                let newPage = index + 1
+                log.info("Start to play Page \(newPage)...")
+                // quick fix, conversation will break one event, fire another
+                self.pageCompletionEvent.onNext(newPage)
             })
             .concatMap { [weak self] in
                 guard let self = self else { return Observable<Void>.empty() }
@@ -238,9 +262,19 @@ class CoPilot {
                 // Schedule work item to end conversation after maxTime
                 DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(maxTime), execute: workItem)
                 
+                // Observe skip event
+                let skipSubscription = self.skipAgentSubject.subscribe(onNext: {
+                    log.info("Skip triggered. Ending agent action early.")
+                    // Execute the work item immediately without waiting
+                    DispatchQueue.global().async(execute: workItem)
+                    workItem.cancel()
+                    observer.onCompleted()
+                })
+                
                 return Disposables.create {
                     // Ensure the workItem is canceled if disposed
                     workItem.cancel()
+                    skipSubscription.dispose()
                     self.conversationalAIViewModel.endConversation()
                     log.info("'agent' action completed or disposed.")
                 }
